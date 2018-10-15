@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+  /* #loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  /* .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }  */
+  .scroll-bar {
+    height: 5px;
+    width: 10px;
+    background-color:#ea830e;
+    position: fixed;
+    z-index: 2;
+  }
+  
+  .content {
+    height:150%;
+  }
+  
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .loading-bar {
+    display: inline-block;
+    width: 4px;
+    height: 35px;
+    border-radius: 4px;
+    animation: loading 1s ease-in-out infinite;
+  }
+  .loading-bar:nth-child(1) {
+    background-color: #3498db;
+    animation-delay: 0;
+  }
+  .loading-bar:nth-child(2) {
+    background-color: #c0392b;
+    animation-delay: 0.09s;
+  }
+  .loading-bar:nth-child(3) {
+    background-color: #f1c40f;
+    animation-delay: .18s;
+  }
+  .loading-bar:nth-child(4) {
+    background-color: #27ae60;
+    animation-delay: .27s;
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1, 2.2);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+  /* table.table-condensed .day:hover {
+    cursor: pointer;
+  }
+  table.table-condensed .day.active {
+    background: #00f;
+  } */

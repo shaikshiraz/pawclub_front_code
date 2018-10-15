@@ -1,0 +1,822 @@
+<!-- <h1 class="text-center">My Orders </h1>
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Available</th>
+                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col" class="text-right">Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img style="height: 50px;width:50px;" src="../../../assets/img/dog.jpeg" id="image2"/> </td>
+                            <td>Product Name Dada</td>
+                            <td>In stock</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td class="text-right">124,90 €</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td><img style="height: 50px;width:50px;" src="../../../assets/img/dog.jpeg" id="image2"/></td>
+                            <td>Product Name Toto</td>
+                            <td>In stock</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td class="text-right">33,90 £</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td><img style="height: 50px;width:50px;" src="../../../assets/img/dog.jpeg" id="image2"/></td>
+                            <td>Product Name Titi</td>
+                            <td>In stock</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td class="text-right">70,00 €</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Sub-Total</td>
+                            <td class="text-right">255,90 €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Shipping</td>
+                            <td class="text-right">6,90 €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right"><strong>346,90 €</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container-fluid fpd">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="cercledoghead text-center">Dog Walking</h2>
+
+          <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+          width: 100%;" src="../../../assets/img/static/Walking.jpeg" class="rounded-circle" alt="Cinque Terre">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="walkingForm" (ngSubmit)="Walking(walkingForm.value)" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter Name" required>
+              </div>
+            </div>
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-8 address-col-left">
+                  <label for="name">Address</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="ad1" placeholder="Address Line 1" required>
+                    <input type="text" class="form-control" id="ad2" placeholder="Address Line 2" required>
+                    <input type="text" class="form-control" id="ad3" placeholder="Address Line 3" required>
+                  </div>
+                </div>
+                <div class="col-md-4 address-col-right">
+                  <div class="form-group">
+                    <select class="form-control" id="city" required>
+                      <option value="">City</option>
+                      <option>Bangalore</option>
+                      <option>Mangalore</option>
+                    </select>
+                    <input type="text" class="form-control" id="zipcode" placeholder="Zip code" required>
+                    <select class="form-control" id="state" required>
+                      <option value="">State</option>
+                      <option>Andra</option>
+                      <option>Karnataka</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12">
+                <label for="name">Contact person name</label>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" formControlName="firstname" id="name" placeholder="First Name" required>
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="lastname" id="name" placeholder="Last Name" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" formControlName="email" id="email" placeholder="Email Address" required>
+                  </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="phoneno" id="phoneno" placeholder="Phone Number" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="name">Address</label>
+                    <input type="text" class="form-control" formControlName="address1" id="name" placeholder="Address Line1*" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="address2" id="name" placeholder="Address Line2*" required>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                          <select name="country" formControlName="country" class="countries form-control" id="countryId">
+                           <option value="">Select Country</option>
+                            </select>
+                          </div>
+                        </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <select name="state"  formControlName="state" class="states form-control" id="stateId">
+                          <option value="">Select State</option>
+                      </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                          <select name="city" formControlName="city" class="cities form-control" id="cityId">
+                            <option value="">Select City</option>
+                        </select>
+                        
+                        </div>
+                      </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <div class="col-md-12">
+              <label for="reqments">What are the timing that you are available to walk?</label>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select class="form-control" formControlName="Time1" id="accounttype" required>
+                      <option value="">Select timings</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select class="form-control"formControlName="Time2" id="accounttype" required>
+                      <option value="">Select timings</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select class="form-control" formControlName="Time3" id="accounttype" required>
+                      <option value="">Select timings</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <select class="form-control" formControlName="from" id="accounttype" required>
+                        <option value="">From</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Days and timings that you are available</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6 address-col-right">
+                  <div class="form-group">
+
+                    <input type="time" formControlName="DayTime1" placeholder="time" class="form-control" id="reqments" required>
+
+                  </div>
+                </div>
+                <div class="col-md-6 address-col-right">
+                  <div class="form-group">
+                    <div class="input-group-append">
+                      <input type="text"   class="form-control date" placeholder="Pick the multiple dates">
+                  </div>
+                    <!-- <input type="text" formControlName="DayTime2" class="form-control date" id="reqments" required> -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Area that the service is available</label>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                        <div formArrayName="area" *ngFor="let items of walkingForm.get('area').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                              <div class="col-md-6">
+                                  <div class="dog_walk form-group">
+                                    <div class="input-group mb-3">
+                                        <input id="searchTextField" type="text" size="50"
+                                        class="form-control" formControlName="ServiceArea"  placeholder="Enter a location" autocomplete="on">
+                                      <input type="text" formControlName="area" class="form-control" placeholder="select">
+                                      
+                                    </div>
+                                  </div>
+                                </div>               
+                          
+               
+                              <div class="col-md-2">
+                                  <ng-container *ngIf="walkingForm.get('area')?.controls?.length<=2">
+                                      <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                      </ng-container>
+                                <ng-container *ngIf="ind!=0">
+                                  <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                </ng-container>
+                          </div> 
+                          </div>
+                        </div>
+ 
+                      
+                      
+                      </div>
+                
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Cost per Day</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="switch">
+                      <input type="checkbox" formControlName="costPerDay" id="walking_blk5" value="0">
+                      <div class="slider round">
+                        <span class="on">YES</span><span class="off">NO</span>
+                      </div>
+
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-9" id="walk" style="display: none;">
+
+              <div class="form-row">
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Timings/Cost Per day</label>
+
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Once a day</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Twice a day</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Thrice a day</label>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-md-3 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="">Small Paws</label>
+                    <div class="form-group">
+                      <input type="text" formControlName="small1" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="small2" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="small3" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="">Medium Paws</label>
+                    <div class="form-group">
+                      <input type="text" formControlName="Medium1" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="Medium2" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="Medium3" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="">Large Paws</label>
+                    <div class="form-group">
+                      <input type="text" formControlName="Large1" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="Large2" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" formControlName="Large3" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <!-- <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Xtra Large Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div> -->
+              </div>
+
+            </div>
+
+            <!-- <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Cost Per Week</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="switch">
+                      <input type="checkbox" id="change_blk66" value="0">
+                      <div class="slider round">
+                        <span class="on">YES</span><span class="off">NO</span>
+                      </div>
+
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-md-12 col-9" id="blk66" style="display: none;">
+
+              <div class="form-row">
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Timings/Cost Per Week</label>
+
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Once a day</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Twice a day</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Thrice a day</label>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                  <div class="form-group">
+                    <label class="kb">Small Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                  <div class="form-group">
+                    <label class="kb">Medium Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg- col-3">
+                  <div class="form-group">
+                    <label class="kb">Large Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Xtra Large Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div> -->
+            <!-- <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Cost Per Month</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="switch">
+                      <input type="checkbox" id="change_blk77" value="0">
+                      <div class="slider round">
+                        <span class="on">YES</span><span class="off">NO</span>
+                      </div>
+
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-md-12 col-9" id="blk77" style="display: none;">
+
+              <div class="form-row">
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Timings/Cost Per Month</label>
+
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Once a day</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Twice a day</label>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Thrice a day</label>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                  <div class="form-group">
+                    <label class="kb">Small Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                  <div class="form-group">
+                    <label class="kb">Medium Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg- col-3">
+                  <div class="form-group">
+                    <label class="kb">Large Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Xtra Large Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR" class="form-control">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div> -->
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Breeds that you walk</label>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                        <div formArrayName="Breed" *ngFor="let items of walkingForm.get('Breed').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                              <div class="col-md-6">
+                                  <div class="dog_walk1 form-group">
+                                    <div class="input-group mb-3">
+                                      <input type="text" formControlName="Breed" class="form-control" placeholder="Mention breed name">
+                                     
+                                    </div>
+                                  </div>
+                                </div>              
+                          
+               
+                              <div class="col-md-2">
+                                  <ng-container *ngIf="walkingForm.get('Breed')?.controls?.length<=2">
+                                      <button (click)="addField1(ind)" class="btn-success btn-sm">+</button>
+                                      </ng-container>
+                                <ng-container *ngIf="ind!=0">
+                                  <button  (click)="removeField1(ind)" class="btn-success btn-sm">- </button>
+                                </ng-container>
+                          </div> 
+                          </div>
+                        </div>
+ 
+                      
+                      
+                      </div>
+              
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" formControlName="selectTime" id="accounttype" required>
+                      <option value="">Select</option>
+                      <option>Morning 6 am to 10am</option>
+                      <option>Afternoon 12 to 4</option>
+                      <option>Evening 6 pm to 10pm </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="cost" placeholder="Cost" class="form-control" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="MaxBreed" placeholder="Maximum number of" class="form-control" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Terms and Conditions*</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control"  required>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="reqments">Bank Details</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accname" class="form-control" id="accountname" placeholder="Account Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="branch" class="form-control" id="branchname" placeholder="Branch Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accno" class="form-control" id="accountno" placeholder="Account No" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="ifsc" class="form-control" id="ifsccode" placeholder="IFSC code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="mmid" class="form-control" id="mmidcode" placeholder="MMID code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="gst" class="form-control" id="address" placeholder="GSTIN" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" formControlName="accotype" id="accounttype" required>
+                    <option value="">Type of Account</option>
+                    <option>T1</option>
+                    <option>T2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                   <label>what is the rules and regulations(<a target="_blank" style="   text-decoration: none;
+                    color: #008CBA;">click on below options</a>?)</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-3 col-lg-3">
+              <label>Upload your Documents Proof id</label>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                  <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());"
+                    style="display: none;" type="file" #image formControlName="image">
+                </span>
+                <span class="form-control"></span>
+              </div>
+
+            </div>
+            <div class=" col-md-3 col-lg-6">
+              <input type="textarea" formControlName="writehere" class="form-control" placeholder="Write Something here">
+            </div>
+
+            <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

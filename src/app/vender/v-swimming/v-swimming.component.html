@@ -1,0 +1,659 @@
+<div class="container-fluid fpd">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h5 class="cercledoghead text-center">Swimming Pool </h5>
+
+          <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+                width: 100%;" src="../../../assets/img/Swimming.jpg" class="rounded-circle" alt="Cinque Terre">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="SwimmingForm" (ngSubmit)="Lost(SwimmingForm.value)" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name of Pool</label>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter Name" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="name">Contact person name</label>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" formControlName="firstname" placeholder="First Name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="name" formControlName="lastname" placeholder="Last Name" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="email" id="name" placeholder="Email Address" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="phoneno" id="name" placeholder="Phone Number" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Address</label>
+                <input type="text" class="form-control" formControlName="address1" id="name" placeholder="Address Line1*" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="address2" id="name" placeholder="Address Line2*" required>
+              </div>
+              <div class="form-row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select name="country"  formControlName="country" class="countries form-control" id="countryId">
+                      <option value="">Select Country</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select name="state"  formControlName="state" class="states form-control" id="stateId">
+                      <option value="">Select State</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select name="city"  formControlName="city" class="cities form-control" id="cityId">
+                      <option value="">Select City</option>
+                    </select>
+
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="text"  formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="email" placeholder="Email address" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+            <!-- <div class="col-md-12">
+                      <div class="form-row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Operational Hours</label>
+                          </div>
+                        </div>
+                     
+                        
+                              <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                                  <label class="primary-switch switch" style="
+                                  float: left;">
+                                      <input type="checkbox" id="change_blk5" value="0">
+                                      <div class="slider round">
+                                          <span class="on">YES</span><span class="off">NO</span>
+                                        </div>
+                                  </label>
+                                  
+                               
+                                </div>
+                                <div class="col-md-12 col-9" id="blk5" style="display: none">
+        
+                                    <div class="form-row">
+                                        <div class="col-md-2 col-lg-3 col-3">
+                                            <div class="">
+                                              <label class="kb"></label>
+                                             
+                                                  
+                                            </div>
+                                            <div class="">
+                                                <div class="form-group center-block">
+                                                    <label class="reqments1">Week Day(Monday to Frieday)</label>
+                                                  </div>
+                                              </div>
+                                          
+                                               
+                                            
+                                              <div class="form-group">
+                                                  <div class="form-group center-block">
+                                                      <label class="reqments1">Weekend(Saturday & Sunday)</label>
+                                                    </div>
+                                                 
+                                                      
+                                                </div>
+                                          </div>
+                                      <div class="col-md-4 col-lg-4 col-3">
+                                        <div class="">
+                                          <label class="kb">Open at Time</label>
+                                          <div class="form-group">
+                                          <input type="text" placeholder="Time"  class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <input type="text" placeholder=""  class="form-control">
+                                              </div>
+                                              
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-lg-4 col-3">
+                                          <div class="form-group">
+                                            <label class="kb">Close at Time</label>
+                                            <div class="form-group">
+                                                <input type="text" placeholder="Time"  class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder=""  class="form-control">
+                                                    </div>
+                                                       
+                                          </div>
+                                        </div>
+                                    
+                                      </div>
+                                    
+                                  </div>
+                      </div>
+                      </div> -->
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <label>Non operational days</label>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="date"  formControlName="operationalDays" placeholder="date" class="form-control" id="reqments">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-4 col-3">
+                            
+                              <div class="form-group">
+                                <label for="reqments">Non Operational dates /days</label>
+                              </div>
+                              
+                            </div> -->
+            <!-- <div class="col-md-6 col-lg-6 offset-md-2 form-group">
+                                <label class="switch" style="
+                                float: left;">
+                                    <input type="checkbox" id="change_blk4">
+                                    <div class="slider round">
+                                        <span class="on">YES</span><span class="off">NO</span>
+                                      </div>
+                                </label>
+                                
+                             
+                              </div> -->
+            <div class="col-md-12 col-9">
+              <div class="form-row">
+                <div class="col-md-3 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Per Meal Cost</label>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Small Paws</label>
+                    <div class="form-group">
+                      <input type="text"  formControlName="small" placeholder="INR" class="form-control">
+                    </div>
+                    <!-- <div class="form-group">
+                                      <input type="text" placeholder="INR"  class="form-control">
+                                        </div>  
+                                        <div class="form-group">
+                                            <input type="text" placeholder="INR"  class="form-control">
+                                              </div> -->
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Medium Paws</label>
+                    <div class="form-group">
+                      <input type="text"  formControlName="Medium" placeholder="INR" class="form-control">
+                    </div>
+                    <!-- <div class="form-group">
+                                              <input type="text" placeholder="INR"  class="form-control">
+                                              </div>
+                                              <div class="form-group">
+                                                  <input type="text" placeholder="INR"  class="form-control">
+                                                    </div> -->
+
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Large Paws</label>
+                    <div class="form-group">
+                      <input type="text" placeholder="INR"  formControlName="Large" class="form-control">
+                    </div>
+                    <!-- <div class="form-group">
+                                                <input type="text" placeholder="INR"  class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="INR"  class="form-control">
+                                                      </div> -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Date available with time slots</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="time">Time</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+
+                    <div class="form-group col-md-3 col-lg-12">
+                      <div class="form-group">
+                          <input type="date" placeholder="date"  formControlName="available" class="form-control" id="reqments" >
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <select class="form-control" id="state" formControlName="From">
+                        <option value="">From</option>
+                        <option>Andra</option>
+                        <option>Karnataka</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <select class="form-control" id="state" formControlName="To">
+                        <option value="">To</option>
+                        <option>Andra</option>
+                        <option>Karnataka</option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <label>Instance conformation</label>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <label class="switch">
+                        <input type="checkbox" formControlName="conformation">
+                        <div class="slider round">
+                          <span class="on">YES</span><span class="off">NO</span>
+                        </div>
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <select class="form-control" id="state" formControlName="Day">
+                        <option value="">Day</option>
+                        <option>Andra</option>
+                        <option>Karnataka</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <input type="text" class="form-control" formControlName="Price" id="ad3" placeholder="Price">
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Provide Transportaion To and From the pool</label>
+                  </div>
+                </div>
+
+
+                <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                  <label class="primary-switch switch" style="
+                                        float: left;">
+                    <input type="checkbox" formControlName="Transportaion" id="change_blk4" value="0">
+                    <div class="slider round">
+                      <span class="on">YES</span><span class="off">NO</span>
+                    </div>
+                  </label>
+
+
+                </div>
+                <div class="col-md-12 col-9 offset-md-5" id="blk4" style="display: none">
+                    <div class="form-row">
+                        <div class="col-md-2 col-lg-3 col-3">
+                          <div class="form-group">
+                            <div class="form-group">
+                              <input type="text" formControlName="chargePerkm" placeholder="Charges per km" class="form-control">
+                            </div>
+    
+                            <div class="form-group">
+                              <input type="text" formControlName="PickUp" placeholder="Pick up charge" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="">
+                          <label style="padding-left:2px; margin-top: 6px;">(or)</label>
+                        </div>
+                        <div class="col-md-2 col-lg-3 col-3">
+                          <div class="form-group">
+                            <div class="form-group">
+                              <input type="text" formControlName="minCharge" placeholder="Minimum charge" class="form-control">
+                            </div>
+                            <div class="form-group">
+                              <input type="text" formControlName="Drop" placeholder="Drop charge" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+    
+                      </div>
+                  <!-- <div class="form-row">
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Cost Per Km</label>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Pick Up Cost</label>
+                        </div>
+                      </div>
+
+
+
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Drop Cost</label>
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Pick up Cost</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Minimum Charge</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Drop Cost</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                  </div> -->
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Terms and Conditions*</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control" >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-row">
+                                <div class="form-group">
+                                <label>Provide transportaions from pool</label>
+                                </div>
+                                
+                              </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-row">
+                                 <input type="text" class="form-control" id="ad3" placeholder="Enter Number" required>
+                                  </div>
+                              </div>
+                            </div>
+                          </div> -->
+            <!-- <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-row">
+                                  <div class="form-group">
+                                  <label>Can human acomapny the pets into the pool</label>
+                                  </div>
+                                  
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-row">
+                                   <input type="text" class="form-control" id="ad3" placeholder="Enter Cost" required>
+                                    </div>
+                                </div>
+                              </div>
+                            </div> -->
+
+            <!-- <div class="col-md-12">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                     <label>what is the rules and regulations(<a target="_blank" style="   text-decoration: none;
+                                      color: #008CBA;">click on below options</a>?)</label>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          
+                            <div class="form-row km">
+                              
+                                <div class="col-md-3 col-lg-2 col-2">
+                                  
+                               
+                                   </div>
+                                     <div class="col-md-3 col-lg-3 col-4">
+                                       <p>
+                                      <img  class="center-block" src="../assets/img/form/homevisit.png"  height=50 width=38px; style="float: right;" id="m1">
+                                      
+                                       home visit mandatory
+                                      fields and good  </p>
+                                       </div>
+                                       <div class="col-md-3 col-lg-3 col-4">
+                                          <p> <img   class="center-block" src="../../../assets/img/dog-training1.png"  height=50 width=38px; style="float: right;">
+                                          Do you take<br> well trained pets </p>
+                                         </div>
+                                         <div class="col-md-3 col-lg-2 col-6">
+                                         <p> <img class="center-block"src="../../../assets/img/females on heat.png"  height=50 width=38px; style="float: right;"> do you take femails on heat </p>
+                                          </div>
+                                            <div class="col-md-3 col-lg-2 col-6">
+                                             <p>
+                                              <img src="../../../assets/img/ticks free.png"  height=38 width=38px; style="float: right;">
+                                                need to be free from ticks</p>
+                                              </div>
+                                            </div>
+                                            
+                            <div class="col-md-12">
+                                <div class="row kb">
+                                  <div class="col-md-3 col-lg-3">
+                                   <label>needs to be vaccaineted</label>
+                                  </div>
+                                    <div class="col-md-9 col-lg-9">
+                                      <div class="form-row">
+                                          
+                                            <div class="col-md-2 col-lg-3">
+                                                <label class="checkbox-inline"><input type="checkbox" value="">Rables</label>
+                                              </div>
+                                              <div class="col-md-2 col-lg-3">
+                                                  <label class="checkbox-inline"><input type="checkbox" value="">kennel caugh</label>
+                                                </div>
+                                                <div class="col-md-2 col-lg-3">
+                                                    <label class="checkbox-inline"><input type="checkbox" value="">Distemper</label>
+                                                  </div>
+                                                <div class=" from group row col-md-3 col-lg-3">
+                                                  <div class="col-md-4 col-lg-6">
+                                                      <label class="checkbox-inline"><input type="checkbox" value="">Others</label>
+                                                  </div>  
+                                                  <div class="col-md-4 col-lg-6">
+                                                    <input type="text" class="form-control">
+                                                  </div>
+                                                  
+                                              </div>
+                                 
+                                </div>
+                                  </div>
+                                </div>
+                              </div> -->
+
+
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="reqments">Bank Details</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="bankname" id="bankname" placeholder="Bank Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="accname" id="accountname" placeholder="Account Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="branch" id="branchname" placeholder="Branch Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="accno" id="accountno" placeholder="Account No" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="ifsc" id="ifsccode" placeholder="IFSC code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="mmid" id="mmidcode" placeholder="MMID code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="gst" id="address" placeholder="GSTN" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control"  formControlName="accotype" id="accounttype" required>
+                    <option value="">Type of Account</option>
+                    <option>T1</option>
+                    <option>T2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+              <label>Upload your photos</label>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                  <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());"
+                    style="display: none;" type="file" #image formControlName="image">
+                </span>
+                <span class="form-control"></span>
+
+              </div>
+
+            </div>
+            <div class=" col-md-3 col-lg-6">
+              <input type="textarea" class="form-control"  formControlName="writehere" placeholder="Write Something here">
+            </div>
+
+            <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

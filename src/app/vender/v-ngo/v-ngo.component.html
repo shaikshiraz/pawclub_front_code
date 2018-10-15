@@ -1,0 +1,263 @@
+<div class="container-fluid fpd">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="cercledoghead text-center">NGO</h2>
+          <img class="img-fluid mx-auto d-block cercledog" src="../../../assets/img/circledog.png">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="NgoForm" (ngSubmit)="Ngo(NgoForm.value)" class="row">
+            <p class="msg_success">{{msg}}</p>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name of ngo</label>
+                <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter Name" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <label for="name">Contact person name</label>
+              </div>
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="firstname" class="form-control" id="name" placeholder="First Name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                     
+                      <input type="text" formControlName="lastname" class="form-control" name="lastname"
+                      placeholder="Last Name" required>
+                      <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="lastname.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="lastname.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="lastname.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="email" class="form-control" id="lastname" placeholder="Email Address" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="phoneno" class="form-control" id="name" placeholder="Phone Number" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="name">Address</label>
+                  <input type="text" formControlName="address1" class="form-control" id="name" placeholder="Address Line1*" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="address2" class="form-control" id="name" placeholder="Address Line2*" required>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                        <select name="country" formControlName="country" class="countries form-control" id="countryId">
+                         <option value="">Select Country</option>
+                          </select>
+                        </div>
+                      </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <select name="state" formControlName="state" class="states form-control" id="stateId">
+                        <option value="">Select State</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                        <select name="city" formControlName="city" class="cities form-control" id="cityId">
+                          <option value="">Select City</option>
+                      </select>
+                      
+                      </div>
+                    </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <input type="text" formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">What we require</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="require" class="form-control" placeholder="Food, medicine, human assistance..." id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="website" class="form-control" placeholder="Enter Website Url" id="reqments" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                      <textarea class="form-control" formControlName="AboutNgo" placeholder="About your NGO" rows="5" id="comment"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="reqments">Terms and Conditions*</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control"  required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <div class="col-md-12 account">
+          <div class="row">
+            <div class="col-md-12">
+                <label for="reqments">Bank Details</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" formControlName="accname" class="form-control" id="accountname" placeholder="Account Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" formControlName="branch" class="form-control" id="branchname" placeholder="Branch Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" formControlName="accno" class="form-control" id="accountno" placeholder="Account No" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" formControlName="ifsc" class="form-control" id="ifsccode" placeholder="IFSC code" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" formControlName="mmid" class="form-control" id="mmidcode" placeholder="MMID code" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" formControlName="gst" class="form-control" id="address" placeholder="GSTN" required>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control" formControlName="accotype" id="accounttype" required>
+                <option value="">Type of Account</option>
+                <option>T1</option>
+                <option>T2</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-3">
+            <label>Upload your photos</label>
+       </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                      <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                      <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;"
+                       type="file" #image formControlName="image">
+                    </span>
+                    <span class="form-control"></span>
+                  </div>
+                  
+             </div>
+             <div class=" col-md-3 col-lg-6">
+                <input type="textarea" formControlName="writehere" class="form-control" placeholder="Write Something here">
+              </div>
+            <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+
+
+
+
+<form [formGroup]="NgoForm">
+  <div formArrayName="row_dynamic" *ngFor="let items of NgoForm.get('row_dynamic').controls;let ind=index;">
+    <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+      <div class="elem">
+        <label>Gender</label>
+        <select formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="elem">
+        <label>Age</label>
+        <input type="text" formControlName="age">
+      </div>
+
+      <div class="elem">
+        <label>TypeOfPets</label>
+        <input type="text" formControlName="TypeOfPet">
+      </div>
+      <div class="elem">
+        <label>No of Pet</label>
+        <input type="text" formControlName="noofpet">
+      </div>
+      <div>
+        <button (click)="addField(ind)">+</button>
+        <ng-container *ngIf="ind!=0">
+          <button  (click)="removeField(ind)">- </button>
+        </ng-container>
+       
+      </div>
+    </div>
+  </div>
+  <br>
+  <button (click)="submitForm()">Click me to read form value</button>
+</form>
+<br>
+<br>
+
+
+<h4>
+  {{fValue}}
+</h4>
+<h1>ho</h1>
+
+
+

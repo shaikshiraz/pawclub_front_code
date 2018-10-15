@@ -1,0 +1,448 @@
+<div class="container-fluid fpd">
+  <div class="row">
+    <div class="col-md-3 col-lg-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="cercledoghead text-center">Home made Product</h2>
+          
+          <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+          width: 100%;" src="../../../assets/img/Food.png" class="rounded-circle" alt="Cinque Terre">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-lg-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="HomeMadeForm" (ngSubmit)="HomeMade(HomeMadeForm.value)" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Business Name</label>
+   
+                <input type="text" class="form-control" formControlName="name"  id="name" placeholder="Enter Name" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <label for="name">Contact person name</label>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text"  formControlName="firstname" class="form-control" id="name" placeholder="First Name" required>
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" formControlName="lastname" class="form-control" id="name" placeholder="Last Name" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+             
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="name">Address</label>
+                    <input type="text" formControlName="address1" class="form-control" id="name" placeholder="Address Line1*" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" formControlName="address2" class="form-control" id="name" placeholder="Address Line2*" required>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                          <select name="country" formControlName="country" class="countries form-control" id="countryId">
+                           <option value="">Select Country</option>
+                            </select>
+                          </div>
+                        </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <select name="state" formControlName="state" class="states form-control" id="stateId">
+                          <option value="">Select State</option>
+                      </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                          <select name="city" formControlName="city" class="cities form-control" id="cityId">
+                            <option value="">Select City</option>
+                        </select>
+                        
+                        </div>
+                      </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Areas that service is avialable</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="switch" style="
+                    float: left;">
+                        <input type="checkbox" id="change_blk1" value="0">
+                        <div class="slider round">
+                            <span class="on">YES</span><span class="off">NO</span>
+                          </div>
+                    </label> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" abc col-md-12"  id="blk1" style="display: none;">       
+              <div class="row" >
+                  <div class="col-md-2" >
+                      <div class="form-group" > 
+                          <label>Type of Product</label>
+                      <input  placeholder="Product Name" class="form-control" />
+                      </div>
+                  </div>
+                  
+                  <div class="col-md-4" >
+                  <div class="form-group" > 
+                      <label class="kb">Short description of product</label>
+                  <input  placeholder="INR" class="form-control" />
+                  </div>
+                  </div>
+                  
+                  <div class="col-md-3" >
+                  <div class="form-group" > 
+                      <label class="kb">Photo</label>
+                  <input  placeholder="Photo" class="form-control" />
+                  </div>
+                  </div>
+                  
+              <div class=" col-md-3">
+                <label>Cost</label>
+                <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="INR">
+              <div class="input-group-append">
+                <a class="btn btn-success" href="javascript:void(0)" id="app_1">+</a>
+              </div>
+              </div>
+              </div>  
+              </div>
+          </div> -->
+          
+            <!-- <div class=" app col-md-12 col-9" id="blk1" style="display: none;">
+              <div class="form-row">
+                  <div class="col-md-2 col-lg-2 col-3">
+                      <div class="form-group">
+                          <label>Type of Product</label>
+                          <div class="form-group input_fields_wrap3 ">
+                          <input type="text" placeholder="Product Name "  class="form-control">
+                          </div>
+                        </div>        
+                        </div>
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Short description of product</label>
+                    <div class="form-group input_fields_wrap3">
+                    <input type="text" placeholder="INR"  class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                    <div class="form-group">
+                      <label class="kb">Photo</label>
+                      <div class="form-group input_fields_wrap3">
+                          <input type="text" placeholder="INR"  class="form-control">
+                          </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-lg- col-3">
+                      <div class="form-group">
+                        <label class="kb">Weight(in grams)</label>
+                        <div class="form-group input_fields_wrap3">
+                            <input type="text" placeholder="INR"  class="form-control">
+                            </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                        <div class="form-group">
+                      
+                              <div class=    <label class="kb">Cost</label>"input_fields_wrap3 input-group mb-3">
+                                  <input type="text" placeholder="INR"  class="form-control">
+                                  <div class="input-group-append">
+                                      <button class="add_field_button3" id="area" type="submit">+</button>
+                                     </div>
+                               </div>
+                        </div>
+                      </div>
+                </div>
+            </div> -->
+            <!-- <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="reqments">Description of the products</label>
+                      <select class="form-control" id="state" required>
+                          <option value="">Select Product</option>
+                          <option>Andra</option>
+                          <option>Karnataka</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="reqments">Enter Size</label>
+                        <select class="form-control" id="state" required>
+                            <option value="">size</option>
+                            <option>Andra</option>
+                            <option>Karnataka</option>
+                          </select>
+                      </div>
+                    </div>
+                </div>
+              </div> -->
+              <!-- <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="reqments">Cost</label>
+                      <input type="text" placeholder="Enter charge" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          
+                          
+                        </div>
+                      </div>
+                  </div>
+                </div> -->
+                <!-- <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                         <label>what is the rules and regulations(<a target="_blank" style="   text-decoration: none;
+                          color: #008CBA;">click on below options</a>?)</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+              
+                <!-- <div class="form-row km">
+                  
+                    <div class="col-md-3 col-lg-2 col-2">
+                      
+                   
+                       </div>
+                         <div class="col-md-3 col-lg-3 col-4">
+                           <p>
+                          <img  class="center-block" src="../assets/img/form/homevisit.png"  height=50 width=38px; style="float: right;" id="m1">
+                          <img  class="center-block" src="../../../assets/img/home visit.png"  height=50 width=38px; style="float: right;" id="m2">
+                           home visit mandatory
+                          fields and good  </p>
+                           </div>
+                           <div class="col-md-3 col-lg-3 col-4">
+                              <p> <img   class="center-block" src="../../../assets/img/dog-training1.png"  height=50 width=38px; style="float: right;">
+                              Do you take<br> well trained pets </p>
+                             </div>
+                             <div class="col-md-3 col-lg-2 col-6">
+                             <p> <img class="center-block"src="../../../assets/img/females on heat.png"  height=50 width=38px; style="float: right;"> do you take femails on heat </p>
+                              </div>
+                                <div class="col-md-3 col-lg-2 col-6">
+                                 <p>
+                                  <img src="../../../assets/img/ticks free.png"  height=38 width=38px; style="float: right;">
+                                    need to be free from ticks</p>
+                                  </div>
+                                </div>
+                                 -->
+                <!-- <div class="col-md-12">
+                    <div class="row kb">
+                      <div class="col-md-3 col-lg-3">
+                       <label>needs to be vaccaineted</label>
+                      </div>
+                        <div class="col-md-9 col-lg-9">
+                          <div class="form-row">
+                              
+                                <div class="col-md-2 col-lg-3">
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Rables</label>
+                                  </div>
+                                  <div class="col-md-2 col-lg-3">
+                                      <label class="checkbox-inline"><input type="checkbox" value="">kennel caugh</label>
+                                    </div>
+                                    <div class="col-md-2 col-lg-3">
+                                        <label class="checkbox-inline"><input type="checkbox" value="">Distemper</label>
+                                      </div>
+                                    <div class=" from group row col-md-3 col-lg-3">
+                                      <div class="col-md-4 col-lg-6">
+                                          <label class="checkbox-inline"><input type="checkbox" value="">Others</label>
+                                      </div>  
+                                      <div class="col-md-4 col-lg-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                      
+                                  </div>
+                     
+                    </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <!-- <div class="col-md-12">
+                      <div class="form-row">
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label>Minimum Order Quantity For free delivery</label>
+                          </div>
+                        </div>
+                              <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                                  <label class="primary-switch switch" style="
+                                  float: left;">
+                                      <input type="checkbox" id="change_blk5" value="0">
+                                      <div class="slider round">
+                                          <span class="on">YES</span><span class="off">NO</span>
+                                        </div>
+                                  </label>
+                                </div>
+                                <div class="col-md-12 col-9" id="blk5" style="display: none">
+                                    <div class="form-row">
+                                        <div class="col-md-2 col-lg-3 col-3">
+                                            <div class="form-group">
+                                              <label class="kb">Cost Per Km</label>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-group center-block">
+                                                    <label class="reqments1">Pick Up Cost</label>
+                                                  </div>
+                                              </div>
+                                              <div class="form-group">
+                                                  <div class="form-group center-block">
+                                                      <label class="reqments1">Drop  Cost</label>
+                                                    </div>
+                                                </div>
+                                          </div>
+                                      <div class="col-md-2 col-lg-3 col-3">
+                                        <div class="form-group">
+                                          <label class="kb">Pick up Cost</label>
+                                          <div class="form-group">
+                                          <input type="text" placeholder="INR"  class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <input type="text" placeholder="INR"  class="form-control">
+                                              </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-2 col-lg-3 col-3">
+                                          <div class="form-group">
+                                            <label class="kb">Minimum Charge</label>
+                                            <div class="form-group">
+                                                <input type="text" placeholder="INR"  class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="INR"  class="form-control">
+                                                    </div>
+                                          </div>
+                                        </div>
+                                          <div class="col-md-2 col-lg-3 col-3">
+                                              <div class="form-group">
+                                                <label class="kb">Drop Cost</label>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="INR"  class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="INR"  class="form-control">
+                                                        </div>
+                                              </div>
+                                            </div>
+                                      </div>
+                                    
+                                  </div>
+                      </div>
+                      </div> -->
+
+                      <div class="col-md-12">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="reqments">Terms and Conditions*</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control"  required>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-12">
+                    <label for="reqments">Bank Details</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accname" class="form-control" id="accountname" placeholder="Account Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="branch" class="form-control" id="branchname" placeholder="Branch Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accno" formControlName="accno" class="form-control" id="accountno" placeholder="Account No" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="ifsc" class="form-control" id="ifsccode" placeholder="IFSC code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control"  formControlName="mmid"  id="mmidcode" placeholder="MMID code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="gst" class="form-control" id="address" placeholder="GSTN " required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" formControlName="accotype" id="accounttype" required>
+                    <option value="">Type of Account</option>
+                    <option>T1</option>
+                    <option>T2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <label>Upload your photos</label>
+           </div>
+                <div class="col-md-4 col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                          <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                          <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;"
+                           type="file" #image formControlName="image">
+                        </span>
+                        <span class="form-control"></span>
+                      </div>
+                      
+                 </div>
+                 <div class=" col-md-3 col-lg-6">
+                    <input type="textarea" formControlName="writehere" class="form-control" placeholder="Write Something here">
+                  </div>
+            <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+ 

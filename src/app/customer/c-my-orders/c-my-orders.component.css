@@ -1,0 +1,136 @@
+.acc{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+h4{
+    text-align:left;
+}
+.list-group-item-action{
+       
+       padding-top: 25px;
+       line-height: 12px;
+       
+       padding-left: 54px;
+}
+.cercledoghead{margin: 35px 0 30px 0;font-size: 55px;}
+.cercledog{width: 250px;}
+.red-logo-area {padding: 90px 0 150px 0;border-left: 4px solid #fb0000;}
+.form-col{max-width: 900px;}
+label{padding-left: 15px;}
+.address-col-left .form-control{margin-bottom: 15px;}
+#city{margin-top: 32px;}
+.address-col-right .form-control{margin-bottom: 15px;}
+.account input, .account select{margin-bottom: 15px}
+.redbtn input{
+    background: #fb0000;
+    border: 0;
+    border-radius: 18px;
+    color: #fff;
+    font-size: 33px;
+    font-weight: 700;
+    padding: 0px 45px 5px 45px;
+    margin: 19px 30px;
+}
+.redbtn input:hover{opacity: 0.7;}
+input:focus{outline: none;}
+@media only screen and (max-width: 767px) {
+	.red-logo-area{padding: 40px 0;border-left: none;}
+	.redbtn input{margin: 20px;font-size: 30px;}
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+th:first-child, td:first-child {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color:white;
+}
+
+table[_ngcontent-c3] {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+     /* border: 1px solid #ddd; */
+    
+}
+hr{
+    height: 8px;
+ 
+    width: 100%;
+}
+
+/* setting the dimensions */
+progress {
+    width: 275px;
+    height: 16px;
+    display: block;
+    /* disable defaults */
+    -webkit-appearance: none;
+    border: none;
+    }
+    /*Styling the background of the progress bar */
+    progress::-webkit-progress-bar {
+    background: white;
+    border-radius: 45px;
+    padding: 2px;
+    box-shadow: 0 1px 0px 0 rgba(8, 3, 3, 0.2);
+    }
+    /* Setting the appearance of the meter */
+    progress::-webkit-progress-value {
+    border-radius: 25px;
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4); 
+    background-size: 250px 25px;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.527) 25%, transparent 25%,
+    transparent 75%, rgba(255, 255, 255, .15) 75%, rgba(255, 255, 255, .15) 75%,
+    transparent 75%, transparent); 
+    }    
+    /* W3.CSS 4.10 February 2018 by Jan Egil and Borge Refsnes */
+/* End extract */
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: -1;
+    
+    left: 0;
+   
+    overflow-x: hidden;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    
+    display: block;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+.w3-sidebar{height:100%;width:200px;background-color:#fff;z-index:1;overflow:auto}
+.w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{min-width:100%}
+.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+.w3-bar{width:100%;overflow:hidden}.w3-center .w3-bar{display:inline-block;width:auto}
+.w3-bar .w3-bar-item{padding:8px 16px;float:left;width:auto;border:none;display:block;outline:0}
+.w3-bar .w3-dropdown-hover,.w3-bar .w3-dropdown-click{position:static;float:left}
+.w3-bar .w3-button{white-space:normal}
+.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
+.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
+.w3-responsive{display:block;overflow-x:auto}
+@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}
+.w3-dropdown-hover.w3-mobile .w3-dropdown-content,.w3-dropdown-click.w3-mobile .w3-dropdown-content{position:relative}  
+.w3-hide-small{display:none!important}.w3-mobile{display:block;width:100%!important}.w3-bar-item.w3-mobile,.w3-dropdown-hover.w3-mobile,.w3-dropdown-click.w3-mobile{text-align:center}
+.w3-dropdown-hover.w3-mobile,.w3-dropdown-hover.w3-mobile .w3-btn,.w3-dropdown-hover.w3-mobile .w3-button,.w3-dropdown-click.w3-mobile,.w3-dropdown-click.w3-mobile .w3-btn,.w3-dropdown-click.w3-mobile .w3-button{width:100%}}
+@media (max-width:768px){.w3-modal-content{width:500px}.w3-modal{padding-top:50px}}
+@media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidebar.w3-collapse{display:block!important}}
+@media (max-width:992px) and (min-width:601px){.w3-hide-medium{display:none!important}}
+@media (max-width:992px){.w3-sidebar.w3-collapse{display:none}
+.w3-main{margin-left:0!important;margin-right:0!important}} 

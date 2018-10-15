@@ -1,0 +1,279 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12 banner-col">
+          <img class="banner-img" src="../../../assets/img/vender_img/bannerimg.png">
+          <h2 class="main-head">ACCOMODATION</h2>
+          <div class="banner-items">
+              <form id="searchform">
+                  <select class="selectcity" name="select-city" id="select-city">
+                      <option value="">Select city</option>
+                      <option value="city1">city1</option>
+                      <option value="city2">city2</option>
+                  </select>
+                  <div class="grouped">
+                      <div class="grouped-left">
+                        <input type="text" id="date1" id="datetimepicker1" data-target="#datetimepicker1" data-toggle="datetimepicker" class="date1" placeholder="MM/DD/YYYY"> 
+                      </div>
+                      <div class="grouped-right">
+                         <input type="text" id="date2" id="datetimepicker2" data-target="#datetimepicker2" data-toggle="datetimepicker" class="date2" placeholder="MM/DD/YYYY">
+                      </div>
+                  </div>
+                  <div class="grouped">
+                      <div class="grouped-left">
+                        <select class="count" >
+                            <option value="">No. of breeds</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                      </div>
+                      <div class="grouped-right">
+                        <select class="breed-enum" >
+                            <option value="">Breed</option>
+                            <option>Dobbermann</option>
+                            <option>Dobbermann</option>
+                            <option>Dobbermann</option>
+                            <option>Dobbermann</option>
+                        </select>
+                      </div>
+                  </div>
+                  <button type="button" id="searchbutton">Search</button>
+              </form>
+              <div class="stay-type">
+                    <div class="homestay">
+                       <a routerLink="/services/c-home-stay"><img id="homestay" src="../../../assets/img/vender_img/homestay.png"></a> 
+                        <p id="homestay-text">HOME STAY</p>
+                    </div>
+                    <div class="kennels">
+                       <a routerLink="/services/c-kennels"> <img id="kennels" src="../../../assets/img/vender_img/kennels.png"></a>
+                        <p id="kennels-text">KENNELS</p>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12 p-0">
+          <h2 class="sub-head">KENNELS</h2>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row m-0">
+      <div class="col-md-12 breadcrumbs">
+          <img src="../../../assets/img/vender_img/smallhome.png"> >
+          <a routerLink="">SERVICES</a> >
+          <a routerLink="/services/c-kennels">ACCOMODATION</a> >
+          <span>KENNELS</span>
+          <button id="advancedsearch">Advanced Search</button>
+      </div>
+  </div>
+</div>
+
+
+<!-- Normal -->
+<div id="normal-section" class="container-fluid">
+  <div class="row stay-imgs-outer-row">
+      <div class="col-md-9 stay-imgs-outer-col">
+          <div class="row stay-imgs-row">
+              <div class="col-md-6 stay-imgs-col" *ngFor="let kennels of kennel">
+                  <div class="stay-img-wrapper">
+                      <a (click)="OnClick(kennels._id)"><img class="stay-img" src="http://localhost:3000/{{kennels.image}}"></a>
+                      <div class="star-rate">
+                          <img src="../../../assets/img/vender_img/star.png">
+                          <img src="../../../assets/img/vender_img/star.png">
+                          <img src="../../../assets/img/vender_img/star.png">
+                          <img src="../../../assets/img/vender_img/star.png">
+                          <img src="../../../assets/img/vender_img/star.png">
+                      </div>
+                      <div class="right-address">
+                          <h3>{{kennels.name}}</h3>
+                          <p>{{kennels.city}}</p>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+      <div class="col-md-3 aside-nav-logo-col">
+          <div class="row aside-nav-logo-row">
+              <div class="col-md-12 aside-logo-col p-0">
+                  <a href="#">
+                      <img src="../../../assets/img/vender_img/redpetlogo.png">
+                  </a>
+              </div>
+              <div class="col-md-12 aside-nav-col">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown"><a class="active dropdown-toggle">Services</a>
+                        <ul class="sub-ul">
+                            <li>
+                                <a class="dropdown-toggle" >ACCOMODATION</a>
+                                <ul class="third-sub-menu">
+                                    <li><a href="#">HOMESTAY</a></li>
+                                    <li><a href="#">KENNELS</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="dropdown-toggle" >PETCARE</a>
+                                <ul class="third-sub-menu">
+                                    <li><a href="#">AAAA</a></li>
+                                    <li><a href="#">BBB</a></li>
+                                    <li><a href="#">CCCCCC</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">SWIMMING</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Lost & Found</a></li>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Normal over -->
+
+
+<!-- advanced -->
+<div id="advance-section" class="container-fluid arriving-area" style="display:none;">
+  <div class="row">
+      <div id="recievers" class="col-md-3 recievers">
+          <form class="row m-0">
+              <div class="col-md-12 group-advanced">
+                  <p>Advanced filter</p>
+                  <input type="search" name="" placeholder="Search by name">
+              </div>
+              <div class="col-md-12 group-type-of-pet pictured-radio">
+                  <p>Type of pet taken</p>
+                  <div class="form-check-inline">
+                      <input type="radio" value="cat" class="form-check-input" id="catbtn" name="breed" >
+                  </div>
+                  <div class="form-check-inline">
+                      <input type="radio" value="dog" class="form-check-input" id="dogbtn" name="breed" >
+                  </div>
+                  <div class="form-check-inline">
+                      <input type="radio" value="fish" class="form-check-input" id="fishbtn" name="breed" >
+                  </div>
+                  <div class="form-check-inline">
+                      <input type="radio" value="all" class="form-check-input" id="allbtn" name="breed" >
+                  </div>
+              </div>
+              <div class="col-md-12 group-others-type">
+                  <span><input type="checkbox" id="otherscheck" >&nbsp;Others&nbsp;&nbsp;&nbsp;</span>
+                  <input type="text" name="" id="otherstext" placeholder="">
+              </div>
+              <div class="col-md-12 group-breed-count">
+                  <div class="row">
+                      <div class="col-md-6 group-breed">
+                          <select class="breed">
+                              <option value="">Breed</option>
+                              <option>Breed</option>
+                              <option>Breed2</option>
+                          </select>
+                      </div>
+                      <div class="col-md-6 group-count">
+                          <input type="text" class="count-left" name="" placeholder="No of pets">
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-12 group-from-to">
+                  <div class="row">
+                      <div class="col-md-6 group-from">
+                          <label>From</label>
+                          <input type="text" id="date3" name="" placeholder="MM/DD/YYYY">
+                      </div>
+                      <div class="col-md-6 group-to">
+                          <label>To</label>
+                          <input type="text" id="date4" name="" placeholder="MM/DD/YYYY">
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-12 group-place">
+                  <p>Place near me</p>
+                  <input type="text" class="zip-left" name="" placeholder="Zipcode">
+                  <select class="city-left">
+                      <option value="">City</option>
+                      <option>City1</option>
+                      <option>City2</option>
+                  </select>
+                  <select class="area-left">
+                      <option value="">Area</option>
+                      <option>Area1</option>
+                      <option>Area2</option>
+                  </select>
+                  <select class="state-left">
+                      <option value="">State</option>
+                      <option>State1</option>
+                      <option>State2</option>
+                  </select>
+              </div>
+              <div class="col-md-12 group-price">
+                  <p>Price</p>
+                  <div class="Prices">
+                      <input class="price-range" type="range" name=""  min="0" max="50000" value="0" step="50">
+                      <span>₹ 0.00</span><span>₹ 50,000</span>
+                  </div>
+              </div>
+              <div class="col-md-12 group-facility">
+                  <div class="form-checks">
+                      <input type="checkbox" value=" " class="form-check-input" id=" " name="facility" ><span>Provides food</span>
+                  </div>
+                  <div class="form-checks">
+                      <input type="checkbox" value=" " class="form-check-input" id=" " name="facility" ><span>AC accomodation</span>
+                  </div>
+                  <div class="form-checks">
+                      <input type="checkbox" value=" " class="form-check-input" id=" " name="facility" ><span>Open play area</span>
+                  </div>
+                  <div class="form-checks">
+                      <input type="checkbox" value=" " class="form-check-input" id=" " name="facility" ><span>Pick up & drop facility</span>
+                  </div>
+                  <div class="form-checks">
+                      <input type="checkbox" value=" " class="form-check-input" id=" " name="facility" ><span>Instant booking</span>
+                  </div>
+                  <div class="form-checks">
+                      <input type="checkbox" value=" " class="form-check-input" id=" " name="facility" ><span>Accomodation with pets</span>
+                  </div>
+              </div>
+              <div class="col-md-12 left-search-btn text-center">
+                  <button type="button" class="btn btn-danger">Search</button>
+              </div>
+          </form>
+      </div>
+      <div id="vend-lists" class="col-md-9 vend-lists">
+          <div class="row">
+              <div class="col-md-12 vend-list" *ngFor="let kennels of kennel">
+                  <div class="row">
+                      <div class="col-md-4 vend-list-col-1">
+                          <img  src="http://localhost:3000/{{kennels.image}}">
+                      </div>
+                      <div class="col-md-4 vend-list-col-2">
+                          <h3>{{kennels.name}}</h3>
+                          <div class="g-star">
+                              <img src="../../../assets/img/vender_img/stargreen.png">
+                              <img src="../../../assets/img/vender_img/stargreen.png">
+                              <img src="../../../assets/img/vender_img/stargreen.png">
+                              <img src="../../../assets/img/vender_img/stargreen.png">
+                              <img src="../../../assets/img/vender_img/stargreen.png">
+                          </div>
+                          <h5>{{kennels.city}}</h5>
+                          <p><span>8</span> <span>very good</span> (<span>500</span> reviews)</p>
+                      </div>
+                      <div class="col-md-4 vend-list-col-3">
+                          <h3>{{kennels.name}}</h3>
+                          <h4><span>₹ </span>1,000/ day</h4>
+                          <p>Free food</p>
+                          <a (click)="OnClick(kennels._id)">View Details</a>
+                      </div>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+</div>
+<!-- advanced -->

@@ -1,0 +1,217 @@
+.imgfull{width:100%;height:100%;}
+    .px-0{padding: 0 0 2px }
+    .centered {position: absolute;    top: 50%;    left: 50%;   transform: translate(-50%, -50%);   }
+    .leftcentered {position: absolute;    top: 80%;    left: 50%;   transform: translate(-50%, -50%);   }
+    h5{color:#000;text-align: center;margin: 10px 0 0 0}
+    .centered h1:hover {    color: #35c793;}
+    .centered h3:hover {    color: #35c793;}
+    .bg {background-color: black;opacity: 1;}
+    input[type=text], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 0 20% ;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 25%;
+    background-color: #f9080b;
+    color: white;
+    padding: 14px 20px;
+    margin: 0 22%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+textarea {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 2% 20% ;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+input#phone {
+    width: 29%;
+    margin-left: 0.5%;
+    margin-top: 2%;
+}
+input#email {
+    width: 29%;
+    margin-right: 1%;
+    margin-top: 2%;
+}
+input#cancel {
+    margin-left: 2%;
+}
+input#submit {
+    margin-right: 2%;
+}
+@media only screen and (max-width: 1004px) {
+   input#phone {
+    width: 60%;
+    margin: 2% 20%;
+}
+input#email {
+   width: 60%;
+    margin: 2% 20%;
+}
+}
+.bg-black-111 {
+    background-color: #111111 !important;
+}
+
+.pb-0 {
+    padding-bottom: 0px !important;
+}
+.pt-40 {
+    padding-top: 40px !important;
+}
+.text-theme-colored {
+    color: #F19F1F !important;
+}
+.widget {
+    margin-bottom: 40px;
+}
+.pl-10 {
+    padding-left: 10px !important;
+}
+.pr-10 {
+    padding-right: 10px !important;
+}
+.m-0 {
+    margin: 0px !important;
+}
+.mr-5 {
+    margin-right: 5px!important;
+}
+.widget.dark .widget-title {
+    color: #fff !important;
+}
+.line-bottom:after {
+    bottom: -1px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 50px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+#MainNav {
+    font-family: 'Fira Sans', sans-serif;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    background: #000 !important;
+    height: 48px;
+}
+#MainNav.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    color: white;
+}
+#MainNav.navbar-dark .navbar-nav .nav-link {
+    font-size: 13px;
+}
+#MainNav .navbar-brand img {
+    width: 235px;
+}
+select:focus option.holder {
+  display: none;
+  }
+
+ .modal-content h4{
+  text-align: center !important;
+  margin-top: 10% !important;
+  color: #f55a4e !important;
+  font-weight: 10px !important;
+}
+
+.close:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  margin-left: 470px;
+  margin-top: -190px;
+  color: #f55a4e;
+  
+}
+
+#create_button{
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid #f55a4e;
+  display: block;
+  margin: auto;
+  
+}
+
+#fb_btn{
+  height:40px;
+  width:40px;
+  margin-left: 200px;
+}
+
+#google_btn{
+ height:40px;
+ width:40px;
+ margin-left:-10px;
+}
+
+.title-description a {
+    color: #f55a4e;
+}
+
+label .labelcss{
+    color: #3C4857;
+    font-weight: 300;
+    transition: all .3s cubic-bezier(.64, .09, .08, 1);
+    display: inline-block;
+  font-size: 13px;
+  margin-left: 10px;
+}
+#question{
+  font-size: 13px;
+}
+
+#login_button{
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid #f55a4e;
+  display: block;
+  margin: auto;
+  width: 100px;
+
+}
+
+#close_btn {
+    cursor: pointer;
+    margin-left: 470px;
+  margin-top: -150px;
+  color: #f55a4e;
+}
+ul.list-border li a:hover {
+    color: orange !important;
+}
+
+.col-sm-11.col-md-11.foothover a:hover {
+    color: orange !important;
+}
+a:hover i.fa-facebook{color: #065887;}
+a:hover i.fa-twitter{color: #3ee6e0;}
+a:hover i.fa-instagram{color: #f00;}
+a:hover i.fa-youtube{color: red;}

@@ -1,0 +1,598 @@
+<!-- <h1 class="text-center">My Orders </h1>
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Available</th>
+                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col" class="text-right">Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img style="height: 50px;width:50px;" src="../../../assets/img/dog.jpeg" id="image2"/> </td>
+                            <td>Product Name Dada</td>
+                            <td>In stock</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td class="text-right">124,90 €</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td><img style="height: 50px;width:50px;" src="../../../assets/img/dog.jpeg" id="image2"/></td>
+                            <td>Product Name Toto</td>
+                            <td>In stock</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td class="text-right">33,90 £</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td><img style="height: 50px;width:50px;" src="../../../assets/img/dog.jpeg" id="image2"/></td>
+                            <td>Product Name Titi</td>
+                            <td>In stock</td>
+                            <td><input class="form-control" type="text" value="1" /></td>
+                            <td class="text-right">70,00 €</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Sub-Total</td>
+                            <td class="text-right">255,90 €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Shipping</td>
+                            <td class="text-right">6,90 €</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right"><strong>346,90 €</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container-fluid fpd">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="cercledoghead text-center">Dog Trainer</h2>
+
+          <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+          width: 100%;" src="../../../assets/img/Trainer.jpg" class="rounded-circle" alt="Cinque Terre">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="TrainerForm" (ngSubmit)="Training(TrainerForm.value)" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name of The Training Center</label>
+                <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter Name" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="name">Contact person name</label>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="firstname" id="name" placeholder="First Name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="lastname" id="name" placeholder="Last Name" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="email" id="name" placeholder="Email Address" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="phoneno"  id="name" placeholder="Phone Number" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Address</label>
+                <input type="text" class="form-control" formControlName="address1" id="name" placeholder="Address Line1*" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="address2" id="name" placeholder="Address Line2*" required>
+              </div>
+              <div class="form-row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select name="country" formControlName="country" class="countries form-control" id="countryId">
+                      <option value="">Select Country</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select name="state" formControlName="state" class="states form-control" id="stateId">
+                      <option value="">Select State</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select name="city" formControlName="city" class="cities form-control" id="cityId">
+                      <option value="">Select City</option>
+                    </select>
+
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="text" formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-3">
+                  <label>Open time</label>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-control" formControlName="opentime">
+                    <option value="">9AM</option>
+                    <option>aaa</option>
+                    <option>---</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label>Close time</label>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-control" formControlName="closetime">
+                    <option value="">5PM</option>
+                    <option>wd</option>
+                    <option>----</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-12">
+              <div class=" form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Home Services Provide?</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class=" switch">
+                      <input type="checkbox" formControlName="services" id="change_train2" value="0">
+                      <div class="slider round">
+                        <span class="on">YES</span>
+                        <span class="off">NO</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12" id="Trainer" style="display: none;">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <div>
+                        <label>Type of services</label>
+                      </div>
+                      <div>
+                        <label>Behavioral training</label>
+                      </div>
+                      <div>
+                        <label>Obedience training</label>
+                      </div>
+                      <div>
+                        <label>Agility training</label>
+                      </div>
+                      <div class="mt-4">
+                        <label>Vocational training</label>
+                      </div>
+                      <div class="">
+                        <label>Therapy training</label>
+                      </div>
+
+
+
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <label>No of sessions</label>
+                      <div class="form-group">
+                        <input type="text" formControlName="session1" class="from form-control" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" formControlName="session2" class="from form-control" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" formControlName="session3" class="from form-control" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" formControlName="session4" class="from form-control" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" formControlName="session5" class="from form-control" placeholder="">
+                      </div>
+
+                    </div>
+                    <div class="form-group col-md-12 col-lg-12">
+                      <input type="text" formControlName="otherServices" class="form-control" placeholder="Other Services">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Small Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="small" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="small1" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="small2" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="small3" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="small4" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="small5" class="from form-control" placeholder="INR">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Medium Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="medium" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="medium1" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="medium2" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text"  formControlName="medium3" class="from form-control" placeholder="INR">
+                        </div>
+
+                        <div class="form-group">
+                          <input type="text" formControlName="medium4" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="medium5" class="from form-control" placeholder="INR">
+                        </div>
+
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="large" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="large1" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="large2" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="large3" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="large4" class="from form-control" placeholder="INR">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="large5" class="from form-control" placeholder="INR">
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Area that the services Available</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="accounttype" required>
+                      <option value="">Select</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="reqments">Date and Timing that you are Available</label>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6 address-col-right">
+                  <div class="form-group">
+                    <input type="datetime-local" formControlName="Available" placeholder="date" class="form-control" id="reqments" required>
+                  </div>
+                </div>
+                <div class="col-md-6 address-col-right">
+                  <div class="form-group">
+                    <input type="date" formControlName="notAvailable" class="form-control" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Breads That you trained</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="BreadTraining" placeholder="Enter details" class="form-control" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">What kind of training do you import</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" placeholder="Enter details" class="form-control" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+
+            </div> -->
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Cost</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" placeholder="Enter Charges" class="form-control" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Terms and Conditions*</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="reqments">Bank Details</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accname" class="form-control" id="accountname" placeholder="Account Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="branch" class="form-control" id="branchname" placeholder="Branch Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accno" class="form-control" id="accountno" placeholder="Account No" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="ifsc" class="form-control" id="ifsccode" placeholder="IFSC code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="mmid" class="form-control" id="mmidcode" placeholder="MMID code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="gst" class="form-control" id="address" placeholder="GSTN" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" formControlName="accotype" id="accounttype" required>
+                    <option value="">Type of Account</option>
+                    <option>T1</option>
+                    <option>T2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                   <label>what is the rules and regulations(<a target="_blank" style="   text-decoration: none;
+                    color: #008CBA;">click on below options</a>?)</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <!-- <div class="form-row km">
+            
+              <div class="col-md-3 col-lg-2 col-2">
+                
+             
+                 </div>
+                   <div class="col-md-3 col-lg-3 col-4">
+                     <p>
+                  
+                    <img  class="center-block" src="../../../assets/img/home visit.png"  height=50 width=38px; style="float: right;" id="m2">
+                     home visit mandatory
+                    fields and good  </p>
+                     </div>
+                     <div class="col-md-3 col-lg-3 col-4">
+                        <p> <img   class="center-block" src="../../../assets/img/dog-training1.png"  height=50 width=38px; style="float: right;">
+                        Do you take<br> well trained pets </p>
+                       </div>
+                       <div class="col-md-3 col-lg-2 col-6">
+                       <p> <img class="center-block"src="../../../assets/img/females on heat.png"  height=50 width=38px; style="float: right;"> do you take femails on heat </p>
+                        </div>
+                          <div class="col-md-3 col-lg-2 col-6">
+                           <p>
+                            <img src="../../../assets/img/ticks free.png"  height=38 width=38px; style="float: right;">
+                              need to be free from ticks</p>
+                            </div>
+                          </div> -->
+
+            <!-- <div class="col-md-12">
+              <div class="row kb">
+                <div class="col-md-3 col-lg-3">
+                 <label>needs to be vaccaineted</label>
+                </div>
+                  <div class="col-md-9 col-lg-9">
+                    <div class="form-row">
+                        
+                          <div class="col-md-2 col-lg-3">
+                              <label class="checkbox-inline"><input type="checkbox" value="">Rables</label>
+                            </div>
+                            <div class="col-md-2 col-lg-3">
+                                <label class="checkbox-inline"><input type="checkbox" value="">kennel caugh</label>
+                              </div>
+                              <div class="col-md-2 col-lg-3">
+                                  <label class="checkbox-inline"><input type="checkbox" value="">Distemper</label>
+                                </div>
+                              <div class=" from group row col-md-3 col-lg-3">
+                                <div class="col-md-4 col-lg-6">
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Others</label>
+                                </div>  
+                                <div class="col-md-4 col-lg-6">
+                                  <input type="text" class="form-control">
+                                </div>
+                            </div>
+              </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-3 col-lg-3">
+              <label>Upload your photos</label>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                  <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());"
+                    style="display: none;" type="file" #image formControlName="image">
+                </span>
+                <span class="form-control"></span>
+              </div>
+
+            </div>
+            <div class=" col-md-3 col-lg-6">
+              <input type="textarea" formControlName="writehere" class="form-control" placeholder="Write Something here">
+            </div>
+
+
+            <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

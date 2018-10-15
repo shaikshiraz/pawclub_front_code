@@ -1,0 +1,2316 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md- col-lg-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="cercledoghead text-center">Accomodation home stay</h2>
+
+          <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+          width: 100%;" src="../../../assets/img/accomodationser.png" class="rounded-circle" alt="Cinque Terre">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9 col-lg-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="HomestayForm" (ngSubmit)="Homestay(HomestayForm.value)">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name of the service </label>
+               <input type="text" class="form-control" formControlName="name" placeholder="Enter Name*" required>
+              </div>
+              <arv-validation-messages [for]="['name']">
+                <div style="color: red">
+                name is required
+                </div>
+              </arv-validation-messages>
+            </div>
+            <div class="col-md-12">
+              <label for="name">Contact person name</label>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" 
+                    class="form-control" formControlName="firstname" id="name"
+                     placeholder="First Name" >
+                     <div *ngIf="HomestayForm.controls['firstname'].touched && !HomestayForm.controls['firstname'].valid">  
+                        <div *ngIf="HomestayForm.controls['firstname'].hasError('required') " class="alert alert-danger">  
+                            First name is required 
+                            
+                            </div>  
+                      
+                             
+                    </div>  
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="lastname" id="name" placeholder="Last Name" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="email" id="name" placeholder="Email Address" required>
+                    <arv-validation-messages [for]="['email']">
+                        <div style="color: red">
+                            email is required
+                        </div>
+                      </arv-validation-messages>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="form-group" [ngClass]="{'has-error':!HomestayForm.controls['phoneno'].valid}">
+                    <input type="text" class="form-control" formControlName="phoneno" 
+                    id="name" placeholder="Phone Number" required maxlength="10">
+                   
+         
+                    <arv-validation-messages [for]="['phoneno']">
+                        <div style="color: red">
+                          phone number is required
+                        </div>
+                      </arv-validation-messages>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+ 
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Where you are located</label>
+                <input type="text" class="form-control" id="name" formControlName="address1" placeholder="Address Line1*" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" formControlName="address2" placeholder="Address Line2*" required>
+              </div>
+              <div class="form-row">
+              <div class="col-md-3">
+                  <div class="form-group">
+                    <select class="countries form-control" name="country" formControlName="country" id="countryId" required>
+                      <option value="">Country</option>
+                   
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <select class="states form-control" name="state" formControlName="state" id="stateId" required>
+                        <option value="">State</option>
+                      </select>
+                    </div>
+                  </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select class="cities form-control" name="city" formControlName="city" id="cityId" required>
+                      <option value="">City</option>
+                    
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="pincode" id="zip" placeholder="zipcode">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Drop off after</label>
+                  <div class="form-group">
+                      <div class="form-group">
+                          <div class="input-group" id="datetimepicker3" data-target-input="nearest">
+                              <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3"/>
+                              <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label>Pick up before</label>
+                  <div class="form-group">
+                      <div class="form-group">
+                          <div class="input-group" id="datetimepicker4" data-target-input="nearest">
+                          <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
+                              <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                        <label>How many pets can you taken in max at one time</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" formControlName="maxpet" placeholder="List the pets and numbers against each other">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                       <label>When are you Available</label>
+                    </div>
+                    <div class="col-md-6">
+                      <label>When are you  Not available</label>
+                    </div>
+                </div>
+              </div> -->
+              <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                        <label>When are you are not available</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                      <div class="input-group-append">
+                          <input type="text" id="mySelectedDate"  class="form-control date" placeholder="Pick the multiple dates">
+                          <div class="input-group-append" data-target="#mySelectedDate" data-toggle="datepicker">
+                            <div class="input-group-text">
+                              <i class="fa fa-calendar"></i></div></div>
+
+                      </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+              <!-- <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="form-row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+
+                              <!-- <div class="input-group date" id="datetimepicker5" data-target-input="nearest">
+                                  <input type="text" formControlName="Available" class="form-control datetimepicker-input" data-target="#datetimepicker5"/>
+                                  <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
+                                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                  </div>
+                              </div> -->
+                          <!-- </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <div class="input-group date" id="datetimepicker6" data-target-input="nearest">
+                                  <input type="text" formControlName="NotAvailable" class="form-control datetimepicker-input" data-target="#datetimepicker6"/>
+                                  <div class="input-group-append" data-target="#datetimepicker6" data-toggle="datetimepicker">
+                                      <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>  -->
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">What kind of pets to you taken in</label>
+                    <div class="row">
+                      <div class="col-md-4 pictured-radio text-center">
+                        <div class="form-check-inline">
+                          <input type="radio" value="cat" class="form-check-input" id="catbtn" name="breed" required>
+                        </div>
+                        <div class="form-check-inline">
+                          <input type="radio" value="dog" class="form-check-input" id="dogbtn" name="breed" required>
+                        </div>
+                        <div class="form-check-inline">
+                          <input type="radio" value="others" class="form-check-input" id="othersbtn" name="breed" required>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Type of Pets">
+                      </div>
+                      <div class="col-md-4">
+                        <div class="input_fields_wrap input-group">
+                          <!-- <button class="add_field_button">+</button> -->
+                          <!-- <input type="text" class="form-control" placeholder="Max Number">
+                          <div class="input-group-append">
+                            <a class="add_field_button btn-success btn-sm">+</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label>How many pets can you taken in max at one time</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="list the pets and numbers against each other">
+                  </div>
+                </div>
+              </div>
+            </div>  -->
+            
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Any inhouse pets</label>
+                    <div class="row">
+                      <div class="col-md-4 pictured-radio text-center">
+                        <div class="form-check-inline">
+                          <input typeue="cat" class="form-check-input" id="catbtn1" name="breed2" required>
+                        </div>="radio" val
+                        <div class="form-check-inline">
+                          <input type="radio" value="dog" class="form-check-input" id="dogbtn1" name="breed2" required>
+                        </div>
+                        <div class="form-check-inline">
+                          <input type="radio" value="others" class="form-check-input" id="othersbtn1" name="breed2" required>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <input type="text" id="other" class="form-control" placeholder="Type of Pets">
+                      </div>
+                      <div class="col-md-4">
+                        <div class="input_fields_wrap1 input-group"> -->
+                          <!-- <button class="add_field_button">+</button> -->
+                          <!-- <input type="text" class="form-control" placeholder="Max Number">
+                          <div class="input-group-append">
+                            <a class="add_field_button1 btn-success btn-sm">+</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="breed_content
+                
+                _block" class="col-md-6">
+                  <label class="ap"></label>
+                  <div class="form-row">
+                    <div class="col-md-3  col-lg-4">
+                      <div class="form-group">
+                        <select id="breed_1" class="form-control" required>
+                          <option value="">Breed</option>
+                          <option>Small</option>
+                          <option>Medium</option>
+                          <option>Large</option>
+                          <option>Xtra Large</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <select id="breed_gender_1" class="form-control" required>
+                          <option value="">Gender</option>
+                          <option>Male</option>
+                          <option>Female</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <div class=" input-group mb-3"> -->
+                          <!-- <button class="add_field_button">+</button> -->
+                          <!-- <input type="text" id="breed_age_1" class="form-control" placeholder="Age">
+                          <div class="input-group-append">
+                            <a id="add_field_button" class="btn-success btn-sm">+</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12">
+                <label for="reqments" name="text">What kind of pets to you taken in</label>
+                  <div class="form-row">
+                    <div class="col-md-2">
+                      <div class="form-group">
+                          <div class="pictured-radio text-center">
+                            <div class="form-check-inline">
+                                <div id="cn11">
+                                    <img class="center-block" src="../../../assets/img/Icons/DogGreen.png" style="float: left;" height="35px;">
+                                  </div>
+                                  <!-- <div id="cn22" style="display: none;">
+                                    <img class="center-block"  src="../../../assets/img/Icons/CatGreen.png" style="float: left;" height="35px;">
+                                  </div> -->
+                                  <!-- <div style="display: none;">
+                                    <input type="checkbox" id="cn" />
+                                  </div> -->
+                            </div>                                         
+                          </div>
+                      </div>
+                    </div>
+                    <div  class="col-md-10 inhouse">
+                      <div class="form-row">
+                        <div formArrayName="small_dog" *ngFor="let items of HomestayForm.get('small_dog').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <select id="breed_gender_3" formControlName="Typeofpets" class="form-control" required>
+                                  <option value="">Select Type of pet</option>
+                                  <option value="small">Small</option>
+                                 
+        
+                                </select>
+                              </div>
+                            </div>
+                           
+                          
+                           
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                      <ng-multiselect-dropdown
+                                      [placeholder]="'Select breed name'"
+                                      [data]="dropdownList1"
+                                      formControlName="breed"
+                                      [settings]="dropdownSettings"
+                                      (onSelect)="onItemSelect($event)"
+                                      (onSelectAll)="onSelectAll($event)"
+                                    >
+                                    </ng-multiselect-dropdown>
+                                    </div>
+                                  </div>
+
+                                  
+                          
+                            <!-- <div class="col-md-4">
+                                <div class="form-group">
+                                <select  formControlName="gender" class="form-control">
+                                  <option>Gender</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                              </div>
+                              </div> 
+                              <div class="col-md-2">
+                                  <ng-container *ngIf="HomestayForm.get('row_dynamic')?.controls?.length<=2">
+                                      <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                      </ng-container>
+                                <ng-container *ngIf="ind!=0">
+                                  <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                </ng-container>
+                          </div>  -->
+                          </div>
+                        </div>
+ 
+                      
+                      
+                      </div>
+                      <div class="form-row">
+                        <div formArrayName="medium_dog" *ngFor="let items of HomestayForm.get('medium_dog').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <select id="breed_gender_3" formControlName="Typeofpets" class="form-control" required>
+                                  <option value="">Select Type of pet</option>
+                                  <option value="Medium">Medium</option>
+                                 
+        
+                                </select>
+                              </div>
+                            </div>
+                           
+                          
+                           
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                      <ng-multiselect-dropdown
+                                      [placeholder]="'Select breed name'"
+                                      [data]="dropdownList2"
+                                      formControlName="breed"
+                                      [settings]="dropdownSettings"
+                                      (onSelect)="onItemSelect($event)"
+                                      (onSelectAll)="onSelectAll($event)"
+                                    >
+                                    </ng-multiselect-dropdown>
+                                    </div>
+                                  </div>
+
+                                  
+                          
+                            <!-- <div class="col-md-4">
+                                <div class="form-group">
+                                <select  formControlName="gender" class="form-control">
+                                  <option>Gender</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                              </div>
+                              </div> 
+                              <div class="col-md-2">
+                                  <ng-container *ngIf="HomestayForm.get('row_dynamic')?.controls?.length<=2">
+                                      <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                      </ng-container>
+                                <ng-container *ngIf="ind!=0">
+                                  <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                </ng-container>
+                          </div>  -->
+                          </div>
+                        </div>
+ 
+                      
+                      
+                      </div>
+
+                      <div class="form-row">
+                        <div formArrayName="large_dog" *ngFor="let items of HomestayForm.get('large_dog').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <select  formControlName="Typeofpets" class="form-control" required>
+                                  <option value="">Select Type of pet</option>
+                                  <option value="large">Large</option>
+                                </select>
+                              </div>
+                            </div>
+                           
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                      <ng-multiselect-dropdown
+                                      [placeholder]="'Select breed name'"
+                                      [data]="dropdownList3"
+                                      formControlName="breed"
+                                      [settings]="dropdownSettings"
+                                      (onSelect)="onItemSelect($event)"
+                                      (onSelectAll)="onSelectAll($event)"
+                                    >
+                                    </ng-multiselect-dropdown>
+                                    </div>
+                                  </div>
+
+                          </div>
+                        </div>
+ 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                            <div class="pictured-radio text-center">
+                              <div class="form-check-inline">
+                                  <div id="dog_ck11">
+                                      <img class="center-block" src="../../../assets/img/Icons/CatGreen.png" style="float: left;" height="35px;">
+                                    </div>
+                                    <!-- <div id="dog_ck22" style="display: none;">
+                                      <img class="center-block" src="../../../assets/img/Icons/DogGreen.png" style="float: left;" height="35px;">
+                                    </div> -->
+                                    <!-- <div style="display: none;">
+                                      <input type="checkbox" id="dog_c"/>
+                                    </div> -->
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div  class="col-md-10 cat_xyz">
+                        <div class="form-row">
+                          <div formArrayName="cat1" *ngFor="let items of HomestayForm.get('cat1').controls;let ind=index;">
+                            <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                               
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <input type="text" placeholder="Breed" formControlName="breed" class="form-control">
+                                </div>
+                              </div>                
+                            
+                              <div class="col-md-4">
+                                  <div class="form-group">
+                                  <select  formControlName="gender" class="form-control">
+                                    <option value="">Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                  </select>
+                                </div>
+                                </div> 
+                 
+                                <div class="col-md-2">
+                                    <ng-container *ngIf="HomestayForm.get('cat1')?.controls?.length<=2">
+                                        <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                        </ng-container>
+                                  <ng-container *ngIf="ind!=0">
+                                    <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                  </ng-container>
+                            </div> 
+                            </div>
+                          </div>
+   
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-2">
+                          <div class="form-group">
+                              <div class="pictured-radio text-center">
+                                <div class="form-check-inline">
+                                    <div id="other_bt11">
+                                        <img class="center-block" src="../../../assets/img/othersbtng.png" style="float: left;" height="65px;">
+                                      </div>
+                                      <!-- <div id="other_bt22" style="display: none;">
+                                        <img class="center-block" src="../../../assets/img/Icons/othersbtng.png" style="float: left;" height="65px;">
+                                      </div> -->
+                                      <!-- <div style="display: none;">
+                                        <input type="checkbox" id="other_btk"/>
+                                      </div> -->
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        <div  class="col-md-10 cat_kbc">
+                            <div class="form-row">
+                            <div formArrayName="Other1" *ngFor="let items of HomestayForm.get('Other1').controls;let ind=index;">
+                              <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                                 
+                                  <div class="col-md-2 col-lg-3">
+                                      <div class="form-group">
+                                       <input type="text" placeholder="Type of pets" formControlName="Typeofpets" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 col-lg-3">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Number of pets" formControlName="noofpets" class="form-control">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-2">
+                                          <div class="form-group">
+                                            <input type="text" id="breed_age_4" formControlName="breed" class="form-control" placeholder="Age"> 
+                                          </div>
+                                        </div>
+                                    <div class="col-md-2">
+                                      <div class="form-group">
+                                        <select id="breed_gender_4" class="form-control" formControlName="gender" required>
+                                          <option value="">Gender</option>
+                                          <option>Male</option>
+                                          <option>Female</option>
+                
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                      <div class="form-group">
+                                        <div class=" input-group mb-3">
+                                          <input type="text" id="breed_age_4" formControlName="age" class="form-control" placeholder="Age">
+                                        </div>
+                                      </div>
+                                    </div>
+                   
+                                  <div class="col-md-2">
+                                      <ng-container *ngIf="HomestayForm.get('Other1')?.controls?.length<=2">
+                                          <button (click)="addField1(ind)" class="btn-success btn-sm">+</button>
+                                          </ng-container>
+                                    <ng-container *ngIf="ind!=0">
+                                      <button  (click)="removeField1(ind)" class="btn-success btn-sm">- </button>
+                                    </ng-container>
+                              </div> 
+                              </div>
+                            </div>
+     
+                          
+                          
+                          </div>
+
+                          <div class="form-row">
+                           
+                          </div>
+                        </div>
+                      </div>
+                </div>
+    
+          <div class="col-md-12">
+            <label>Any inhouse pets</label>
+              <div class="form-row">
+                <div class="col-md-2">
+                  <div class="form-group">
+                      <div class="pictured-radio text-center">
+                        <div class="form-check-inline">
+                            <div id="cat_1">
+                                <img class="center-block" src="../../../assets/img/Icons/DogGreen.png" style="float: left;" height="35px;">
+                              </div>
+                              <!-- <div id="cat_2" style="display: none;">
+                                <img class="center-block"  src="../../../assets/img/Icons/CatGreen.png" style="float: left;" height="35px;">
+                              </div> -->
+                              <!-- <div style="display: none;">
+                                <input type="checkbox" id="cat" />
+                              </div> -->
+                        </div>                                         
+                      </div>
+                  </div>
+                </div>
+                <div  class="col-md-10 kindrow">
+                  <div class="form-row">
+                      <div formArrayName="small_dog1" *ngFor="let items of HomestayForm.get('small_dog1').controls;let ind=index;">
+                        <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                           
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <select id="breed_gender_3" formControlName="Typeofpets" class="form-control" required>
+                                <option value="">Select Type of pet</option>
+                                <option value="small">Small</option>
+      
+                              </select>
+                            </div>
+                          </div>
+                         
+                        
+                         
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                    <ng-multiselect-dropdown
+                                    [placeholder]="'Select breed name'"
+                                    [data]="dropdownList1"
+                                    formControlName="breed"
+                                    [settings]="dropdownSettings"
+                                    (onSelect)="onItemSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                  >
+                                  </ng-multiselect-dropdown>
+                                  </div>
+                                </div>
+
+                                
+                        
+                          <!-- <div class="col-md-4">
+                              <div class="form-group">
+                              <select  formControlName="gender" class="form-control">
+                                <option>Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                              </select>
+                            </div>
+                            </div> 
+                            <div class="col-md-2">
+                                <ng-container *ngIf="HomestayForm.get('row_dynamic')?.controls?.length<=2">
+                                    <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                    </ng-container>
+                              <ng-container *ngIf="ind!=0">
+                                <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                              </ng-container>
+                        </div>  -->
+                        </div>
+                      </div>
+
+                    
+                    
+                    </div>
+                    <div class="form-row">
+                        <div formArrayName="medium_dog1" *ngFor="let items of HomestayForm.get('medium_dog1').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <select id="breed_gender_3" formControlName="Typeofpets" class="form-control" required>
+                                  <option value="">Select Type of pet</option>
+                                  <option value="Medium">Medium</option>
+                                 
+        
+                                </select>
+                              </div>
+                            </div>
+                           
+                          
+                           
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                      <ng-multiselect-dropdown
+                                      [placeholder]="'Select breed name'"
+                                      [data]="dropdownList2"
+                                      formControlName="breed"
+                                      [settings]="dropdownSettings"
+                                      (onSelect)="onItemSelect($event)"
+                                      (onSelectAll)="onSelectAll($event)"
+                                    >
+                                    </ng-multiselect-dropdown>
+                                    </div>
+                                  </div>
+
+                                  
+                          
+                            <!-- <div class="col-md-4">
+                                <div class="form-group">
+                                <select  formControlName="gender" class="form-control">
+                                  <option>Gender</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                              </div>
+                              </div> 
+                              <div class="col-md-2">
+                                  <ng-container *ngIf="HomestayForm.get('row_dynamic')?.controls?.length<=2">
+                                      <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                      </ng-container>
+                                <ng-container *ngIf="ind!=0">
+                                  <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                </ng-container>
+                          </div>  -->
+                          </div>
+                        </div>
+ 
+                      
+                      
+                      </div>
+
+                      <div class="form-row">
+                          <div formArrayName="large_dog1" *ngFor="let items of HomestayForm.get('large_dog1').controls;let ind=index;">
+                            <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                               
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <select id="breed_gender_3" formControlName="Typeofpets" class="form-control" required>
+                                    <option value="">Select Type of pet</option>
+                                    <option value="large">Large</option>
+                                   
+          
+                                  </select>
+                                </div>
+                              </div>
+                             
+                            
+                             
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                        <ng-multiselect-dropdown
+                                        [placeholder]="'Select breed name'"
+                                        [data]="dropdownList3"
+                                        formControlName="breed"
+                                        [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event)"
+                                        (onSelectAll)="onSelectAll($event)"
+                                      >
+                                      </ng-multiselect-dropdown>
+                                      </div>
+                                    </div>
+  
+                                    
+                            
+                              <!-- <div class="col-md-4">
+                                  <div class="form-group">
+                                  <select  formControlName="gender" class="form-control">
+                                    <option>Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                  </select>
+                                </div>
+                                </div> 
+                                <div class="col-md-2">
+                                    <ng-container *ngIf="HomestayForm.get('row_dynamic')?.controls?.length<=2">
+                                        <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                        </ng-container>
+                                  <ng-container *ngIf="ind!=0">
+                                    <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                  </ng-container>
+                            </div>  -->
+                            </div>
+                          </div>
+   
+                        
+                        
+                        </div>
+
+
+                </div>
+              </div>
+              <div class="form-row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                        <div class="pictured-radio text-center">
+                          <div class="form-check-inline">
+                              <div id="dog_ck1">
+                                  <img class="center-block" src="../../../assets/img/Icons/CatGreen.png" style="float: left;" height="35px;">
+                                </div>
+                                <!-- <div id="dog_ck2" style="display: none;">
+                                  <img class="center-block" src="../../../assets/img/Icons/DogGreen.png" style="float: left;" height="35px;">
+                                </div> -->
+                                <!-- <div style="display: none;">
+                                  <input type="checkbox" id="dog_ck"/>
+                                </div> -->
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div  class="col-md-10 xyz">
+                    <div class="form-row">
+                        <div formArrayName="cat2" *ngFor="let items of HomestayForm.get('cat2').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" placeholder="Breed" formControlName="breed" class="form-control">
+                              </div>
+                            </div>                
+                          
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                <select  formControlName="gender" class="form-control" aria-placeholder="gender">
+                                  <option value="">Gender</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                              </div>
+                              </div> 
+               
+                              <div class="col-md-2">
+                                  <ng-container *ngIf="HomestayForm.get('cat2')?.controls?.length<=2">
+                                      <button (click)="addField2(ind)" class="btn-success btn-sm">+</button>
+                                      </ng-container>
+                                <ng-container *ngIf="ind!=0">
+                                  <button  (click)="removeField2(ind)" class="btn-success btn-sm">- </button>
+                                </ng-container>
+                          </div> 
+                          </div>
+                        </div>
+ 
+                      
+                      
+                      </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-2">
+                      <div class="form-group">
+                          <div class="pictured-radio text-center">
+                            <div class="form-check-inline">
+                                <div id="other_bt1">
+                                    <img class="center-block" src="../../../assets/img/othersbtng.png" style="float: left;" height="35px;">
+                                  </div>
+                                  <!-- <div id="other_bt2" style="display: none;">
+                                    <img class="center-block" src="../../../assets/img/Icons/othersbtng.png" style="float: left;" height="35px;">
+                                  </div> -->
+                                  <!-- <div style="display: none;">
+                                    <input type="checkbox" id="other_bt"/>
+                                  </div> -->
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div  class="col-md-10 kbc">
+                      <div class="form-row">
+                          <div formArrayName="Other2" *ngFor="let items of HomestayForm.get('Other2').controls;let ind=index;">
+                            <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                               
+                                <div class="col-md-2 col-lg-3">
+                                    <div class="form-group">
+                                     <input type="text" placeholder="Type of pets" formControlName="Typeofpets" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-lg-3">
+                                      <div class="form-group">
+                                          <input type="text" placeholder="Number of pets" formControlName="noofpets" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                          <input type="text" id="breed_age_4" formControlName="breed" class="form-control" placeholder="Age"> 
+                                        </div>
+                                      </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                      <select id="breed_gender_4" class="form-control" formControlName="gender" required>
+                                        <option value="">Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+              
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                      <div class=" input-group mb-3">
+                                        <input type="text" id="breed_age_4" formControlName="age" class="form-control" placeholder="Age">
+                                      </div>
+                                    </div>
+                                  </div>
+                 
+                                <div class="col-md-2">
+                                    <ng-container *ngIf="HomestayForm.get('Other2')?.controls?.length<=2">
+                                        <button (click)="addField3(ind)" class="btn-success btn-sm">+</button>
+                                        </ng-container>
+                                  <ng-container *ngIf="ind!=0">
+                                    <button  (click)="removeField3(ind)" class="btn-success btn-sm">- </button>
+                                  </ng-container>
+                            </div> 
+                            </div>
+                          </div>
+   
+                        
+                        
+                        </div>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label>
+                    Accepts only one dog at a time
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class=" col-md-6 vb col-lg-6">
+                      <label class="switch">
+                        <input type="checkbox" formControlName="onedog">
+                        <div class="slider round">
+                          <span class="on">YES</span><span class="off">NO</span>
+                        </div>
+
+                      </label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                        <div class="form-group">
+                      <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+                            width: 10%;" src="../../../assets/img/DayCareService.png" >
+                       </div>
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Cost">
+                      </div>
+                      </div>
+                </div>
+                </div> -->
+            <!-- <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Day care service Provided?</label>
+                    </div>
+                     </div>
+                     <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Timing">
+                    </div>
+                  </div>
+                  
+                </div>
+              </div> -->
+
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">What kind of food do you prepare</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" id="accounttype" required>
+                      <option value="">Veg/Non-Veg/both</option>
+                      <option>Veg</option>
+                      <option>Non-veg</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label> (Click on any image shown below?)</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="24_service_1">
+                        <img class="center-block" src="../../../assets/img/Icons/24HourSupervisionGrey.png" style="float: left;" height="70px;">24/7
+                        Supervision Available
+                      </div>
+                      <div id="24_service_2" style="display: none;">
+                        <img class="center-block" src="../../../assets/img/Icons/24HourSupervisionGreen.png" style="float: left;" height="70px;">24/7
+                        Supervision Available
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="services1" id="24_service" />
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="first_aidkit_1">
+                        <img class="center-block" src="../../../assets/img/Icons/FirstAidKidGrey.png" style="float: left;" height="60px;">First
+                        Aid kit<br> Available
+                      </div>
+                      <div id="first_aidkit_2" style="display: none;">
+                        <img class="center-block" src="../../../assets/img/Icons/FirstAidKidGreen.png" style="float: left;" height="60px;">First
+                        Aid kit<br> Available
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="first_aidkit" id="first_aidkit" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="senior_dog_1">
+                        <img class="center-block" src="../../../assets/img/Icons/SeniorDogHandlingGrey.png" style="float: left;" height="45px;">                        Senior
+                        dog handling experience
+                      </div>
+                      <div id="senior_dog_2" style="display: none;">
+                        <img class="center-block" src="../../../assets/img/Icons/SeniorDogHandlingGreen.png" style="float: left;" height="45px;">                        Senior
+                        dog handling experience
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="senior_dog" id="senior_dog" />
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="females_on_1">
+                        <img src="../../../assets/img/Icons/FemalesonheatGrey.png" style="float: left;" height="50px;"> Do
+                        you take females on heat
+                      </div>
+                      <div id="females_on_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/FemalesonheatGreen.png" style="float: left;" height="50px;">                        Do
+                        you take females on heat
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="females_on" id="females_on">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="medication_1">
+                        <img class="center-block" src="../../../assets/img/Icons/OralMedicationGrey.png" style="float: left;" height="55px;">Can
+                        Adminster oral medication if necessary</div>
+                      <div id="medication_2" style="display: none">
+                        <img class="center-block" src="../../../assets/img/Icons/OralMedicationGreen.png" style="float: left;" height="55px;">Can
+                        Adminster oral medication if necessary</div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="medication" id="medication" />
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="booking_1">
+                        <img src="../../../assets/img/Icons/InstantBookingGrey.png" style="float: left;" height="45px;">                        Instant
+                        booking allowed
+                      </div>
+                      <div id="booking_2" style="display: none">
+                        <img src="../../../assets/img/Icons/InstantBookingGreen.png" style="float: left;" height="45px;">                        Instant
+                        booking allowed
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="booking" id="booking" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="home_visit_1">
+                        <img class="center-block" src="../../../assets/img/Icons/HomevisitGrey.png" style="float: left;" height="50px;">Home
+                        visit mandatory</div>
+                      <div id="home_visit_2" style="display: none;">
+                        <img class="center-block" src="../../../assets/img/Icons/HomeServiceGreen.png" style="float: left;" height="50px;">Home
+                        visit <br> mandatory
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="home_visit" id="home_visit">
+                      </div>
+                    </div>
+
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="pet_training_1">
+                        <img src="../../../assets/img/Icons/InhouseTrainedPetsGrey.png" style="float: left;" height="45px;">                        Do
+                        you take in only house trained pets
+                      </div>
+                      <div id="pet_training_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/InhouseTrainedPetsGreen.png" style="float: left;" height="45px;">                        Do
+                        you take in only house trained pets
+                      </div>
+                      <div style="display: none">
+                        <input type="checkbox" formControlName="pet_training" id="pet_training" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="need_ticks_1">
+                        <img class="center-block" src="../../../assets/img/Icons/TicksFreeGrey.png" style="float: left;" height="50px;">Need
+                        to be free from ticks</div>
+                      <div id="need_ticks_2" style="display: none">
+                        <img class="center-block" src="../../../assets/img/Icons/TicksFreeGreen.png" style="float: left;" height="50px;">Need
+                        to be free from ticks</div>
+                      <div style="display:none;">
+                        <input type="checkbox" formControlName="need_ticks" id="need_ticks">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div id="open_play_1">
+                        <img class="center-block" src="../../../assets/img/Icons/OpenPlayAreaGrey.png" style="float: left;" height="50px;"><label>open
+                          play area</label></div>
+                      <div id="open_play_2" style="display: none">
+                        <img class="center-block" src="../../../assets/img/Icons/OpenPlayAreaGreen.png" style="float: left;" height="50px;">Open
+                        paly area</div>
+                      <div style="display:none;">
+                        <input type="checkbox" formControlName="open_play" id="open_play">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6" id="gggg">
+                      <div id="ac_defalut_1">
+                        <img class="center-block" src="../../../assets/img/Icons/AirConditionerGrey.png" style="float: left;" height="70px;">A/C
+                        accomodation Available
+                      </div>
+                      <div id="ac_defalut_2" style="display: none;">
+                        <img class="center-block" src="../../../assets/img/Icons/AirConditionerGreen.png" style="float: left;" height="70px;">A/C
+                        accomodation Available
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" formControlName="ac_accomodation" id="ac_accomodation" value="0" />
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <input type="text" class="form-control" formControlName="ac_charges" placeholder="Enter Charges" id="test">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+<!-- 
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-4 mt-1">
+                  <div class="form-group">
+                    <label>When are you Available</label>
+                  </div>
+                </div>
+                <div class=" try col-md-8">
+                  <div class="form-row">
+                    <div class=" col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <select id="breed_1" class="form-control" required>
+                          <option value="">Day</option>
+                          <option>Small</option>
+                          <option>Medium</option>
+                          <option>Large</option>
+                          <option>Xtra Large</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <select id="breed_gender_1" class="form-control" required>
+                          <option value="">Month</option>
+                          <option>Male</option>
+                          <option>Female</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <div class=" input-group mb-3"> -->
+                          <!-- <button class="add_field_button" >+</button> -->
+                          <!-- <select id="breed_age_1" class="form-control" required>
+                            <option value="">Month</option>
+                            <option>Male</option>
+                            <option>Female</option>
+
+                          </select>
+                          <div class="input-group-append">
+                            <a id="add_field_button" id="date_month" class="btn-success btn-sm">+</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-4">
+                  <label>Rate for accomodation
+                  </label>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-4 col-3">
+                      <div id="dog_1">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 38px;">
+                      </div>
+                      <!-- <div id="dog_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 38px;">
+                      </div> -->
+                      <!-- <div style="display:none;">
+                        <input type="checkbox" id="dog">
+                      </div> -->
+                    </div>
+                    <div class="col-md-4 col-3">
+                      <div id="medium_paw_1">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style="height: 48px;">
+                      </div>
+                      <!-- <div id="medium_paw_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 48px;">
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" id="medium_paw">
+                      </div> -->
+                    </div>
+                    <div class="col-md-4 col-3">
+                      <div id="large_paw_1">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style="height: 61px;">
+                      </div>
+                      <!-- <div id="large_paw_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 61px;">
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" id="large_paw">
+                      </div> -->
+                    </div>
+                    <!-- <div class="col-md-3 col-3">
+                      <div id="x_large_paw_1">
+                        <img src="../../../assets/img/Icons/DogGrey.png" style="height: 72px;">
+                      </div>
+                      <div id="x_large_paw_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 72px;">
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" id="x_large_paw">
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-8">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div class="form-group">
+                        <label class="">Small Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="small" class="from form-control" placeholder="Enter charge">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div class="form-group">
+                        <label class="">Medium Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="medium" class="from form-control" placeholder="Enter charge">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div class="form-group">
+                        <label class="">Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="large" class="from form-control" placeholder="Enter charge">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-3 col-lg-4 col-3">
+                        <div class="form-group">
+                          <label class="">Large Paws</label>
+                          <div class="form-group">
+                            <input type="text" class="from form-control" placeholder="Enter charge">
+                          </div>
+                        </div>
+                      </div> -->
+                      
+                    <!-- <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">X-Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" class="from form-control" placeholder="Enter charge">
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-4">
+                  <!-- <label>Rate for accomodation
+                                   </label> -->
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-4 col-lg-6 col-3">
+                      <div id="cat_1">
+                        <img src="../../../assets/img/Icons/CatGreen.png" style=" height: 47px;">
+                      </div>
+                      <!-- <div id="cat_2" style="display: none">
+                        <img src="../../../assets/img/Icons/CatGreen.png" style=" height: 47px;">
+                      </div> -->
+                      <!-- <div style="display: none;">
+                        <input type="checkbox" id="small_cat">
+                      </div> -->
+                    </div>
+                    <div class="col-md-4 col-lg-6 col-3">
+                        <div id="cat_1">
+                          <img src="../../../assets/img/othersbtng.png" style=" height: 50px;">
+                        </div>
+                        <!-- <div id="cat_2" style="display: none">
+                          <img src="../../../assets/img/Icons/CatGreen.png" style=" height: 47px;">
+                        </div> -->
+                        <!-- <div style="display: none;">
+                          <input type="checkbox" id="small_cat">
+                        </div> -->
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <div class="row">
+               
+                <div class="col-md-12">
+                  <div class="form-row">
+
+                      <div class="col-md-6 col-lg-6 col-3">
+                          <div class="form-group">
+                            <label class="">Small Cat</label>
+                            <!-- <div class="form-group">
+                                              <select class="form-control" id="accounttype" required>
+                                                <option value="">Less then 10kg</option>
+                                                <option>5kg</option>
+                                                <option>6kg</option>
+                                                <option>7kg</option>
+                                                <option>8kg</option>
+                                                <option>9kg</option>
+                                              </select>
+                                            </div> -->
+                            <div class="form-group">
+                              <input type="text" formControlName="small_cat1" class="from form-control" placeholder="INR">
+                            </div>
+                          </div>
+                        </div>
+                    <div class="col-md-6 col-lg-6 col-3">
+                      <div class="form-group">
+                        <label class="">Others</label>
+                        <!-- <div class="form-group">
+                                          <select class="form-control" id="accounttype" required>
+                                            <option value="">Less then 10kg</option>
+                                            <option>5kg</option>
+                                            <option>6kg</option>
+                                            <option>7kg</option>
+                                            <option>8kg</option>
+                                            <option>9kg</option>
+                                          </select>
+                                        </div> -->
+                        <div class="form-group form-row">
+                          <div class="col-md-3">
+                              <input type="text" formControlName="small_cat1" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="col-md-3">
+                              <input type="text" formControlName="small_cat1" class="from form-control" placeholder="INR">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Do You Provide Pick and drop</label>
+                  </div>
+                </div>
+                <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                  <label class="primary-switch switch" style="
+                                            float: left;">
+                    <input type="checkbox" formControlName="pickdrop" id="change_blk5" value="0">
+                    <div class="slider round">
+                      <span class="on">YES</span><span class="off">NO</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="col-md-12 col-9 offset-md-5" id="blk5" style="display: none">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <div class="form-group">
+                          <input type="text" formControlName="ChargePerkm" placeholder="Charges per km" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                          <input type="text" formControlName="PickCharge" placeholder="Pick up charge" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="">
+                      <label style="padding-left:2px; margin-top: 6px;">(or)</label>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <div class="form-group">
+                          <input type="text" formControlName="MinCharge" placeholder="Minimum charge" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" formControlName="DropCharge" placeholder="Drop charge" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <!-- <div class="col-md-12">
+               <div class="form-row">
+                 <div class="col-md-3">
+                   <div class="form-group">
+                   <label>Ac accomodation Available</label>
+                 </div>
+                 </div>
+                 <div class="col-md-3">
+                  <div class="form-group">
+                      <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+                      width: 35%; margin-top: -18px;" src="../../../assets/img/home visit.png" >
+                  </div>
+                 </div>
+                 <div class="col-md-6">
+                   <div class=" form-group">
+                     <label>Any additional chargers</label>
+                     <input type="text" class="form-control" placeholder="enter charge per day">
+                   </div>
+                 </div> 
+
+               </div>
+             </div> -->
+            <!-- <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                    <label>24hours Servicres Available</label>
+                  </div>
+                  </div>
+                  <div class="col-md-3">
+                   <div class="form-group">
+                       <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+                       width: 35%; margin-top: -18px;" src="../../../assets/img/247 supervision.png" >
+                   </div>
+                  </div>
+                  <div class="col-md-3">
+                    
+                    <div class=" form-group">
+                        <label>  need to be free from ticks</label>
+                           
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    
+                      <div class=" form-group">
+                        
+                              <img class="center-block" src="../../../assets/img/grass-leaves-silhouette.png"
+                              width="100%"
+                              height="50px;">
+                      </div>
+                    </div>
+
+                </div>
+              </div> -->
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-3">
+
+                  <div class="form-group">
+                    <label for="reqments">Day Care Services Provided(less Then 24hrs)</label>
+                  </div>
+
+                </div>
+                <div class="form-group col-md-6 co-lg-6 offset-md-2">
+                  <label class="switch" style="
+                       float: left;">
+                    <input type="checkbox" formControlName="Timings" id="change_blk1" value="0">
+                    <div class="slider round">
+                      <span class="on">YES</span><span class="off">NO</span>
+                    </div>
+                  </label>
+
+                </div>
+                <div class="col-md-12 col-9" id="blk1" style="display: none;">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Timings</label>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">0 to 12 hrs</label>
+                        </div>
+                      </div>
+                      <!-- <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">4 hrs to 8 hrs</label>
+                        </div>
+                      </div> -->
+                      <!-- <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">8 hrs to 12hrs</label>
+                        </div>
+                      </div> -->
+                      <!-- <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">12 hrs to 16 hrs</label>
+                        </div>
+                      </div> -->
+                      <!-- <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">16 hrs to 24 hrs</label>
+                        </div>
+                      </div> -->
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Small Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="SmallPawCharge" placeholder="INR" class="form-control">
+                        </div>
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Medium Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="MediumPawCharge" placeholder="INR" class="form-control">
+                        </div>
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="100" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" formControlName="largePawCharge" placeholder="INR" class="form-control">
+                        </div>
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div> -->
+
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Xtra Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-3">
+
+                  <div class="form-group">
+                    <label for="reqments">Do you Provide Home cooked food</label>
+                  </div>
+
+                </div>
+                <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                  <label class="primary-switch switch" style="
+                          float: left;">
+                    <input type="checkbox" formControlName="Food" id="change_blk2" value="0">
+                    <div class="slider round">
+                      <span class="on">YES</span><span class="off">NO</span>
+                    </div>
+                  </label>
+
+                </div>
+                <div class="col-md-12 col-9" id="blk2" style="display: none">
+                  <div class="form-group">
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <label>Meal Charges</label>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" formControlName="MealCharge" class="form-control" placeholder="INR">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="form-row">
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Food/Per Meal</label>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Veg</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Non Veg</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-3">
+                      <div class="form-group">
+                        <label class="kb">Small Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-3">
+                      <div class="form-group">
+                        <label class="kb">Medium Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg- col-3">
+                      <div class="form-group">
+                        <label class="kb">Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Xtra Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-3">
+                  <div class="form-group">
+                    <label for="reqments">Do You Provide Packaged Food like Pedigree?</label>
+                  </div>
+                </div>
+                <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                  <label class="switch" style="
+                            float: left;">
+                    <input type="checkbox" id="change_blk3" value="0">
+                    <div class="slider round">
+                      <span class="on">YES</span><span class="off">NO</span>
+                    </div>
+                  </label>
+                </div>
+                <div class="col-md-12 col-9" id="blk3" style="display: none">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Food/Per Cost</label>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Pedigree</label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Royal Canin</label>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Drools</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-3">
+                      <div class="form-group">
+                        <label class="kb">Small Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-3">
+                      <div class="form-group">
+                        <label class="kb">Medium Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg- col-3">
+                      <div class="form-group">
+                        <label class="kb">Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Xtra Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div> -->
+
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-3">
+
+                  <div class="form-group">
+                    <label for="reqments">Do you Provide Home cooked Snacks</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 col-lg-6 offset-md-2 form-group">
+                  <label class="switch" style="
+                              float: left;">
+                    <input type="checkbox" id="change_blk4">
+                    <div class="slider round">
+                      <span class="on">YES</span><span class="off">NO</span>
+                    </div>
+                  </label>
+
+                </div>
+                <div class="col-md-12 col-9" id="blk4" style="display: none;">
+
+                  <div class="form-row">
+
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Snack/Per Meal Cost</label>
+
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Treats</label>
+                        </div>
+                      </div> 
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Biscuits</label>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="form-group center-block">
+                          <label class="reqments1">Other-please specify</label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-3">
+                      <div class="form-group">
+                        <label class="kb">Small Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-3">
+                      <div class="form-group">
+                        <label class="kb">Medium Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg- col-3">
+                      <div class="form-group">
+                        <label class="kb">Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="kb">Xtra Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" placeholder="INR" class="form-control">
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div> -->
+
+            <!--                    
+                    <div class="col-md-12">
+                        <div class="row">
+                          <div class="col-md-4 col-4">
+                          
+                            <div class="form-group">
+                              <label for="reqments">Day Care Services Provided(less then 24)</label>
+                            </div>
+                          
+                            <div class="form-group center-block1">
+                                <label class="switch" style="
+                                float: left;">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                
+                                <div class="form-group center-block">
+                                    <label class="reqments">4 hrs to 8hrs</label>
+                                  </div>
+                              </div>
+                              <div class="form-group center-block">
+                                  <label class="reqments">4 hrs to 8hrs</label>
+                                </div>
+                                <div class="form-group center-block">
+                                    <label class="reqments">8 hrs to 12 hrs</label>
+                                  </div>
+                                  <div class="form-group center-block">
+                                    <label class="reqments">12 hrs to 16 hrs</label>
+                                  </div>
+                                  <div class="form-group center-block">
+                                    <label class="reqments">16 hrs to 24 hrs</label>
+                                  </div>
+                          </div>
+                          <div class="col-md-8 col-8">
+  
+                            <div class="form-row">
+                          
+                              <div class="col-md-2 col-lg-3 col-3">
+                                <div class="form-group">
+                                  <label class="kb">Small Paws</label>
+                                  <div class="form-group">
+                                  <input type="text" placeholder="INR"  class="form-control">
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="text" placeholder="INR"  class="form-control">
+                                      </div>
+                                      <div class="form-group">
+                                          <input type="text" placeholder="INR"  class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                            <input type="text" placeholder="INR"  class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                              <input type="text" placeholder="INR"  class="form-control">
+                                              </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2 col-lg-3 col-3">
+                                  <div class="form-group">
+                                    <label class="kb">Medium Paws</label>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="INR"  class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="INR"  class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" placeholder="INR"  class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                  <input type="text" placeholder="INR"  class="form-control">
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <input type="text" placeholder="INR" class="form-control">
+                                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-2 col-lg-3 col-3">
+                                    <div class="form-group">
+                                      <label class="kb">Large Paws</label>
+                                      <div class="form-group">
+                                          <input type="text" placeholder="INR"  class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <input type="text" placeholder="INR"  class="form-control">
+                                              </div>
+                                              <div class="form-group">
+                                                  <input type="text" placeholder="INR"  class="form-control">
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <input type="text" placeholder="INR" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <input type="text" placeholder="INR" class="form-control">
+                                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-lg-3 col-3">
+                                      <div class="form-group">
+                                        <label class="kb">Xtra Large Paws</label>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="INR"  class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" placeholder="INR"  class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="INR" class="form-control">
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <input type="text" placeholder="INR"  class="form-control">
+                                                      </div>
+                                                      <div class="form-group">
+                                                        <input type="text" placeholder="INR" class="form-control">
+                                                        </div>
+                                      </div>
+                                    </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+   -->
+    <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+            <label for="reqments">Terms and Conditions*</label>
+          </div>
+          </div>
+          <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control">
+          </div>
+          </div>
+        </div>
+        </div> 
+        <div class="col-md-12">
+          <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+            <label for="reqments">About your service*</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+            <textarea formControlName="Aboutservice" rows="3" placeholder="About your service" class="form-control"></textarea>
+            </div>
+          </div>
+          </div>
+      </div> 
+   <!-- <iframe src="https://calendar.google.com/calendar/embed?src=2rpl3qrb54r32svk4o5dgq2pgo%40group.calendar.google.com&ctz=Asia%2FCalcutta" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="reqments">Bank Details</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="accname" id="accountname" placeholder="Account Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="branch" id="branchname" placeholder="Branch Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="accno" id="accountno" placeholder="Account No" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="ifsc" id="ifsccode" placeholder="IFSC code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="mmid" id="mmidcode" placeholder="MMID code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="gst" id="address" placeholder="GSTN" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" id="accounttype" formControlName="accotype" required>
+                    <option value="">Type of Account</option>
+                    <option>T1</option>
+                    <option>T2</option>
+                  </select>
+                </div>
+              </div> 
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-3 col-lg-3">
+                        <label>Upload your photos</label>
+                      </div>
+                      <div class="col-md-4 col-lg-3">
+                        <div class="input-group">
+                          <span class="input-group-btn">
+                            <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                            <input name="uploaded_file" 
+                            onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());"
+                              style="display: none;" type="file" formControlName="image" #image>
+                          </span>
+                          <span class="form-control"></span>
+                        </div>
+          
+                      </div>
+                      <div class=" col-md-3 col-lg-6">
+                        <input type="textarea" class="form-control" formControlName="writehere" name="textarea" placeholder="Write Something here">
+                      </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <form [formGroup]="HomestayForm">
+  <div formArrayName="row_dynamic" *ngFor="let items of HomestayForm.get('row_dynamic').controls;let ind=index;">
+    <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+      <div class="elem">
+        <label>Gender</label>
+        <select formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="elem">
+        <label>Age</label>
+        <input type="text" formControlName="age">
+      </div>
+<!-- 
+      <div class="elem">
+        <label>TypeOfPets</label>
+        <input type="text" formControlName="TypeOfPet">
+      </div>
+      <div class="elem">
+        <label>No of Pet</label>
+        <input type="text" formControlName="noofpet">
+      </div> -->
+      <!-- <div>
+        <button (click)="addField(ind)">+</button>
+        <ng-container *ngIf="ind!=0">
+          <button  (click)="removeField(ind)">- </button>
+        </ng-container>
+       
+      </div>
+    </div>
+  </div>
+  <br>
+  <button (click)="submitForm()">Click me to read form value</button>
+</form>
+<br>
+<br>
+
+
+<h4>
+  {{fValue}}
+</h4>
+<h1>ho</h1> --> 
+
+<!-- <h4>
+    {{fValue}}
+  </h4> -->
+
+
+
+
+
+
+
+

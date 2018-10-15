@@ -1,0 +1,37 @@
+.acc{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.list-group-item-action{
+       
+       padding-top: 25px;
+       line-height: 12px;
+       
+       padding-left: 97px;
+}
+.cercledoghead{margin: 35px 0 30px 0;font-size: 55px;}
+.cercledog{width: 250px;}
+.red-logo-area {padding: 90px 0 150px 0;border-left: 4px solid #fb0000;}
+.form-col{max-width: 900px;}
+label{padding-left: 15px;}
+.address-col-left .form-control{margin-bottom: 15px;}
+#city{margin-top: 32px;}
+.address-col-right .form-control{margin-bottom: 15px;}
+.account input, .account select{margin-bottom: 15px}
+.redbtn input{
+    background: #fb0000;
+    border: 0;
+    border-radius: 18px;
+    color: #fff;
+    font-size: 33px;
+    font-weight: 700;
+    padding: 0px 45px 5px 45px;
+    margin: 19px 30px;
+}
+.redbtn input:hover{opacity: 0.7;}
+input:focus{outline: none;}
+@media only screen and (max-width: 767px) {
+	.red-logo-area{padding: 40px 0;border-left: none;}
+	.redbtn input{margin: 20px;font-size: 30px;}
+}

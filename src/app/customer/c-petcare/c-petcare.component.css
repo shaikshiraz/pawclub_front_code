@@ -1,0 +1,20 @@
+/* body */
+.main-head {text-align: right;margin: 31px 0 0 0;width: 62.5%;background: #00000085;color: #fff;font-size: 30px;padding: 20px 130px;border-top-right-radius: 30px;border-bottom-right-radius: 30px;}
+.left-dog{background-image: url('../../../assets/img/leftbg.png');background-size: 58.33% 100%;background-repeat: no-repeat;}
+.blue-wrap{padding: 45px 15px;}
+.navname-a{padding: 0;background-color: #000;}
+.blue-shade{box-shadow: 0 0 100px -7px #33a595;}
+.navname-a:hover{text-decoration: none;}
+.navname-a:hover img{opacity: 0.5;}
+.navname-a img{width: 100%;}
+.navname-span{display: block;color: #fff;font-size: 20px;font-weight: 600;margin: -40px 0 10px 0;padding-left: 7px;}
+/* body over */
+
+/* body Media query */
+@media only screen and (max-width: 767px){
+	.main-head{text-align: center;padding: 15px;width: 95%;border-radius: 9px;margin: 35px auto 0 auto;}
+	.left-dog{background-image: none;}
+	.blue-shade{box-shadow: none;}
+	.navname-a{background: none;box-shadow: 0 0 50px -7px #33a595;margin: 15px auto;width: 100%;max-width: 370px;display: block;}
+	.navname-a img{border-radius: 4px;}
+}

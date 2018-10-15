@@ -1,0 +1,167 @@
+.trans{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.fpd{padding-top: 37px;}
+.cercledoghead{margin: 35px 0 30px 0;font-size: 41px;}
+.cercledog{width: 250px;}
+.red-logo-area {padding: 90px 0 190px 0;border-left: 4px solid #fb0000;}
+.form-col{max-width: 900px;}
+
+.address-col-left .form-control{margin-bottom: 15px;}
+#city{margin-top: 32px;}
+.address-col-right .form-control{margin-bottom: 15px;}
+.account input, .account select{margin-bottom: 15px}
+.redbtn input{background: #fb0000;border: 0;border-radius: 3px;color: #fff;font-size: 37px;font-weight: 700;padding: 0px 45px 5px 45px;margin: 55px 30px;}
+.redbtn input:hover{opacity: 0.7;}
+input:focus{outline: none;}
+@media only screen and (max-width: 767px) {
+.red-logo-area{padding: 40px 0;border-left: none;}
+.redbtn input{margin: 20px;font-size: 30px;}
+}
+
+.pictured-radio{padding-right: 0;}
+.pictured-radio .form-check-inline{margin-right: 2px}
+.pictured-radio input[type="radio"]{opacity:0.5;margin:14px;-webkit-appearance: none;-moz-appearance: none;appearance: none;border: 1px solid #000;width: 38px;height: 38px;border-radius: 50%;}
+.pictured-radio input[type="radio"]:hover{opacity: 1;}
+.pictured-radio input[type="radio"]:checked{opacity: 1;}
+#catbtn{background: url(../../../assets/img/catbtnb.png);background-size: 100% 100%;}
+#dogbtn{background: url(../../../assets/img/dogbtnb.png);background-size: 100% 100%;}
+#fishbtn{background: url(../../../assets/img/fishbtnb.png);background-size: 100% 100%;}
+#othersbtn{background: url(../../../assets/img/othersbtnb.png);background-size: 100% 100%;}
+#catbtn:checked{background: url(../../../assets/img/catbtnb.png);background-size: 100% 100%;}
+#dogbtn:checked{background: url(../../../assets/img/dogbtng.png);background-size: 100% 100%;}
+#fishbtn:checked{background: url(../../../assets/img/fishbtng.png);background-size: 100% 100%;}
+#othersbtn:checked{background: url(../../../assets/img/othersbtng.png);background-size: 100% 100%;}
+#others{display: none; margin-top: 32px;}
+.redbtn input{background: #fb0000;border: 0;border-radius: 3px;color: #fff;font-size: 37px;font-weight: 700;padding: 0px 45px 5px 45px;margin: 55px 30px;}
+.redbtn input:hover{opacity: 0.7;}
+input:focus{outline: none;}
+@media only screen and (max-width: 767px) {
+.red-logo-area{padding: 40px 0;border-left: none;}
+.redbtn input{margin: 20px;font-size: 30px;}
+}   
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.img-center {
+  display: block;
+  margin: 0 auto;
+}
+/* .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 0px;
+  margin-left: 12px;
+} */
+.kb{
+  padding-top: 18px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightslategray;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2ab934;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(55px);
+  -ms-transform: translateX(55px);
+  transform: translateX(55px);
+}
+
+/*------ ADDED CSS ---------*/
+.on
+{
+  display: none;
+}
+
+.on, .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;}
+
+  input[type="date"] {
+      position: relative;
+      padding: 10px;
+    }
+    
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      color: transparent;
+      background: none;
+      z-index: 1;
+    }
+    
+    input[type="date"]:before {
+      color: transparent;
+      background: none;
+      display: block;
+      font-family: 'FontAwesome';
+      content: '\f073';
+      /* This is the calendar icon in FontAwesome */
+      width: 26px;
+      height: 20px;
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      color: #999;
+    }
+    /*--------------END----------------*/

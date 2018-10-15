@@ -1,0 +1,333 @@
+<!-- <mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button routerLink='/'>PawClub</button>
+    <span class="spacer"></span>
+    <button  mat-button routerLink='/register'>Register</button>
+    <button  mat-button routerLink='/login'>Login</button>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/login'>Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/register'>Register</a>
+    </li> -->
+    <!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </li> -->
+  <!-- </div>
+</nav> -->
+  
+<!-- 
+<nav class="navbar  navbar-expand-md bg-dark navbar-dark" id="MainNav">
+	<div class="container">
+		<a class="navbar-brand" routerLink='/home'><img src="../../../assets/img/pawlogo.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a  class="nav-link" routerLink='/home'>Home</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services</a>
+				<div class="dropdown-menu">
+						<a class="dropdown-item" routerLink='/services/accomodation'>Accomodation</a>
+						<a class="dropdown-item" routerLink='/food'>Food</a>
+						<a class="dropdown-item" routerLink='/services/c-petcare'>Petcare</a>
+						<a class="dropdown-item" routerLink='/services/c-adoption'>Adoption/Lost & Found</a>
+					</div>
+				</li>
+				
+				<li class="nav-item" style="padding-right: 228px;">
+					<a class="nav-link" *ngIf="!_auth.loggedIn()" routerLink='/login'>Login</a>
+        </li>
+        <li class="nav-item" style="padding-right: 228px;">
+					<a class="nav-link" *ngIf="!_auth.loggedIn()"  routerLink='/register'>Register</a>
+        </li> 
+         <li class="nav-item" style="padding-right: 228px;">
+					<a class="nav-link" *ngIf="_auth.loggedIn()" (click)="_auth.logoutUser()" routerLink='/home'>Logout</a>
+        </li>  
+			</ul>
+		</div>
+	</div>
+</nav> -->
+<!-- <mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-button routerLink='/'>PawClub</button>
+    <span class="spacer"></span>
+    <button  mat-button routerLink='/register'>Register</button>
+    <button  mat-button routerLink='/login'>Login</button>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/login'>Login</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink='/register'>Register</a>
+    </li> -->
+    <!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </li> -->
+  <!-- </div>
+</nav> -->
+  
+
+  <!-- <nav class="navbar  navbar-expand-md bg-dark navbar-dark" id="MainNav">
+		<div class="container-fluid">
+		  <a class="navbar-brand" routerLink='/home'><img src="../../../assets/img/pawlogo.png"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item active">
+		        <a  class="nav-link" routerLink='/home'>Home</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services</a>
+				  <div class="dropdown-menu">
+			        <a class="dropdown-item" routerLink='/services/c-accomodation/'>Accomodation</a>
+			        <a class="dropdown-item" routerLink='/services/c-food'>Food</a>
+			        <a class="dropdown-item" routerLink='/services/c-petcare'>Petcare</a>
+			        <a class="dropdown-item" routerLink='/services/c-adoption'>Adoption/Lost & Found</a>
+			      </div>
+		      </li>
+          <li class="nav-item ">
+              <a  class="nav-link" routerLink='/home'>Home</a>
+            </li>
+            <li class="nav-item ">
+                <a  class="nav-link" routerLink='/home'>Home</a>
+              </li>
+              <li class="nav-item">
+                  <a  class="nav-link" routerLink='/home'>Home</a>
+                </li>
+		      <li class="nav-item" style="padding-right: 228px;">
+		        <a class="nav-link" routerLink='/login'>Login</a>
+          </li>
+          <li  class="nav-item">
+            <a>
+              <div id="google_translate_element"> 
+                
+              </div>
+            </a>
+          </li>
+		    </ul>
+      </div>
+		</div>
+  </nav> -->
+
+  <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark" id="MainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/img/pawlogo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active" routerLinkActive="active current">
+            <a class="nav-link" routerLink="home">HOME</a>
+          </li>
+          <li class="nav-item dropdown"  routerLinkActive="active current">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">SERVICES</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink='/services/c-accomodation/'>Accomodation</a>
+                <a class="dropdown-item" routerLink='/services/c-food'>Food</a>
+                <a class="dropdown-item" routerLink='/services/c-petcare'>Petcare</a>
+                <a class="dropdown-item" routerLink='/services/c-adoption'>Adoption/Lost & Found</a>
+              </div></li>
+          <li class="nav-item"  routerLinkActive="active current">
+            <a class="nav-link" href="#">LOST & FOUND</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">DONATE</a>
+          </li> -->
+          <!-- <li class="nav-item"  routerLinkActive="active current">
+            <a class="nav-link" routerLink="login">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark" id="MainNav" >
+    <div class="container-fluid" style="margin-left: 1%">
+      <a class="navbar-brand" routerLink=""><img src="../../../assets/img/live/petwhitelogo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+          <!--<li class="nav-item active">
+            <a class="nav-link" href="#">HOME</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">SERVICES</a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">ACCOMODATION</a>
+              <a class="dropdown-item" href="#">FOOD</a>
+              <a class="dropdown-item" href="#">PETCARE</a>
+              <a class="dropdown-item" href="#">ADOPTION/LOST & FOUND</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">LOST & FOUND</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">DONATE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">CONTACT US</a>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="about-us" routerLinkActive="active" >About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="contact-us" routerLinkActive="active">Contact Us</a>
+          </li>
+          <li class="nav-item">
+           <a class="nav-link" data-target="#myModal2" routerLinkActive="active" *ngIf="!_auth.loggedIn()" data-toggle="modal" href="#">Login</a> 
+          </li>
+          <li class="nav-item dropdown" *ngIf="_auth.loggedIn()" >
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+               {{user}}
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/customer/profile">Profile</a>
+                <a class="dropdown-item" style="cursor: pointer" *ngIf="_auth.loggedIn()" (click)="_auth.logoutUser()">Logout</a> 
+              </div>
+            </li>
+          <!-- <li class="nav-item">
+            <
+            
+           </li> -->
+  
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">Open Small Modal</button> -->
+        </ul>
+        <div>
+            <img style="width: 44px;" src="{{google}}">
+          </div>
+      </div>
+    </div>
+  </nav>
+  
+
+
+
+  <div class="modal fade" id="myModal2">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="modal-dialog">
+        <div class="modal-content">
+     
+          <button type="button" class="close" data-dismiss="modal" id="close_btn">&times;</button>
+     
+          <!-- Modal Header -->
+          <div class="modal-header"><br><br>
+            <div class="container-fluid" style="text-align: center;padding-bottom: 8%">
+                <h2 style="padding-top: 5%">Welcome to Pawclub.in</h2>
+                <hr>
+                <br><br><br>
+                <div class="row">
+     
+                  <div class="col-md-12 container-contact100-form-btn">
+                    <button type="button" class="contact100-form-btn" data-dismiss="modal" routerLink="/customer/login"
+                     class="btn contact100-form-btn btn-block">You wish TO OFFER a service </button>
+                  </div>
+                </div><br><br><br>
+                  <div class="row">
+                    <div class="col-md-12 container-contact100-form-btn">
+                        <button type="button" class=""
+                         data-dismiss="modal" routerLink="/venders/login"
+                        class="btn contact100-form-btn btn-block"
+                       >You wish AVAIL a service</button>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+  
+  

@@ -1,0 +1,28 @@
+
+    .main-head {
+        text-align: right;
+        margin: 10px 0 0 0;
+        width: 72.5%;
+        background: #0000001c;
+        color: #000;
+        font-size: 30px;
+        padding: 20px 130px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .vendorForm{
+        border-radius: 5px;
+        background-color: #000000b3;
+        padding: 15%;
+        margin: 5% 10%;
+    }
+    .btn{
+        margin: 0 25%;
+        width: 50%;
+        background-color: red;
+        color: #fff;
+    }
+    .form-control {
+      color: grey!important;
+    }
+    

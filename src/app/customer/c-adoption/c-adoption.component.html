@@ -1,0 +1,232 @@
+<div class="container-fluid text-center">
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-12 col-sm-4 col-md-4">
+            <a routerLink="/venders/v-petadoption" class="btn btn-info">Add pet for Adoption</a>
+        </div>
+        <div class="col-12 col-sm-4 col-md-4">
+            <a routerLink="/venders/v-found-pet" class="btn btn-success">Report a found pet</a>
+        </div>
+        <div class="col-12 col-sm-4 col-md-4">
+            <a routerLink="/venders/v-lost-found" class="btn btn-danger">Report a lost pet</a>
+        </div>
+    </div>
+</div>
+<div class="page">
+    <div class="container block-padding pt-0">
+        <div class="col-lg-8 offset-lg-2 text-center" style="margin-top: 60px;">
+            <h1 style="margin: 5%">Adoption</h1>
+            <h3>Find a new furry Friend</h3>
+
+        </div>
+
+        <!-- First row: Adopt a pet -->
+        <div id="adoptionpets" class="row mt-5 hide-450">
+
+
+            <div id="post-110"
+             class="post-110 adoption 
+             type-adoption status-publish 
+             has-post-thumbnail hentry"
+              *ngFor="let adoption of adoptions">
+                <!-- Pet  -->
+                <div class="adopt-card res-margin" >
+                    <div class="card bg-light-custom">
+                        <div class="thumbnail text-center">
+                            <!-- Image -->
+
+                            <img class="border-irregular1 img-fluid
+                             scale-down" style="width: 180px; height: 117px;" src="http://localhost:3000/{{adoption.image}}" alt="">
+
+                            <!-- Name -->
+                            <div class="caption-adoption">
+                                <h6 class="adoption-header">{{adoption.name}}</h6>
+                                <!-- List -->
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <strong>Gender: </strong>
+                                        {{adoption.gender}}</li>
+
+                                    <li>
+                                        <strong>Neutered: </strong>
+                                        Yes</li>
+
+                                    <li>
+                                        <strong>Age: </strong>
+                                        {{adoption.age}}</li>
+
+                                    <!--<li><strong>Breed: </strong>  
+                                                 Poodle</li>
+                                                                                                            
+                                                                                                                    <li><strong>Vaccinated: </strong>  
+                                                 Yes</li>
+                                                                                                            
+                                                                                                                    <li><strong>Size: </strong>  
+                                                 Medium</li>-->
+
+
+                                </ul>
+                                <!-- Buttons -->
+                                <div class="text-center">
+                                    <a (click)="OnClick(adoption._id)" class="btn btn-primary">
+                                        More Info
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /thumbnail -->
+                    </div>
+                    <!-- /card -->
+                </div>
+                <!-- /adopt-card -->
+                <!-- /pet -->
+            </div>    
+        </div>
+        <div class="loader-wrapper">
+            <div id="adopen" ng-click="adopen=true"class="loader">
+                <span>+</span>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="col-lg-8 offset-lg-2 text-center" style="margin-top: 60px;">
+            <h1 style="margin: 5%">Found Pets</h1>
+            <h3>We Found Some Pets</h3>
+
+        </div>
+        <div id="foundpets" class="row mt-5 hide-450">
+            <div id="post-110" class="post-110 adoption
+             type-adoption status-publish 
+             has-post-thumbnail hentry"  *ngFor="let found of founds">
+                <!-- Pet  -->
+                <div class="adopt-card res-margin">
+                    <div class="card bg-light-custom">
+                        <div class="thumbnail text-center">
+                            <!-- Image -->
+
+                            <img class="border-irregular1 img-fluid" style="height: 100%; width: 100px;" src="http://localhost:3000/{{found.image}}" alt="">
+
+                            <!-- Name -->
+                            <div class="caption-adoption">
+                                <h6 class="adoption-header">{{found.name}}</h6>
+                                <!-- List -->
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <strong>Gender: </strong>
+                                        {{found.gender}}</li>
+
+                                    <li>
+                                        <strong>Neutered: </strong>
+                                        Yes</li>
+
+                                    <li>
+                                        <strong>Age: </strong>
+                                        2 years</li>
+
+                                    <!--<li><strong>Breed: </strong>  
+                           Poodle</li>
+                                                        
+                                                                            <li><strong>Vaccinated: </strong>  
+                           Yes</li>
+                                                        
+                                                                            <li><strong>Size: </strong>  
+                           Medium</li>-->
+
+
+                                </ul>
+                                <!-- Buttons -->
+                                <div class="text-center">
+                                    <a href="./found/adopt-fluffy.html" class="btn btn-primary">
+                                        More Info
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /thumbnail -->
+                    </div>
+                    <!-- /card -->
+                </div>
+                <!-- /adopt-card -->
+                <!-- /pet -->
+            </div>
+        </div>
+        <div class="loader-wrapper">
+            <div id="foopen" ng-click="foopen=true" class="loader">
+                <span>+</span>
+            </div>
+        </div>
+
+        <div class="col-lg-8 offset-lg-2 text-center" style="margin-top: 60px;">
+            <h1 style="margin: 5%">Lost Pets</h1>
+            <h3>We lost our pets</h3>
+
+        </div>
+        <div id="lostpets" class="row mt-5 hide-450">
+            <div id="post-110" class="post-110 adoption 
+            type-adoption status-publish
+             has-post-thumbnail hentry" *ngFor="let lost of losts">
+                <!-- Pet  -->
+                <div class="adopt-card res-margin">
+                    <div class="card bg-light-custom">
+                        <div class="thumbnail text-center">
+                            <!-- Image -->
+
+                            <img class="border-irregular1 img-fluid" style="height: auto;width: 100px;" src="http://localhost:3000/{{lost.image}}" alt="">
+
+                            <!-- Name -->
+                            <div class="caption-adoption">
+                                <h6 class="adoption-header">{{lost.name}}</h6>
+                                <!-- List -->
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <strong>Gender: </strong>
+                                        {{lost.gender}}</li>
+
+                                    <li>
+                                        <strong>Neutered: </strong>
+                                        Yes</li>
+
+                                    <li>
+                                        <strong>Age: </strong>
+                                        2 years</li>
+
+                                    <!--<li><strong>Breed: </strong>  
+                           Poodle</li>
+                                                        
+                                                                            <li><strong>Vaccinated: </strong>  
+                           Yes</li>
+                                                        
+                                                                            <li><strong>Size: </strong>  
+                           Medium</li>-->
+
+
+                                </ul>
+                                <!-- Buttons -->
+                                <div class="text-center">
+                                    <a href="./lost/adopt-fluffy.html" class="btn btn-primary">
+                                        More Info
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /thumbnail -->
+                    </div>
+                    <!-- /card -->
+                </div>
+                <!-- /adopt-card -->
+                <!-- /pet -->
+            </div>
+        </div>
+        <div class="loader-wrapper mb-3">
+            <div id="loopen" ng-click="loopen=true" class="loader">
+                <span>+</span>
+            </div>
+        </div>
+        <!--<div class="col-md-12 mt-5">
+                <nav aria-label="pagination">
+                   <ul class="pagination float-right"><li class="page-item"><a aria-label="Previous" class="page-link" href="index.html"><span aria-hidden="true" class="hidden-xs">Previous</span><span class="visible-xs"></span></a></li><li class="page-item"><a class="page-link active">1</a></li><li class="page-item"><a class="page-link" href="page/2/index.html">2</a></li><li class="page-item"><a aria-label="Next" class="page-link" href="page/2/index.html"><span aria-hidden="true" class="hidden-xs">Next</span><span class="visible-xs"></span></a></li></ul></nav></div> -->
+        <!-- /col-md -->
+        <!--</div>-->
+        <!-- /container -->
+    </div>

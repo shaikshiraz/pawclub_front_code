@@ -1,0 +1,111 @@
+<!-- <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style> -->
+<!-- <body class="w3-light-grey w3-content" style="max-width:1600px"> -->
+
+<!-- Sidebar/menu -->
+<div class="col-md-12">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col-md-3">
+          <nav class="w3-sidebar sidenav
+          w3-collapse hidden-xs"
+           style="width:300px; height: 700px;
+           background-color:beige" ><br>
+             <div class="w3-container">
+              <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+                <i class="fa fa-remove"></i>
+              </a>
+              <img src="../../../assets/img/accomodationser.png" 
+              style="width:35%; margin-left: 95px; " class="w3-round" 
+              class="rounded-circle"><br><br>
+              <h4 style="text-align:center"><b >View Profile</b></h4>
+            </div>
+            <div class="w3-bar-block">
+              
+                  <a class="nav-link active" routerLink="/services/c-myorders"
+                  class="w3-bar-item w3-button w3-text-teal" style="text-align:center">
+                  <i class="fa fa-shopping-cart fa-fw w3-margin-right"
+                  data-toggle="tab"  href="#home"></i>My Orders</a>
+                
+                <a href="javascript:void(0)"  class="nav-link"  data-toggle="tab" href="#menu1"
+                 class="w3-bar-item w3-button w3-text-teal" style="text-align:center;padding-right: 31px;">
+                 <i class="fa fa-star fa-fw w3-margin-right"></i>Reviews</a> 
+  
+                 <a class="nav-link active" routerLink="/customer/c-account"
+                 class="w3-bar-item w3-button" style="text-align:center">
+                 <i class="fa fa-user fa-fw w3-margin-right"
+                 data-toggle="tab"  href="#home"></i>Edit Profile</a>
+  
+              <a routerLink="/" *ngIf="_auth.loggedIn()" (click)="_auth.logoutUser()"  style="text-align:center;padding-right: 31px;">
+                
+                <i class="fas fa-power-off fa-fw w3-margin-right"  >
+              </i>Logout</a> 
+            
+            
+            </div> 
+           
+           
+          </nav>
+               </div>
+  
+               <div  class="col-md-8">
+    
+                <div id="portfolio"> 
+                  <div class="col-md-12">
+                      <div class="container tab-content">
+                            
+                              <div  id="home" class=" row container tab-pane active">
+                              
+                               <div class="col-md-8">
+                                  <h2>{{Firstname}} {{Lastname}}</h2>
+                                  <h5>Members Since {{MemberSince}}</h5>
+                                  
+                                  <h5>We Possess 3 pets</h5>
+                                  <br>
+                                  <h3>Review  <img src="../../../assets/img/icons8-yelp-48.png">(0)</h3><hr>
+                                  <p>Ramaswamy hasn't posted any reviews.</p>
+                                 <br><br>
+                                  <h3>Photos<img src="../../../assets/img/icons8-medium-icons-48.png">(2)</h3><hr>
+                                  <img src="../../../assets/img/accomodationser.png">
+                                   <img src="../../../assets/img/Swimming.jpg" style="height: 170px;width: 170px; margin-left:10%;">
+                                   <br><br><br>
+                          
+                                   </div> 
+                              </div>
+                          
+                          </div>
+                         
+                        </div>
+              
+                      
+                
+               </div>
+               
+              </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+                
+                 
+                         
+                 
+                 
+                         
+  

@@ -1,0 +1,628 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 banner-col">
+      <img class="banner-img" src="../../../../assets/img/bannerimg.png">
+      <h2 class="main-head">ACCOMODATION</h2>
+      <div class="banner-items">
+        <form id="searchform">
+          <select class="selectcity" name="select-city" id="select-city">
+            <option value="">Select city</option>
+            <option value="city1">city1</option>
+            <option value="city2">city2</option>
+          </select>
+          <div class="grouped">
+            <div class="grouped-left">
+              <input type="text" id="date1" class="date1" placeholder="MM/DD/YYYY">
+            </div>
+            <div class="grouped-right">
+              <input type="text" id="date2" class="date2" placeholder="MM/DD/YYYY">
+            </div>
+          </div>
+          <div class="grouped">
+            <div class="grouped-left">
+              <select class="breed" name="Breed">
+                <option value="">Breed</option>
+                <option>breed1</option>
+                <option>breed2</option>
+              </select>
+            </div>
+            <div class="grouped-right">
+              <select type="text" class="count" placeholder="No. of pets">
+                <option value="">No. of pets</option>
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+          </div>						
+          <button type="button" id="searchbutton">Search</button>
+        </form>
+      </div>
+      <span class="verified-vendor">Verified Vendor</span>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 p-0">
+      <h2 class="sub-head">HOME STAY</h2>
+      <div class="starw">
+          <img src="../../../../assets/img/star.png">
+          <img src="../../../../assets/img/star.png">
+          <img src="../../../../assets/img/star.png">
+          <img src="../../../../assets/img/star.png">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row m-0">
+    <div class="col-md-12 breadcrumbs">
+      <img src="../../../../assets/img/smallhome.png"> >
+      <a href="#">SERVICES</a> >
+      <a href="#">ACCOMODATION</a> >
+      <a href="#">HOME STAY</a> >
+      <span>THE QUARTER</span>
+    </div>
+  </div>
+</div>
+<div class="container-fluid center-sec">
+  <div class="row mx-0">
+    <div class="col-lg-9 content-area">
+      <div class="row">
+        <div class="col-md-12 cont-col">
+          <h2 id="vname" data-vid="0123456789">The Quarter, <span href="#">Jubilee Hills, </span><span href="#">Hyderabad, </span><span href="#">Telangana State, </span><span href="#">India</span></h2>
+          <p>The Quater is a great place to hang out with your favourite pet. We provide al types of amenities. The place where you can forget everything and relax along with your pet. A great sea-view hotel with equally awesome weather rejuvenates you. Come have an amazing experience with us.</p>
+        </div>
+        <div class="col-md-6 fac-col">
+          <h3>Facilities we offer</h3>
+          <div class="row">
+            <div class="col-md-12 facility-col">
+              <div class="facility">
+                <div class="lefter"><h4>Pick up and drop @Rs 7/km</h4></div>
+                <div class="righter"><img src="../../../../assets/img/greytransport.jpg"></div>
+              </div>
+              <div class="facility">
+                <div class="lefter"><h4>Open play area</h4></div>
+                <div class="righter"><img src="../../../../assets/img/greyground.jpg"></div>
+              </div>
+              <div class="facility">
+                <div class="lefter"><h4>Accomodation @Rs 50/Hr</h4></div>
+                <div class="righter"><img src="../../../../assets/img/greyhome.jpg"></div>
+              </div>
+              <div class="facility">
+                <div class="lefter"><h4>Home Cooked Food @Rs 45/meal</h4></div>
+                <div class="righter"><img src="../../../../assets/img/greyfood.jpg"></div>
+              </div>
+              <div class="facility">
+                <div class="lefter"><h4>Senior Dog handling experience</h4></div>
+                <div class="righter"><img src="../../../../assets/img/greydogexp.jpg"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-center pt-2">Availability Calendar</h4>
+        </div>
+        <div class="col-md-6">
+          <p class="bg-warning text-white my-0 py-2 px-3 rounded text-center">
+            Warning!. Maximum Quantity You Can Select From Each Table is&nbsp; - <strong id="maxqty">10</strong> -
+          </p>
+        </div>
+        <div class="col-sm-12">
+          <h4 class="pt-2">Services charges are:</h4>
+          <div class="rows">
+            <div class="col-sm-12 d-flex justify-content-md-start flex-wrap px-0 pb-2">
+              <div class="pr-3">
+                <label for="startdate" class="startdate pl-1">From:</label>
+                <input type="text" id="startdate" name="startdate" />
+              </div>
+              <div class="pull-xs-left">
+                <label for="enddate" class="enddate pl-1">To:</label>
+                <input type="text" id="enddate" name="enddate" />
+              </div>
+            </div>
+            <div class="col-sm-12" id="msg"></div>
+          </div>
+          <div class="row m-0">
+            <div class="col-sm-12 table-wrapper-col px-3">
+              
+
+
+
+
+              <!-- table-div start -->
+
+
+
+
+
+
+              <form class="row">
+                <div id="pricetable1" class="col-12 pricetable my-1">
+                  <div class="row">
+                    <div class="col-12 tphead-main-wrapper px-0">
+                      <h3 class="bullet-style">A</h3>
+                      <h2 id="tphead-main-1" data-stype="homestay">Homestay</h2>
+                    </div>
+                    <div class="col-sm-9 col-12 tphead-sub-h">
+                      <div class="row">
+                        <div class="col-sm-1 col-2 px-0 text-center"><label>Select</label></div>
+                        <div class="col-sm-2 col-4"><label>Services For</label></div>
+                        <div class="col-sm-4 col-6"><label>Breed</label></div>
+                        <div class="col-sm-2 qty-head"><label>Quantity</label></div>
+                        <div class="col-sm-3 dark-blue-bg cperd-head"><label>Cost For <span class="days">1</span> day(s)</label></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3 col-12 tphead-sub-h tphead-sub-total">
+                      <div class="row">
+                        <div class="col-12"><label>Sub Total</label></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-9 col-12 tpbody">
+                      <div id="pricetable-1-row-1" class="row row-1 pricetablerow">
+                        <div id="pricetable-1-row-1-col-1" class="col-2 data-fetch table-h-col-1 d-none" data-price="20" data-sdate="" data-edate="" data-days="" data-qty="" data-breed="" data-total="" data-btype="Large Dog" data-selected=""></div>
+                        <div class="col-sm-1 col-2 selectorcheck-wrapper text-right pt-2"><input type="checkbox" class="selectorcheck"></div>
+                        <div class="col-sm-2 col-4 servicefor">Large Dog</div>
+                        <div class="col-sm-4 col-6 breedname-wrapper">
+                          <p class="my-0 fz-9 color-0ab21b">ctrl + click to multiselect/deselect</p>
+                          <select id="pricetable-1-row-1-breed" class="breedname" multiple>
+                            <option>Dobbermann</option>
+                            <option>Greate Dane</option>
+                            <option>Neapolitan mastiff</option>
+                            <option>New Type</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-2 col-4 offset-2 offset-sm-0 quantity">
+                          <div class="quantity-set not-setted">
+                            <select type="number" name="" class="w-75 py-0 fz-9">
+                              <option value="1">1</option>
+                            </select>
+                            <div class="w-25 qn-wrapper">
+                              <div class="qn">
+                                <h2 class="qn-info not-selected ">Select one breed</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                          <h6 class="text-center mb-0">
+                            <span class="color-07c">&#x20B9; </span>
+                            <span class="costperday-total color-07c">20</span>
+                          </h6>
+                          <p class="mb-0 fz-9"><b>This price is for:</b></p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-breed">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;breed(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-days">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;day(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-0ab21b">minimum per unit is</span>
+                              <span class="color-07c">&nbsp;&#x20B9;&nbsp;</span>
+                              <span class="color-07c">20</span>
+                            </b>
+                          </p>
+                        </div>
+                      </div>
+                      <div id="pricetable-1-row-2" class="row row-2 pricetablerow">
+                        <div id="pricetable-1-row-2-col-1" class="col-2 data-fetch table-h-col-2 d-none" data-price="30" data-sdate="" data-edate="" data-days="" data-qty="" data-breed="" data-total="" data-btype="Medium Dog" data-selected=""></div>
+                        <div class="col-sm-1 col-2 selectorcheck-wrapper text-right pt-2"><input type="checkbox" class="selectorcheck"></div>
+                        <div class="col-sm-2 col-4 servicefor">Medium Dog</div>
+                        <div class="col-sm-4 col-6 breedname-wrapper">
+                          <p class="my-0 fz-9 color-0ab21b">ctrl + click to multiselect/deselect</p>
+                          <select id="pricetable-1-row-2-breed" class="breedname" multiple>
+                            <option>Dobbermann</option>
+                            <option>Greate Dane</option>
+                            <option>Neapolitan mastiff</option>
+                            <option>New Type</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-2 col-4 offset-2 offset-sm-0 quantity">
+                          <div class="quantity-set not-setted">
+                            <select type="number" name="" class="w-75 py-0 fz-9">
+                              <option value="1">1</option>
+                            </select>
+                            <div class="w-25 qn-wrapper">
+                              <div class="qn">
+                                <h2 class="qn-info not-selected ">Select one breed</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                          <h6 class="text-center mb-0">
+                            <span class="color-07c">&#x20B9; </span>
+                            <span class="costperday-total color-07c">30</span>
+                          </h6>
+                          <p class="mb-0 fz-9"><b>This price is for:</b></p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-breed">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;breed(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-days">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;day(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-0ab21b">minimum per unit is</span>
+                              <span class="color-07c">&nbsp;&#x20B9;&nbsp;</span>
+                              <span class="color-07c">30</span>
+                            </b>
+                          </p>
+                        </div>
+                      </div>
+                      <div id="pricetable-1-row-3" class="row row-3 pricetablerow">
+                        <div id="pricetable-1-row-3-col-1" class="col-2 data-fetch table-h-col-3 d-none" data-price="15" data-sdate="" data-edate="" data-days="" data-qty="" data-breed="" data-total="" data-btype="Small Dog" data-selected=""></div>
+                        <div class="col-sm-1 col-2 selectorcheck-wrapper text-right pt-2"><input type="checkbox" class="selectorcheck"></div>
+                        <div class="col-sm-2 col-4 servicefor">Small Dog</div>
+                        <div class="col-sm-4 col-6 breedname-wrapper">
+                          <p class="my-0 fz-9 color-0ab21b">ctrl + click to multiselect/deselect</p>
+                          <select id="pricetable-1-row-3-breed" class="breedname" multiple>
+                            <option>Dobbermann</option>
+                            <option>Greate Dane</option>
+                            <option>Neapolitan mastiff</option>
+                            <option>New Type</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-2 col-4 offset-2 offset-sm-0 quantity">
+                          <div class="quantity-set not-setted">
+                            <select type="number" name="" class="w-75 py-0 fz-9">
+                              <option value="1">1</option>
+                            </select>
+                            <div class="w-25 qn-wrapper">
+                              <div class="qn">
+                                <h2 class="qn-info not-selected ">Select one breed</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                          <h6 class="text-center mb-0">
+                            <span class="color-07c">&#x20B9; </span>
+                            <span class="costperday-total color-07c">15</span>
+                          </h6>
+                          <p class="mb-0 fz-9"><b>This price is for:</b></p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-breed">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;breed(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-days">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;day(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-0ab21b">minimum per unit is</span>
+                              <span class="color-07c">&nbsp;&#x20B9;&nbsp;</span>
+                              <span class="color-07c">15</span>
+                            </b>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3 col-12 tpsubtotal">
+                      <div class="row">
+                        <div class="col-12 subtotal-wrapper">&#x20B9; <span class="subtotal">00.00</span></div>
+                      </div>
+                    </div>
+                    <div class="col-3 d-none subtotal-dnone"><span id="subtotal-dnone-1" data-stotal="0"></span></div>
+                  </div>
+                </div>
+
+
+
+
+                <div id="pricetable2" class="col-12 pricetable my-1">
+                  <div class="row">
+                    <div class="col-12 tphead-main-wrapper px-0">
+                      <h3 class="bullet-style">A</h3>
+                      <h2 id="tphead-main-2" data-stype="food">FOOD</h2>
+                    </div>
+                    <div class="col-sm-9 col-12 tphead-sub-h">
+                      <div class="row">
+                        <div class="col-sm-1 col-2 px-0 text-center"><label>Select</label></div>
+                        <div class="col-sm-2 col-4"><label>Services For</label></div>
+                        <div class="col-sm-4 col-6"><label>Breed</label></div>
+                        <div class="col-sm-2 qty-head"><label>Quantity</label></div>
+                        <div class="col-sm-3 dark-blue-bg cperd-head"><label>Cost For <span class="days">1</span> day(s)</label></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3 col-12 tphead-sub-h tphead-sub-total">
+                      <div class="row">
+                        <div class="col-12"><label>Sub Total</label></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-9 col-12 tpbody">
+                      <div id="pricetable-2-row-1" class="row row-1 pricetablerow">
+                        <div id="pricetable-2-row-1-col-1" class="col-2 data-fetch table-h-col-1 d-none" data-price="20" data-sdate="" data-edate="" data-days="" data-qty="" data-breed="" data-total="" data-btype="Large Dog" data-selected=""></div>
+                        <div class="col-sm-1 col-2 selectorcheck-wrapper text-right pt-2"><input type="checkbox" class="selectorcheck"></div>
+                        <div class="col-sm-2 col-4 servicefor">Large Dog</div>
+                        <div class="col-sm-4 col-6 breedname-wrapper">
+                          <p class="my-0 fz-9 color-0ab21b">ctrl + click to multiselect/deselect</p>
+                          <select id="pricetable-1-row-1-breed" class="breedname" multiple>
+                            <option>Dobbermann</option>
+                            <option>Greate Dane</option>
+                            <option>Neapolitan mastiff</option>
+                            <option>New Type</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-2 col-4 offset-2 offset-sm-0 quantity">
+                          <div class="quantity-set not-setted">
+                            <select type="number" name="" class="w-75 py-0 fz-9">
+                              <option value="1">1</option>
+                            </select>
+                            <div class="w-25 qn-wrapper">
+                              <div class="qn">
+                                <h2 class="qn-info not-selected ">Select one breed</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                          <h6 class="text-center mb-0">
+                            <span class="color-07c">&#x20B9; </span>
+                            <span class="costperday-total color-07c">20</span>
+                          </h6>
+                          <p class="mb-0 fz-9"><b>This price is for:</b></p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-breed">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;breed(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-days">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;day(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-0ab21b">minimum per unit is</span>
+                              <span class="color-07c">&nbsp;&#x20B9;&nbsp;</span>
+                              <span class="color-07c">20</span>
+                            </b>
+                          </p>
+                        </div>
+                      </div>
+                      <div id="pricetable-2-row-2" class="row row-2 pricetablerow">
+                        <div id="pricetable-2-row-2-col-1" class="col-2 data-fetch table-h-col-2 d-none" data-price="30" data-sdate="" data-edate="" data-days="" data-qty="" data-breed="" data-total="" data-btype="Medium Dog" data-selected=""></div>
+                        <div class="col-sm-1 col-2 selectorcheck-wrapper text-right pt-2"><input type="checkbox" class="selectorcheck"></div>
+                        <div class="col-sm-2 col-4 servicefor">Medium Dog</div>
+                        <div class="col-sm-4 col-6 breedname-wrapper">
+                          <p class="my-0 fz-9 color-0ab21b">ctrl + click to multiselect/deselect</p>
+                          <select id="pricetable-1-row-2-breed" class="breedname" multiple>
+                            <option>Dobbermann</option>
+                            <option>Greate Dane</option>
+                            <option>Neapolitan mastiff</option>
+                            <option>New Type</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-2 col-4 offset-2 offset-sm-0 quantity">
+                          <div class="quantity-set not-setted">
+                            <select type="number" name="" class="w-75 py-0 fz-9">
+                              <option value="1">1</option>
+                            </select>
+                            <div class="w-25 qn-wrapper">
+                              <div class="qn">
+                                <h2 class="qn-info not-selected ">Select one breed</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                          <h6 class="text-center mb-0">
+                            <span class="color-07c">&#x20B9; </span>
+                            <span class="costperday-total color-07c">30</span>
+                          </h6>
+                          <p class="mb-0 fz-9"><b>This price is for:</b></p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-breed">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;breed(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-days">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;day(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-0ab21b">minimum per unit is</span>
+                              <span class="color-07c">&nbsp;&#x20B9;&nbsp;</span>
+                              <span class="color-07c">30</span>
+                            </b>
+                          </p>
+                        </div>
+                      </div>
+                      <div id="pricetable-2-row-3" class="row row-3 pricetablerow">
+                        <div id="pricetable-2-row-3-col-1" class="col-2 data-fetch table-h-col-3 d-none" data-price="15" data-sdate="" data-edate="" data-days="" data-qty="" data-breed="" data-total="" data-btype="Small Dog" data-selected=""></div>
+                        <div class="col-sm-1 col-2 selectorcheck-wrapper text-right pt-2"><input type="checkbox" class="selectorcheck"></div>
+                        <div class="col-sm-2 col-4 servicefor">Small Dog</div>
+                        <div class="col-sm-4 col-6 breedname-wrapper">
+                          <p class="my-0 fz-9 color-0ab21b">ctrl + click to multiselect/deselect</p>
+                          <select id="pricetable-1-row-3-breed" class="breedname" multiple>
+                            <option>Dobbermann</option>
+                            <option>Greate Dane</option>
+                            <option>Neapolitan mastiff</option>
+                            <option>New Type</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-2 col-4 offset-2 offset-sm-0 quantity">
+                          <div class="quantity-set not-setted">
+                            <select type="number" name="" class="w-75 py-0 fz-9">
+                              <option value="1">1</option>
+                            </select>
+                            <div class="w-25 qn-wrapper">
+                              <div class="qn">
+                                <h2 class="qn-info not-selected ">Select one breed</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 col-6">
+                          <h6 class="text-center mb-0">
+                            <span class="color-07c">&#x20B9; </span>
+                            <span class="costperday-total color-07c">15</span>
+                          </h6>
+                          <p class="mb-0 fz-9"><b>This price is for:</b></p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-breed">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;breed(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-07c costperday-days">1</span>
+                              <span class="color-07c">x </span>
+                              <span class="color-0ab21b">&nbsp;day(s)</span>
+                            </b>
+                          </p>
+                          <p class="mb-0 fz-9">
+                            <b>
+                              <span class="color-0ab21b">minimum per unit is</span>
+                              <span class="color-07c">&nbsp;&#x20B9;&nbsp;</span>
+                              <span class="color-07c">15</span>
+                            </b>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3 col-12 tpsubtotal">
+                      <div class="row">
+                        <div class="col-12 subtotal-wrapper">&#x20B9; <span class="subtotal">00.00</span></div>
+                      </div>
+                    </div>
+                    <div class="col-3 d-none subtotal-dnone"><span id="subtotal-dnone-2" data-stotal="0"></span></div>
+                  </div>
+                </div>
+
+
+
+
+                <div id="grand-total-wrapper" class="col-12 grand-total my-2 px-0">
+                  <h4 id="grand-total-displayed" class="text-right m-0">Grand Total: &#x20B9; <span>00.00</span></h4>
+                </div>
+                <div id="submitprice-wrapper" class="col-12 pricetable-submit text-right my-2 px-0" style="display: none;">
+                  <button id="submitprice" class="btn btn-warning">Add To Cart</button>
+                  <span id="grand-total-dnone" data-gtotal="0"></span>
+                </div>
+              </form>
+
+
+
+
+
+              <!-- table-div end -->
+
+
+
+
+
+
+            </div>
+            <div class="col-sm-12" id="cashbuttons" style="display: none;">
+              <div class="row">
+                <div class="col-sm-6">
+                  <button type="button" class="btn btn-warning btn-lg btn-block mt-3">Add to Cart</button>
+                </div>
+                <div class="col-sm-6">
+                  <button type="button" class="btn btn-success btn-lg btn-block mt-3">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 slider-col">
+      <div class="v-slide-area">
+        <h2 class="gal-head">GALLERY</h2>
+        <div class="gal-up">
+          <i class="next fa fa-angle-up" aria-hidden="true"></i>
+        </div>
+        <div class="v-slider">
+          <div id="owl-demo">
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog1.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog2.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog3.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog1.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog2.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog3.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog1.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog2.jpg" alt="Image"></div>
+            <div class="item"><img class="item-img" src="../../../../assets/img/img/qtdog3.jpg" alt="Image"></div>
+          </div>
+        </div>
+        <div class="gal-down">
+          <i class="prev fa fa-angle-down" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 review-flexwise">
+      <div class="row">
+        <div class="col-md-12 review-show-col">
+          <h2>Customer Review <span class="small-review">(<span>The Quater</span> reviewed a rating of <span>4</span> out of 5)</span></h2>
+          <div class="row">
+            <div class="col-r-left">
+              <img src="../../../../assets/img/img/clientreply1.jpg">
+              <p class="text-center">John</p>
+            </div>
+            <div class="col-r-right">
+              <div class="stary">
+                <img src="../../../../assets/img/img/stary.jpg">
+                <img src="../../../../assets/img/img/stary.jpg">
+                <img src="../../../../assets/img/img/stary.jpg">
+                <img src="../../../../assets/img/img/stary.jpg">
+              </div>
+              <div class="review-text">
+                <p class="r-words">"We were so happy to find a ghost tour where dogs were allowed. We thoroughly enjoyed ourselves on the tour:"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 review-put-col">
+          <button class="review-btn">Write a review</button>
+          <textarea class="review-t-area" rows="4"></textarea>
+          <div class="commment-cancel">
+            <button>commment</button>
+            <button>cancel</button>
+          </div>
+          <div id="serverdate" class="d-none">12/10/2018</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{myData.city}}

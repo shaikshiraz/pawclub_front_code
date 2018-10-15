@@ -1,0 +1,59 @@
+.bg-black-111 {
+    background-color: #111111 !important;
+    position: sticky;z-index: 999;
+}
+
+.pb-0 {
+    padding-bottom: 0px !important;
+}
+.pt-40 {
+    padding-top: 40px !important;
+}
+.text-theme-colored {
+    color: #F19F1F !important;
+}
+.widget {
+    margin-bottom: 40px;
+}
+.pl-10 {
+    padding-left: 10px !important;
+}
+.pr-10 {
+    padding-right: 10px !important;
+}
+.m-0 {
+    margin: 0px !important;
+}
+.mr-5 {
+    margin-right: 5px!important;
+}
+.widget.dark .widget-title {
+    color: #fff !important;
+}
+.line-bottom:after {
+    bottom: -1px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 50px;
+}
+.col-sm-11.col-md-11.foothover a:hover {
+    color: orange !important;
+}
+a:hover i.fa-facebook{color: #065887;}
+a:hover i.fa-twitter{color: #3ee6e0;}
+a:hover i.fa-instagram{color: #f00;}
+a:hover i.fa-youtube{color: red;}
+
+ul.list-border li a:hover {
+    color: orange !important;
+}
+* ,h1,h2,h4,h5,h6{font-family: 'Fira Sans', sans-serif;font-size: 0.8rem;}
+h3{font-family: Montserrat,sans-serif;font-size: 25px;color: #494848;}
+p{font-size: 0.5rem;}
+
+@font-face { 
+    font-family: "FontAwesome";
+    src: url("http://www.mysite.com/fonts/fontawesome-webfont.eot?v=4.0.3");
+    }

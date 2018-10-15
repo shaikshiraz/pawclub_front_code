@@ -1,0 +1,663 @@
+<div class="container-fluid fpd">
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="cercledoghead text-center">Grooming</h2>
+  
+            <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+                  width: 100%;" src="../../../assets/img/static/Grooming.jpeg"
+              class="rounded-circle" alt="Cinque Terre">
+          </div>
+          <div class="col-md-12 red-logo-area">
+            <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-lg-9">
+        <div class="row">
+          <div class="col-md-12 form-col mx-auto">
+            <form [formGroup]="GroomingForm" (ngSubmit)="Grooming(GroomingForm.value)" class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="name">Name of Grooming Center</label>
+                  <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter Name"
+                    required>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="name">Contact Person Name</label>
+              </div>
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" formControlName="firstname" id="firstname" placeholder="First Name"
+                        required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" formControlName="lastname" id="lastname" placeholder="Last Name"
+                        required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" formControlName="email" id="email" placeholder="Email Address"
+                        required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" formControlName="phoneno" id="phoneno" placeholder="Phone Number"
+                        required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="name">Address</label>
+                  <input type="text" class="form-control" formControlName="address1" id="address1" placeholder="Address Line1*"
+                    required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="address2" id="address2" placeholder="Address Line2*"
+                    required>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <select name="country" formControlName="country" class="countries form-control" id="countryId">
+                        <option value="">Select Country</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <select name="state" formControlName="state" class="states form-control" id="stateId">
+                        <option value="">Select State</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <select name="city" formControlName="city" class="cities form-control" id="cityId">
+                        <option value="">Select City</option>
+                      </select>
+  
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <input type="number" formControlName="pincode" 
+                      onKeyPress="if(this.value.length==6) return false;"
+                      class="form-control" id="zip" placeholder="zipcode">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Area that the services available</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                   <div class="form-group">
+                        <input id="searchTextField" type="text" size="50" 
+                        class="form-control" formControlName="ServiceArea"  placeholder="Enter a location" autocomplete="on">
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+  
+              <!-- <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-row">
+  
+                      <div class="form-group col-md-6 col-lg-8">
+                        <label for="date">Date and time are available</label>
+                      </div>
+  
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-row">
+                      <div class="form-group col-md-3 col-lg-6">
+                        <select class="form-control" id="state" required>
+                          <option value="">From</option>
+                          <option>Andra</option>
+                          <option>Karnataka</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-3 col-lg-6">
+                        <select class="form-control" id="state" required>
+                          <option value="">To</option>
+                          <option>Andra</option>
+                          <option>Karnataka</option>
+                        </select>
+                      </div>
+  
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+  
+              <!-- <div class="col-md-12">
+                          <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-row">
+                              <div class="form-group">
+                              <label>Home services that are avilable</label>
+                              </div>
+                              
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                                
+                            </div>
+                          </div>
+                        </div>
+                   
+                        <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-2 col-lg-3">
+              
+                              </div>
+                              <div class="col-md-9 col-lg-12">
+                                <div class="form-row">
+              
+                                
+                                <div class="col-md-2 col-lg-3 col-lg-1">
+                                    <div class="form-group gb">
+                                    <img src="../../../assets/img/home visit.png"
+                                    height="45px;">
+                                        </div>
+                                </div>
+                                <div class="col-md-2 col-lg-3 col">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="date" class="form-control" id="reqments" required>
+                                      </div>
+                                </div>
+                                <div class="col-md-2 col-lg-3">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="date" class="form-control" id="reqments" required>
+                                      </div>
+                                </div>
+                                <div class="col-md-2 col-lg-3">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="date" class="form-control" id="reqments" required>
+                                      </div>
+                                </div>
+                               
+                              </div>
+                            </div>
+                            </div>
+                          </div> -->
+  
+              <div class="col-md-12">
+                <div class=" form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label>Cost type of services</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class=" switch">
+                        <input type="checkbox" id="change_custum1" formControlName="serviceCost" value="0">
+                        <div class="slider round">
+                          <span class="on">YES</span><span class="off">NO</span>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-12" id="cust_change2" style="display: none;">
+                <div class="row">
+                  <div class="col-md-12 account">
+                    <div class="row">
+                      <div class="col-md-4">
+                         <label>(Click icons) to enter the cost
+                            </label>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="row">
+                          <div class="col-md-3 col-3">
+                            <div id="dog_1">
+                              <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 30px;">
+                            </div>
+                            <!-- <div id="dog_2" style="display: none;">
+                                  <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 30px;">
+                                </div>
+                                <div style="display:none;">
+                                  <input type="checkbox" id="dog">
+                                </div> -->
+                          </div>
+                          <div class="col-md-3 col-3">
+                            <div id="medium_paw_1">
+                              <img src="../../../assets/img/Icons/DogGreen.png" style="height: 40px;">
+                            </div>
+                            <!-- <div id="medium_paw_2" style="display: none;">
+                                  <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 40px;">
+                                </div>
+                                <div style="display: none;">
+                                  <input type="checkbox" id="medium_paw">
+                                </div> -->
+                          </div>
+                          <div class="col-md-3 col-3">
+                            <div id="large_paw_1">
+                              <img src="../../../assets/img/Icons/DogGreen.png" style="height: 60px;">
+                            </div>
+                            <!-- <div id="large_paw_2" style="display: none;">
+                                  <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 60px;">
+                                </div>
+                                <div style="display: none;">
+                                  <input type="checkbox" id="large_paw">
+                                </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-row">
+                      <div class="col-md-3 col-lg-6">
+                        <label>Type of services</label>
+                        <div class="form-group name">
+                          <label>Bath</label>
+                        </div>
+                        <div class="form-group name">
+                          <label>Haircut</label>
+                        </div>
+                        <div class="form-group name">
+                          <label>Nailcut</label>
+                        </div>
+                        <div class="form-group name">
+                          <label>Styling</label>
+                        </div>
+                        <div class="form-group name">
+                          <label>Spa services</label>
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-lg-6">
+                        <label>Logos</label>
+                        <div id="bath_1" class="logo">
+                          <img class="center-block" src="../../../assets/img/Icons/BathGrey.png" height="38px;">
+                        </div>
+                        <div id="bath_2" class="logo" style="display:none">
+                          <img class="center-block" src="../../../assets/img/Icons/BathGreen.png" height="38px;">
+                        </div>
+                        <div class="logo" style="display: none;">
+                          <input type="checkbox" id="bath">
+                        </div>
+                        <div class="logo" id="hair_1">
+                          <img class="center-block" src="../../../assets/img/Icons/HaircutGrey.png" height="38px;">
+                        </div>
+                        <div id="hair_2" class="logo" style="display:none">
+                          <img class="center-block" src="../../../assets/img/Icons/HaircutGreen.png" height="38px;">
+                        </div>
+                        <div style="display:none;" class="logo">
+                          <input type="checkbox" id="hair">
+                        </div>
+                        <div id="nail_1" class="logo">
+                          <img class="center-block" src="../../../assets/img/Icons/NailCutGrey.png" height="38px;">
+                        </div>
+                        <div id="nail_2" style="display:none;" class="logo">
+                          <img class="center-block" src="../../../assets/img/Icons/NailCutGreen.png" height="38px;">
+                        </div>
+                        <div style="display:none;" class="logo">
+                          <input type="checkbox" id="nail">
+                        </div>
+                        <div id="style_1" class="logo">
+                          <img class="center-block" src="../../../assets/img/Icons/StylingGrey.png" height="38px;">
+                        </div>
+                        <div id="style_2" style="display:none" class="logo">
+                          <img class="center-block" src="../../../assets/img/Icons/StylingGreen.png" height="38px;">
+                        </div>
+                        <div style="display:none;" class="logo">
+                          <input type="checkbox" id="style">
+                        </div>
+                        <div id="other_1" class="logo">
+                          <img class="center-block" src="../../../assets/img/Icons/DogSpaGrey.png" height="38px;">
+                        </div>
+                        <div id="other_2" class="mt-1" style="display:none;">
+                          <img class="center-block" src="../../../assets/img/Icons/DogSpaGreen.png" height="38px;">
+                        </div>
+                        <div style="display:none;" class="logo">
+                          <input type="checkbox" id="other">
+                        </div>
+                      </div>
+                      <input type="text" formControlName="otherServices" class="form-control" placeholder="Other services">
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="form-row">
+                      <div class="col-md-2 col-lg-3 col-3">
+                        <div>
+                          <label class="">Small Paws</label>
+                          <div class="form-group">
+                            <input type="text" formControlName="small" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="small1" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="small2" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="small3" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="small4" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="small5" class="from form-control" placeholder="INR">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 col-lg-3 col-3">
+                        <div>
+                          <label class="">Medium Paws</label>
+                          <div class="form-group">
+                            <input type="text" formControlName="medium" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="medium1" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="medium2" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="medium3" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="medium4" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="medium5" class="from form-control" placeholder="INR">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 col-lg-3 col-3">
+                        <div>
+                          <label class="">Large Paws</label>
+                          <div class="form-group">
+                            <input type="text" formControlName="large" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="large1" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="large2" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="large3" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="large4" class="from form-control" placeholder="INR">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" formControlName="large5" class="from form-control" placeholder="INR">
+                          </div>
+  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="inc col-md-12">
+                                       
+                                                <div class="row" >
+                                                    <div class="col-md-2" >
+                                                        <div class="form-group" > 
+                                                        <input  placeholder="Other Services" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2" >
+                                                    <div class="form-group" > 
+                                                    <input  placeholder="" class="form-control" />
+                                                    </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2" >
+                                                    <div class="form-group" > 
+                                                    <input  placeholder="" class="form-control" />
+                                                    </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2" >
+                                                        <div class="form-group" > 
+                                                        <input  placeholder="" class="form-control" />
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2" >
+                                                    <div class="form-group" > 
+                                                    <input  placeholder="" class="form-control" />
+                                                    </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2 input-group mb-3" >
+                                                    
+                                                    <input  placeholder="" class="form-control" />
+                                                    <div class="input-group-append">
+                                                      <a class="btn btn-danger" href="javascript:void(0)" id="append" name="append">+</a>
+                                                    
+                                                    </div>
+                                                    </div>
+                                              
+                                                </div>
+                                        
+                                            </div> -->
+  
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Do you provide these services at the customers place?</label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                    <label class="primary-switch switch" style="
+                              float: left;">
+                      <input type="checkbox" formControlName="services" id="change_custum" value="0">
+                      <div class="slider round">
+                        <span class="on">YES</span><span class="off">NO</span>
+                      </div>
+                    </label>
+                  </div>
+
+
+                  <div class="col-md-12 col-9" id="cust_change" style="display: none">
+                      <div class="form-row">
+                          <div class="col-md-6">
+                              <label>What are the area that you services</label>
+                            </div>
+                      <div formArrayName="ServiceArea" *ngFor="let items of GroomingForm.get('ServiceArea').controls;let ind=index;">
+                        <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                           
+                          <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="searchTextField" type="text" size="50" 
+                                class="form-control" formControlName="ServiceArea"  placeholder="Enter a location" autocomplete="on">
+                            </div>
+                          </div>                
+                        
+             
+                            <div class="col-md-2">
+                                <ng-container *ngIf="GroomingForm.get('ServiceArea')?.controls">
+                                    <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                    </ng-container>
+                              <ng-container *ngIf="ind!=0">
+                                <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                              </ng-container>
+                        </div> 
+                        </div>
+                      </div>
+
+                    
+                    
+                    </div>
+
+
+                    <!-- <div class="form-group">
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <label>What are the area that you services</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="searchTextField" type="text" size="50" 
+                                class="form-control" formControlName="ServiceArea"  placeholder="Enter a location" autocomplete="on">
+                            </div>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label>Do you charge extra</label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6 col-lg-6 offset-md-2">
+                    <label class="primary-switch switch" style="
+                                            float: left;">
+                      <input type="checkbox" formControlName="ExtraCharge" id="change_blk11" value="0">
+                      <div class="slider round">
+                        <span class="on">YES</span><span class="off">NO</span>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col-md-12 col-9" id="blk11" style="display: none">
+                    <div class="form-group">
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <label>How much</label>
+                        </div>
+                        <div class="col-md-6">
+                          <input type="text" formControlName="HowMuch" class="form-control" placeholder="INR">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="reqments">Terms and Conditions*</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="reqments">About your Service*</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="About Your Service" minlength="250" id="exampleTextarea"
+                        rows="3"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-12 account">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="reqments">Bank Details</label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" formControlName="accname" class="form-control" id="accountname" placeholder="Account Name"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" formControlName="branch" class="form-control" id="branchname" placeholder="Branch Name"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" formControlName="accno" class="form-control" id="accountno" placeholder="Account No"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" formControlName="ifsc" class="form-control" id="ifsccode" placeholder="IFSC code"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" formControlName="mmid" class="form-control" id="mmidcode" placeholder="MMID code"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" formControlName="gst" class="form-control" id="address" placeholder="GSTN"
+                      required>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-control" formControlName="accotype" id="accounttype" required>
+                      <option value="">Type of Account</option>
+                      <option>Current</option>
+                      <option>Saving</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <label>Upload your photos</label>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                    <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());"
+                      style="display: none;" type="file" #image formControlName="image">
+                  </span>
+                  <span class="form-control"></span>
+                </div>
+  
+              </div>
+              <div class=" col-md-3 col-lg-6">
+                <input type="textarea" class="form-control" formControlName="writehere" placeholder="Write Something here">
+              </div>
+  
+              <div class="col-md-12 redbtn text-center">
+                <input id="submit" class="redbtn1" type="submit" name="">
+                <input class="redbtn2" type="button" name="" value="Cancel">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

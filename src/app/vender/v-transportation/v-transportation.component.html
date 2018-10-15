@@ -1,0 +1,822 @@
+
+<div class="container-fluid fpd">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="cercledoghead text-center">Transportation</h3>
+
+          <img class="img-fluid mx-auto d-block cercledog" style="    height: auto;
+              width: 100%;" src="../../../assets/img/Transportation.jpg" class="rounded-circle" alt="Cinque Terre">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../../assets/img/redpetlogo.png">
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="TransportationForm" (ngSubmit)="Transportation(TransportationForm.value)" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name of the service</label>
+                <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter Name" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <label for="name">Contact person name</label>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control" formControlName="firstname" id="name" placeholder="First Name" required>
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="lastname" id="name" placeholder="Last Name" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" formControlName="email" id="name" placeholder="Email Address" required>
+                  </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="phoneno" id="name" placeholder="Phone Number" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                  <label for="name">Address</label>
+                  <input type="text" class="form-control" formControlName="address1" id="name" placeholder="Address Line1*" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="address2" id="name" placeholder="Address Line2*" required>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                        <select name="country" formControlName="country" class="countries form-control" id="countryId">
+                         <option value="">Select Country</option>
+                          </select>
+                        </div>
+                      </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <select name="state" formControlName="state" class="states form-control" id="stateId">
+                        <option value="">Select State</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="form-group">
+                        <select name="city" formControlName="city" class="cities form-control" id="cityId">
+                          <option value="">Select City</option>
+                      </select>
+                      
+                      </div>
+                    </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <input type="text" formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-md-6">
+                      <label>Avialable chart</label>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                    <div class="input-group-append">
+                        <input type="text" id="mySelectedDate" formControlName="Avialable"  class="form-control date" placeholder="Pick the multiple dates">
+                        <div class="input-group-append" data-target="#mySelectedDate" data-toggle="datepicker">
+                          <div class="input-group-text">
+                            <i class="fa fa-calendar"></i></div></div>
+
+                    </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-4 col-3">
+  
+                    <div class="form-group">
+                      <label for="reqments">Airport pick /drop service provided</label>
+                    </div>
+  
+                  </div>
+                  <div class="form-group col-md-6 co-lg-6 offset-md-2">
+                    <label class="switch" style="
+                         float: left;">
+                      <input type="checkbox" formControlName="Airport" id="transport_blk1" value="0">
+                      <div class="slider round">
+                        <span class="on">YES</span><span class="off">NO</span>
+                      </div>
+                    </label>
+  
+                  </div>
+                  <div class="col-md-12 col-9" id="transport" style="display: none;">
+                    <div class="form-row">
+                      <div class="col-md-3 col-lg-3 col-3">
+                        <div class="form-group">
+                          <label class="">Cost</label>
+                        </div>
+                        <!-- <div class="form-group">
+                          <div class="form-group center-block">
+                            <label class="reqments1">0 to 12 hrs</label>
+                          </div>
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <div class="form-group center-block">
+                            <label class="reqments1">4 hrs to 8 hrs</label>
+                          </div>
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <div class="form-group center-block">
+                            <label class="reqments1">8 hrs to 12hrs</label>
+                          </div>
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <div class="form-group center-block">
+                            <label class="reqments1">12 hrs to 16 hrs</label>
+                          </div>
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <div class="form-group center-block">
+                            <label class="reqments1">16 hrs to 24 hrs</label>
+                          </div>
+                        </div> -->
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-3">
+                        <div class="form-group">
+                          <label class="">Small Paws</label>
+                          <div class="form-group">
+                            <input type="text" formControlName="small1" placeholder="INR" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" formControlName="small2" placeholder="INR" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" formControlName="small3" placeholder="INR" class="form-control">
+                              </div>
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-3">
+                        <div class="form-group">
+                          <label class="">Medium Paws</label>
+                          <div class="form-group">
+                            <input type="text" formControlName="Medium1" placeholder="INR" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" formControlName="Medium2" placeholder="INR" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" formControlName="Medium3" placeholder="INR" class="form-control">
+                              </div>
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="100" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+  
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-3">
+                        <div class="form-group">
+                          <label class="">Large Paws</label>
+                          <div class="form-group">
+                            <input type="text" formControlName="Large1" placeholder="INR" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <input type="text" formControlName="Large2" placeholder="INR" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" formControlName="Large3" placeholder="INR" class="form-control">
+                              </div>
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+                          <!-- <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div> -->
+  
+                        </div>
+                      </div>
+                      <!-- <div class="col-md-2 col-lg-3 col-3">
+                        <div class="form-group">
+                          <label class="kb">Xtra Large Paws</label>
+                          <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" placeholder="INR" class="form-control">
+                          </div>
+  
+                        </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+             <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="reqments">Cost per/km</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="Costperkm" class="form-control" placeholder="INR" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="reqments">Minimum charges</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="Mincharge" class="form-control" placeholder="INR" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+                <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="reqments">Terms and Conditions*</label>
+                      </div>
+                      </div>
+                      <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="Conditions" placeholder="Terms and Conditions" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                    </div> 
+                    <div class="col-md-12">
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                        <label for="reqments">About your service*</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                        <textarea formControlName="Aboutservice" rows="3" placeholder="About your service" class="form-control"></textarea>
+                        </div>
+                      </div>
+                      </div>
+                  </div> 
+            <!-- <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Type of vehicles</label>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                  <div class="row">
+                    <div class="form-group col-md-3 col-lg-4">
+                      <img src="../../../assets/img/Icons/ACAvailableGrey.png" style=" height: 48px;" id="ac1">
+                      <img src="../../../assets/img/Icons/ACAvailableGreen.png" style=" height: 48px;" id="ac2">
+
+                      <div>
+                        <label>Ac avialable</label>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-8">
+                      <input type="text" class="form-control" placeholder="list of vehical">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Areas that you service</label>
+                </div>
+                <div class="col-md-6 col-lg-6">
+
+                  <div class="form-group col-md-4 col-lg-12">
+                    <select class="form-control" id="accounttype" required>
+                      <option value="">List Other Area of service</option>
+                      <option>T1</option>
+                      <option>T2</option>
+                    </select>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Avialable date along with timeing for each date of the week with an option to copy for specific
+                      date range</label>
+                  </div>
+                </div>
+                <div class=" col-md-6">
+                  <div class="form-row">
+                    <div class=" col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <select id="breed_1" class="form-control" required>
+                          <option value="">Day</option>
+                          <option>Small</option>
+                          <option>Medium</option>
+                          <option>Large</option>
+                          <option>Xtra Large</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <select id="breed_gender_1" class="form-control" required>
+                          <option value="">Month</option>
+                          <option>Male</option>
+                          <option>Female</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4">
+                      <div class="form-group">
+                        <div class=" input-group mb-3"> -->
+                          <!-- <button class="add_field_button" >+</button> -->
+                          <!-- <select id="breed_age_1" class="form-control" required>
+                            <option value="">Month</option>
+                            <option>Male</option>
+                            <option>Female</option>
+
+                          </select>
+                          <div class="input-group-append">
+                            <a id="add_field_button" id="date_month" class="btn-success btn-sm">+</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-md-6 col-lg-6">
+                         <div class="form-row">
+                            <div class="form-group col-md-2 col-lg-4">
+                                <select class="form-control" id="accounttype" required>
+                                    <option value="">Day
+                                      <input type="datetime">
+                                    </option>
+                                    <option>Sunday</option>
+                                    <option>Monday</option>
+                                    <option>TUES</option>
+                                    <option>WED</option>
+                                    <option>THU</option>
+                                    <option>FRI</option>
+                                  </select>
+                          
+                        </div>
+                        <div class="form-group col-md-2 col-lg-4">
+                            <select class="form-control" id="accounttype" required>
+                                <option value="">Month</option>
+                                <option>jan</option>
+                                <option>Feb</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                              </select>
+                      
+                    </div>
+                    <div class="form-group col-md-2 col-lg-4">
+                        <select class="form-control" id="timeDropdownlist" required>
+                            <option value="">Time</option>
+ 
+                          </select>
+                  
+                       </div>
+                        </div>
+                        </div> -->
+
+            <!-- <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Rates</label>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <select class="form-control" id="accounttype" required>
+                        <option value="">0km - 10km</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                      </select>
+
+                    </div>
+                    <div class="form-group col-md-3 col-lg-6">
+                      <input type="text" class="form-control" placeholder="claculated on kms">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Airport pick up/ and drops provided</label>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-2">
+                      <img src="../../../assets/img/Icons/AirportPickupGrey.png" height="38px;" id="m1">
+                      <img src="../../../assets/img/Icons/AirportPickupGreen.png" height="38px;" id="m2">
+
+                    </div>
+                    <div class="form-group col-md-3 col-lg-10">
+                      <input type="text" class="form-control" placeholder="Flate rate depending on the area and kms">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- 
+                <div class="col-md-12 account">
+                  <div class="row">
+                    <div class="col-md-6">
+                     <label>where you want to go</label>
+                    </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-8 pictured-radio text-center">
+                           
+                            <div class="form-check-inline">
+                              <input type="radio" value="cat" class="form-check-input" id="catbtn" name="breed" required>
+                            </div>
+                            <div class="form-check-inline">
+                              <input type="radio" value="dog" class="form-check-input" id="dogbtn" name="breed" required>
+                            </div>
+                            <div class="form-check-inline">
+                              <input type="radio" value="fish" class="form-check-input" id="fishbtn" name="breed" required>
+                            </div>
+                            <div class="form-check-inline">
+                              <input type="radio" value="others" class="form-check-input" id="othersbtn" name="breed" required>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+            <!-- <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-4">
+                  <label>What are the kind of pets you are willing to transport
+                  </label>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div id="dog_1">
+                        <img src="../../../assets/img/Icons/DogGrey.png" style=" height: 47px;">
+                      </div>
+                      <div id="dog_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 47px;">
+                      </div>
+                      <div style="display:none;">
+                        <input type="checkbox" id="dog">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div id="medium_paw_1">
+                        <img src="../../../assets/img/Icons/DogGrey.png" style="height:55px;">
+                      </div>
+                      <div id="medium_paw_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 55px;">
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" id="medium_paw">
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div id="large_paw_1">
+                        <img src="../../../assets/img/Icons/DogGrey.png" style="height: 67px;">
+                      </div>
+                      <div id="large_paw_2" style="display: none;">
+                        <img src="../../../assets/img/Icons/DogGreen.png" style=" height: 67px;">
+                      </div>
+                      <div style="display: none;">
+                        <input type="checkbox" id="large_paw">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+
+
+
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-8">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div class="form-group">
+                        <label class="">Small Paws</label>
+                        <div class="form-group">
+                          <input type="text" class="from form-control" placeholder="Enter charge">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div class="form-group">
+                        <label class="">Medium Paws</label>
+                        <div class="form-group">
+                          <input type="text" class="from form-control" placeholder="Enter charge">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-3">
+                      <div class="form-group">
+                        <label class="">Large Paws</label>
+                        <div class="form-group">
+                          <input type="text" class="from form-control" placeholder="Enter charge">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+<!-- 
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>maximum capacity in (one go)</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="enter the Number" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row"> -->
+                <!-- <div class="col-md-6">
+                  <div class="form-group">
+
+                  </div>
+                </div> -->
+                <!-- <div class="col-md-10 col-lg-10">
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-4 col-4">
+                        <img src="../../../assets/img/Icons/CrateGreen.png" style="width: 41%; height: 38px;" id="image2">
+                        <img src="../../../assets/img/Icons/CrateGrey.png" style="width: 41%; height: 38px;" id="image1">
+                        <section><label>Small</label></section>
+                      </div>
+                      <div class="col-md-4 col-4">
+                        <img src="../../../assets/img/Icons/CrateGreen.png" style="width: 40%; height: 53px;" id="im2">
+                        <img src="../../../assets/img/Icons/CrateGrey.png" style="width: 40%; height: 53px;" id="im1">
+                        <section><label>Medium</label></section>
+                      </div>
+                      <div class="col-md-4 col-4">
+                        <img src="../../../assets/img/Icons/CrateGreen.png" style="width:63%; height: 66px;" id="img2">
+                        <img src="../../../assets/img/Icons/CrateGrey.png" style="width: 63%; height: 66px;" id="img1">
+                        <section style="    padding-left: 5px;"><label>Large</label></section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Can your vehicle take crate</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Quantity" id="reqments" required>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12 account">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="reqments">Bank Details</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accname" class="form-control" id="accountname" placeholder="Account Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="branch" class="form-control" id="branchname" placeholder="Branch Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="accno" class="form-control" id="accountno" placeholder="Account No" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="ifsc" class="form-control" id="ifsccode" placeholder="IFSC code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="mmid" class="form-control" id="mmidcode" placeholder="MMID code" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" formControlName="gst" class="form-control" id="address" placeholder="GSTN" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control" formControlName="accotype" id="accounttype" required>
+                    <option value="">Type of Account</option>
+                    <option>Savings</option>
+                    <option>Current</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3">
+              <label>Upload your photos</label>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <div class="input-group">
+                <span class="input-group-btn">
+                  <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                  <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());"
+                    style="display: none;" type="file" #image formControlName="image">
+                </span>
+                <span class="form-control"></span>
+              </div>
+
+            </div>
+            <div class=" col-md-3 col-lg-6">
+              <input type="textarea" formControlName="writehere" class="form-control" placeholder="Write Something here">
+            </div>
+
+            <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="col-md-12">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                               <label>what is the rules and regulations(<a target="_blank" style="   text-decoration: none;
+                                color: #008CBA;">click on below options</a>?)</label>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                <div class="form-row">
+                 <div class="col-md-3 col-lg-2 col-4">
+                  <p>
+                    <img class="center-block" src="../../../assets/img/laptop.png"  height=50 width=38px; style="float: right;">
+                   instance and conformation </p>
+                    </div>
+                      <div class="col-md-3 col-lg-2 col-4">
+                        <p>
+                       <img  class="center-block" src="../assets/img/form/homevisit.png"  height=50 width=38px; style="float: right;" id="m1">
+                       <img  class="center-block" src="../../../assets/img/home visit.png"  height=50 width=38px; style="float: right;" id="m2">
+                        home visit mandatory </p>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-4">
+                           <p> <img   class="center-block" src="../../../assets/img/dog-training1.png"  height=50 width=38px; style="float: right;">
+                           Do you take<br> well trained pets </p>
+                          </div>
+                          <div class="col-md-3 col-lg-2 col-6">
+                          <p> <img class="center-block"src="../../../assets/img/females on heat.png"  height=50 width=38px; style="float: right;"> do you take femails on heat </p>
+                           </div>
+                             <div class="col-md-3 col-lg-2 col-6">
+                              <p>
+                               <img src="../../../assets/img/ticks free.png"  height=38 width=38px; style="float: right;">
+                                 need to be free from ticks</p>
+                               </div>
+                             </div>
+
+                                             
+                  <div class=" from-row col-md-4">
+                  <label>insert Photos and video</label>
+                  </div>
+                  <div class=" from-row col-md-8">
+                  <input type="file" class="form-control-file border" name="file">
+                
+                </div>
+                <div class="col-md-12">
+                    <div class="row kb">
+                      <div class="col-md-3 col-lg-3">
+                       <label>needs to be vaccaineted</label>
+                      </div>
+                        <div class="col-md-9 col-lg-9">
+                          <div class="form-row">
+                              
+                                <div class="col-md-2 col-lg-3">
+                                    <label class="checkbox-inline"><input type="checkbox" value="">Rables</label>
+                                  </div>
+                                  <div class="col-md-2 col-lg-3">
+                                      <label class="checkbox-inline"><input type="checkbox" value="">kennel caugh</label>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2">
+                                        <label class="checkbox-inline"><input type="checkbox" value="">Distemper</label>
+                                      </div>
+                                  <div class=" from group row col-md-3 col-lg-4">
+                                      <div class="col-md-4 col-lg-6">
+                                          <label class="checkbox-inline"><input type="checkbox" value="">Others</label>
+                                      </div>  
+                                      <div class="col-md-4 col-lg-6">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                      
+                                  </div>
+                     
+                    </div>
+                      </div>
+                    </div>
+                  </div> -->

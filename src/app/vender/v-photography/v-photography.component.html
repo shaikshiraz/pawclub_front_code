@@ -1,0 +1,268 @@
+
+            
+  
+   <div class="container-fluid fpd">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="cercledoghead text-center">PET PHOTOGRAPHY</h2>
+            <img class="img-fluid mx-auto d-block cercledog"  src="../../../assets/img/circledog.png">
+          </div>
+          <div class="col-md-12 red-logo-area">
+            <img class="img-fluid mx-auto d-block redpetlogo"  src="../../../assets/img/redpetlogo.png">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-12 form-col mx-auto">
+            <form [formGroup]="PhotoForm" (ngSubmit)="Photos(PhotoForm.value)" class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="name">Business Name</label>
+                  <input type="text" class="form-control"  formControlName="name" placeholder="Enter Name" required>
+                </div>
+              </div>
+              <div class="col-md-12">
+                  <label for="name">Contact person name</label>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control"  formControlName="firstname"  placeholder="First Name" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control"  formControlName="lastname" placeholder="Last Name" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control"  formControlName="email" placeholder="Email Address" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control"  formControlName="phoneno" placeholder="Phone Number" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="name">Address</label>
+                    <input type="text" class="form-control"  formControlName="address1" placeholder="Address Line1*" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control"  formControlName="address2" placeholder="Address Line2*" required>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                          <select name="country"  formControlName="country" class="countries form-control" id="countryId">
+                           <option value="">Select Country</option>
+                            </select>
+                          </div>
+                        </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <select name="state"  formControlName="state" class="states form-control" id="stateId">
+                          <option value="">Select State</option>
+                      </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                          <select name="city"  formControlName="city" class="cities form-control" id="cityId">
+                            <option value="">Select City</option>
+                        </select>
+                        
+                        </div>
+                      </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text"  formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Website address</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                             <input type=" text"  formControlName="Website"  class="form-control" placeholder="Website address">
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Available and Timings</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                                    <input type="text"  formControlName="Available" class="form-control datetimepicker-input" data-target="#datetimepicker4"/>
+                                    <!-- <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div> -->
+                                </div>
+                            </div>
+                 
+                          </div>
+                      </div>
+                    </div>
+                    
+              <div class="col-md-12 col-9">
+                <label>Cost</label>
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Number of shorts</label>
+                        <input type="text"  formControlName="noofShots" placeholder="INR" class="form-control">
+                      </div>
+                    
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">Per hour</label>
+                        <div class="form-group">
+                          <input type="text"  formControlName="PerHour" placeholder="INR" class="form-control">
+                        </div>
+                       
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">half day</label>
+                        <div class="form-group">
+                          <input type="text"  formControlName="HalfDay" placeholder="INR" class="form-control">
+                        </div>
+                      
+
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-3">
+                      <div class="form-group">
+                        <label class="">full day</label>
+                        <div class="form-group">
+                          <input type="text"  formControlName="Fullday" placeholder="INR" class="form-control">
+                        </div>
+                       
+
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Comments / description</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                           <textarea type="text"  formControlName="Comments"  row="5" class="form-control" placeholder=" Comments/description"></textarea>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                
+              <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Terms and Conditions</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                           <textarea  formControlName="Condition" type=" text" class="form-control" row="5" placeholder="Terms and Conditions"></textarea>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                
+                
+              
+      
+                  <div class="col-md-3 col-lg-3 form-group">
+                    <label>Upload your photos</label>
+                  </div>
+                  <div class="col-md-4 col-lg-3 from-group">
+                    <div class="input-group">
+                      <span class="input-group-btn">
+                        <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                        <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());"
+                          style="display: none;" type="file" #image formControlName="image">
+                      </span>
+                      <span class="form-control"></span>
+                    </div>
+      
+                  </div>
+                  <div class=" col-md-3 col-lg-6 form-group">
+                    <input type="textarea" class="form-control" formControlName="writehere"  placeholder="Write Something here">
+                  </div>
+                  <div class="col-md-12 account">
+                      <div class="form-row">
+                        <div class="col-md-12 form-group">
+                          <label for="reqments">Bank Details</label>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <input type="text"  formControlName="bankname" class="form-control" id="bankname" placeholder="Bank Name" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <input type="text"  formControlName="accname" class="form-control" id="accountname" placeholder="Account Name" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <input type="text"  formControlName="branch" class="form-control" id="branchname" placeholder="Branch Name" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <input type="text" class="form-control" formControlName="accno" id="accountno" placeholder="Account No" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <input type="text"  formControlName="ifsc" class="form-control" id="ifsccode" placeholder="IFSC code" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <input type="text"  formControlName="mmid" class="form-control" id="mmidcode" placeholder="MMID code" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <input type="text"  formControlName="gst" class="form-control" id="address" placeholder="GSTN" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                          <select class="form-control"  formControlName="accotype" id="accounttype" required>
+                            <option value="">Type of Account</option>
+                            <option>T1</option>
+                            <option>T2</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+           
+              <div class="col-md-12 redbtn text-center">
+                <input id="submit" class="redbtn1" type="submit" name="">
+                <input class="redbtn2" type="button" name="" value="Cancel">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

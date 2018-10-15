@@ -1,0 +1,33 @@
+<form [formGroup]="UserForm" (ngSubmit)="CreateAccContact(UserForm.value)" #AccountContactForm>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label>First Name <span style="color: red">*</span></label>
+        <input type="text" class="form-control" placeholder="Enter first name" formControlName="name">
+        <div class="alert" *ngIf="!UserForm.controls['name'].valid && (UserForm.controls['name'].touched)">
+          <div [hidden]="!UserForm.controls['name'].errors.required">
+            First name is required.
+          </div>
+          <div [hidden]="!UserForm.controls['name'].errors.minlength">
+            First name must have 3 characters length.
+          </div>
+          <div [hidden]="!UserForm.controls['name'].errors.maxlength">
+            First name with in 1500 characters length.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+        <label class="form-control-label">User Image</label>
+        <input type="file" class="dropify" formControlName="image" #image>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      <input type="submit" class="btn btn-primary" value="Submit" [disabled]="!UserForm.valid">
+    </div>
+  </div>
+</form>

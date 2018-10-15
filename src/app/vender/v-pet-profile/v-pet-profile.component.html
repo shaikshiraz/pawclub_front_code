@@ -1,0 +1,1449 @@
+<div class="container-fluid fpd">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="cercledoghead text-center">Pet Profile</h2>
+          <img class="img-fluid mx-auto d-block cercledog" src="../../assets/img/circledog.png">
+        </div>
+        <div class="col-md-12 red-logo-area">
+          <img class="img-fluid mx-auto d-block redpetlogo" src="../../assets/img/redpetlogo.png">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 form-col mx-auto">
+          <form [formGroup]="PetProfileForm" (ngSubmit)="petProfile(PetProfileForm.value)" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name"
+                  class="form-control" 
+                 placeholder="Enter Name" >
+              </div>
+            </div>
+            
+            <div class="col-md-12">
+              <label for="name">Contact person name</label>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="firstname" class="form-control" id="name" placeholder="First Name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="lastname" class="form-control" id="name" placeholder="Last Name" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="email" class="form-control" id="name" placeholder="Email Address" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="phoneno" class="form-control" id="name" placeholder="Phone Number" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="name">Address</label>
+                <input type="text" formControlName="address1" class="form-control" id="name" placeholder="Address Line1*" required>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="address2" class="form-control" id="name" placeholder="Address Line2*" required>
+              </div>
+              <div class="form-row">
+                  <div class="col-md-3">
+                      <div class="form-group">
+                      <select name="country" formControlName="country" class="countries form-control" id="countryId">
+                       <option value="">Select Country</option>
+                        </select>
+                      </div>
+                    </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <select name="state" formControlName="state" class="states form-control" id="stateId">
+                      <option value="">Select State</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                      <select name="city" formControlName="city" class="cities form-control" id="cityId">
+                        <option value="">Select City</option>
+                    </select>
+                    
+                    </div>
+                  </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <input type="text" formControlName="pincode" class="form-control" id="zip" placeholder="zipcode">
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-12">
+              <label for="reqments">Kind of pets</label>
+                <div class="form-row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                        <div class="pictured-radio text-center">
+                          <div class="form-check-inline">
+                              <div id="cn11">
+                                  <img class="center-block" src="../../../assets/img/Icons/DogGreen.png" style="float: left;" height="35px;">
+                                </div>
+                                <!-- <div id="cn22" style="display: none;">
+                                  <img class="center-block"  src="../../../assets/img/Icons/CatGreen.png" style="float: left;" height="35px;">
+                                </div> -->
+                                <!-- <div style="display: none;">
+                                  <input type="checkbox" id="cn" />
+                                </div> -->
+                          </div>                                         
+                        </div>
+                    </div>
+                  </div>
+                  <div  class="col-md-10 cat_inhouse">
+                    <div class="form-row">
+                      <div formArrayName="small_dog" *ngFor="let items of PetProfileForm.get('small_dog').controls;let ind=index;">
+                        <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                           
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <select id="breed_gender_3" formControlName="Typeofpets" class="form-control">
+                                <option value="">Select Type of pet</option>
+                                <option value="small">Small</option>
+                               
+      
+                              </select>
+                            </div>
+                          </div>
+                         
+                        
+                         
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                    <ng-multiselect-dropdown
+                                    [placeholder]="'custom placeholder'"
+                                    [data]="dropdownList1"
+                                    formControlName="breed"
+                                    [settings]="dropdownSettings"
+                                    (onSelect)="onItemSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                  >
+                                  </ng-multiselect-dropdown>
+                                  </div>
+                                </div>
+
+                                
+                        
+                          <!-- <div class="col-md-4">
+                              <div class="form-group">
+                              <select  formControlName="gender" class="form-control">
+                                <option>Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                              </select>
+                            </div>
+                            </div> 
+                            <div class="col-md-2">
+                                <ng-container *ngIf="PetProfileForm.get('row_dynamic')?.controls?.length<=2">
+                                    <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                    </ng-container>
+                              <ng-container *ngIf="ind!=0">
+                                <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                              </ng-container>
+                        </div>  -->
+                        </div>
+                      </div>  
+                    </div>
+
+                    <div class="form-row">
+                            <div formArrayName="medium_dog" *ngFor="let items of PetProfileForm.get('medium_dog').controls;let ind=index;">
+                              <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                                 
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <select id="breed_gender_3" formControlName="Typeofpets" class="form-control">
+                                      <option value="">Select Type of pet</option>
+                                      <option value="Medium">Medium</option>
+                                     
+            
+                                    </select>
+                                  </div>
+                                </div>
+                               
+                              
+                               
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                          <ng-multiselect-dropdown
+                                          [placeholder]="'custom placeholder'"
+                                          [data]="dropdownList2"
+                                          formControlName="breed"
+                                          [settings]="dropdownSettings"
+                                          (onSelect)="onItemSelect($event)"
+                                          (onSelectAll)="onSelectAll($event)"
+                                        >
+                                        </ng-multiselect-dropdown>
+                                        </div>
+                                      </div>
+    
+                                      
+                              
+                                <!-- <div class="col-md-4">
+                                    <div class="form-group">
+                                    <select  formControlName="gender" class="form-control">
+                                      <option>Gender</option>
+                                      <option value="Male">Male</option>
+                                      <option value="Female">Female</option>
+                                    </select>
+                                  </div>
+                                  </div> 
+                                  <div class="col-md-2">
+                                      <ng-container *ngIf="PetProfileForm.get('row_dynamic')?.controls?.length<=2">
+                                          <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                          </ng-container>
+                                    <ng-container *ngIf="ind!=0">
+                                      <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                    </ng-container>
+                              </div>  -->
+                              </div>
+                            </div>
+     
+                          
+                          
+                          </div>
+
+                          <div class="form-row">
+                          <div formArrayName="large_dog" *ngFor="let items of PetProfileForm.get('large_dog').controls;let ind=index;">
+                            <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                               
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <select id="breed_gender_3" formControlName="Typeofpets" class="form-control">
+                                    <option value="">Select Type of pet</option>
+                                    <option value="large">Large</option>
+                                   
+          
+                                  </select>
+                                </div>
+                              </div>
+                             
+                            
+                             
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                        <ng-multiselect-dropdown
+                                        [placeholder]="'custom placeholder'"
+                                        [data]="dropdownList3"
+                                        formControlName="breed"
+                                        [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event)"
+                                        (onSelectAll)="onSelectAll($event)"
+                                      >
+                                      </ng-multiselect-dropdown>
+                                      </div>
+                                    </div>
+  
+                                    
+                            
+                              <!-- <div class="col-md-4">
+                                  <div class="form-group">
+                                  <select  formControlName="gender" class="form-control">
+                                    <option>Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                  </select>
+                                </div>
+                                </div> 
+                                <div class="col-md-2">
+                                    <ng-container *ngIf="PetProfileForm.get('row_dynamic')?.controls?.length<=2">
+                                        <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                        </ng-container>
+                                  <ng-container *ngIf="ind!=0">
+                                    <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                                  </ng-container>
+                            </div>  -->
+                            </div>
+                          </div>
+   
+                        
+                        
+                        </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-2">
+                      <div class="form-group">
+                          <div class="pictured-radio text-center">
+                            <div class="form-check-inline">
+                                <div id="dog_ck11">
+                                    <img class="center-block" src="../../../assets/img/Icons/CatGreen.png" style="float: left;" height="35px;">
+                                  </div>
+                                  <!-- <div id="dog_ck22" style="display: none;">
+                                    <img class="center-block" src="../../../assets/img/Icons/DogGreen.png" style="float: left;" height="35px;">
+                                  </div> -->
+                                  <!-- <div style="display: none;">
+                                    <input type="checkbox" id="dog_c"/>
+                                  </div> -->
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div  class="col-md-10 cat_xyz">
+                      <div class="form-row">
+                        <div formArrayName="cat1" *ngFor="let items of PetProfileForm.get('cat1').controls;let ind=index;">
+                          <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                             
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <input type="text" placeholder="Breed" formControlName="breed" class="form-control">
+                              </div>
+                            </div>                
+                          
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                <select  formControlName="gender" class="form-control">
+                                  <option value="">Gender</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                              </div>
+                              </div> 
+                           
+                              <div class="col-md-2">
+                                <ng-container *ngIf="PetProfileForm.get('cat1')?.controls?.length<=2">
+                                    <button (click)="addField(ind)" class="btn-success btn-sm">+</button>
+                                    </ng-container>
+                              <ng-container *ngIf="ind!=0">
+                                <button  (click)="removeField(ind)" class="btn-success btn-sm">- </button>
+                              </ng-container>
+                        </div> 
+                             
+                          </div>
+                        </div>
+ 
+                      
+                      
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                      <div class="col-md-2">
+                        <div class="form-group">
+                            <div class="pictured-radio text-center">
+                              <div class="form-check-inline">
+                                  <div id="other_bt11">
+                                      <img class="center-block" src="../../../assets/img/Icons/othersbtng.png" style="float: left;" height="65px;">
+                                    </div>
+                                    <!-- <div id="other_bt22" style="display: none;">
+                                      <img class="center-block" src="../../../assets/img/Icons/othersbtng.png" style="float: left;" height="65px;">
+                                    </div> -->
+                                    <!-- <div style="display: none;">
+                                      <input type="checkbox" id="other_btk"/>
+                                    </div> -->
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div  class="col-md-10 cat_kbc">
+                        <div class="form-row">
+                          <div formArrayName="Other1" *ngFor="let items of PetProfileForm.get('Other1').controls;let ind=index;">
+                            <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                               
+                                <div class="col-md-2 col-lg-3">
+                                    <div class="form-group">
+                                     <input type="text" placeholder="Type of pets" formControlName="Typeofpets" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2 col-lg-3">
+                                      <div class="form-group">
+                                          <input type="text" placeholder="Number of pets" formControlName="noofpets" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                          <input type="text" id="breed_age_4" formControlName="breed" class="form-control" placeholder="Age"> 
+                                        </div>
+                                      </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                      <select id="breed_gender_4" class="form-control" formControlName="gender" required>
+                                        <option value="">Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+              
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <div class="form-group">
+                                      <div class=" input-group mb-3">
+                                        <input type="text" id="breed_age_4" formControlName="age" class="form-control" placeholder="Age">
+                                      </div>
+                                    </div>
+                                  </div>
+                 
+                                <div class="col-md-2">
+                                    <ng-container *ngIf="PetProfileForm.get('Other1')?.controls?.length<=2">
+                                        <button (click)="addField1(ind)" class="btn-success btn-sm">+</button>
+                                        </ng-container>
+                                  <ng-container *ngIf="ind!=0">
+                                    <button  (click)="removeField1(ind)" class="btn-success btn-sm">- </button>
+                                  </ng-container>
+                            </div> 
+                            </div>
+                          </div>
+   
+                        
+                        
+                        </div>
+                      </div>
+                    </div>
+              </div>
+    
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-8 pictured-radio text-center">
+                      <label class="d-block text-left" for="name">Kind of Pet</label>
+                      <div class="form-check-inline">
+                        <input type="radio" value="cat" class="form-check-input" id="catbtn" name="breed" required>
+                      </div>
+                      <div class="form-check-inline">
+                        <input type="radio" value="dog" class="form-check-input" id="dogbtn" name="breed" required>
+                      </div>
+                      <div class="form-check-inline">
+                        <input type="radio" value="fish" class="form-check-input" id="fishbtn" name="breed" required>
+                      </div>
+                      <div class="form-check-inline">
+                        <input type="radio" value="others" class="form-check-input" id="othersbtn" name="breed" required>
+                      </div>
+                    </div>
+                    <div class="col-md-4 others">
+                      <input type="text" class="form-control" id="others">
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="age"></label>
+                    <div class="form-group">
+                      <input type="tel" class="form-control" id="phone" placeholder="Enter type of pet" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Name of the Pets</label>
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <div class="form-group">
+                        <input type="text" formControlName="petName" class="form-control" id="phone" placeholder="Enter Name" >
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <div class="form-group">
+
+                        <select class="form-control" formControlName="Breed" >
+                          <option value="">Breed</option>
+                          <option>Small</option>
+                          <option>Medium</option>
+                          <option>Large</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label>Date Of Birth</label>
+                  <div class="form-group">
+                      
+                    <input type="date" formControlName="Dateofbirth" bsDatepicker class="form-control" id="phone" placeholder="Phone Number" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                  <label>Pet Id Number</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" formControlName="petId" class="form-control" id="email" placeholder="cupa Number/Micro chip numebr" >
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-lg-3">
+                  <label>Vaccination records</label>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="Rabels" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Rabels</label>
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <label>Adminstraion date</label>
+                  <div class="form-group">
+                    <input type="date" formControlName="Adminstraion1" class="form-control" name="file" placeholder="choose" >
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <label>Due Date</label>
+                  <div class="form-group">
+                    <input type="date" formControlName="Due1" class="form-control" name="file" placeholder="choose" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-lg-3">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="KennelCough" class="custom-control-input" id="customCheck2">
+                    <label class="custom-control-label" for="customCheck2">Kennel cough</label>
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <input type="date" formControlName="Adminstraion2" class="form-control" name="file" placeholder="choose" >
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <input type="date" formControlName="Due2" class="form-control" name="file" placeholder="choose" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-lg-3">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="Distemper" class="custom-control-input" id="customCheck3">
+                    <label class="custom-control-label" for="customCheck3">Distemper</label>
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <input type="date" formControlName="Adminstraion3" class="form-control" name="file" placeholder="choose" >
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <input type="date" formControlName="Due3" class="form-control" name="file" placeholder="choose"> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4 col-lg-3">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="provo" class="custom-control-input" id="customCheck4">
+                    <label class="custom-control-label" for="customCheck4">provo</label>
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <input type="date" formControlName="Adminstraion4" class="form-control" name="file" placeholder="choose" >
+                  </div>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <input type="date" formControlName="Due4" class="form-control" name="file" placeholder="choose" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-12 col-9">
+              <label>Food habits</label>
+              <div class="form-row">
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Pet Name/Time</label>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Type of Meal</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group center-block">
+                      <label class="reqments1">Type of Food</label>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="col-md-2 col-lg-3 col-3">
+                  <div class="form-group">
+                    <label class="kb">Morning Meal</label>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option>Vegmain meal</option>
+                        <option>Non vegmain meal</option>
+                        <option>snack</option>
+                        <option>Veg meal light</option>
+                        <option>Veg meal light</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option value="">Home Packaged</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                  <div class="form-group">
+                    <label class="kb">Afternoon Meal</label>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option>Vegmain meal</option>
+                        <option>Non vegmain meal</option>
+                        <option>snack</option>
+                        <option>Veg meal light</option>
+                        <option>Veg meal light</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option value="">Home Packaged</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                      </select>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                  <div class="form-group">
+                    <label class="kb">Evening Meal</label>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option>Vegmain meal</option>
+                        <option>Non vegmain meal</option>
+                        <option>snack</option>
+                        <option>Veg meal light</option>
+                        <option>Veg meal light</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option value="">Home Packaged</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2 col-lg-2 col-3">
+                  <div class="form-group">
+                    <label class="kb">Night Meals</label>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option>Vegmain meal</option>
+                        <option>Non vegmain meal</option>
+                        <option>snack</option>
+                        <option>Veg meal light</option>
+                        <option>Veg meal light</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control">
+                        <option value="">Home Packaged</option>
+                        <option>T1</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                        <option>T2</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-md-12">
+              <div class="form-row"> -->
+                
+                <div class="col-md-12 ">
+                  <label>Food Habit</label>
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="MorningMeal" class="custom-control-input" id="customCheck111">
+                        <label class="custom-control-label" for="customCheck111">Morning meal</label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="AfternoonMeal" class="custom-control-input" id="customCheck122">
+                        <label class="custom-control-label" for="customCheck122">Afternoon meal</label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="EveningMeal" class="custom-control-input" id="customCheck133">
+                        <label class="custom-control-label" for="customCheck133">Evening meal</label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="NightMeal" class="custom-control-input" id="customCheck144">
+                        <label class="custom-control-label" for="customCheck144">Night meal</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- </div>
+            </div> -->
+
+
+
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-8">
+                    <label>Sleep habit</label>
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="OntheFloor" class="custom-control-input" id="customCheck11">
+                        <label class="custom-control-label" for="customCheck11">Onthe Floor</label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="Mattress" class="custom-control-input" id="customCheck12">
+                        <label class="custom-control-label" for="customCheck12">Mattress</label>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="Bed" class="custom-control-input" id="customCheck13">
+                        <label class="custom-control-label" for="customCheck13">Bed</label>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="Sofa" class="custom-control-input" id="customCheck14">
+                        <label class="custom-control-label" for="customCheck14">Sofa</label>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="Other" class="custom-control-input" id="customCheck15">
+                        <label class="custom-control-label" for="customCheck15">Other</label>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-md-4">
+                  <label></label>
+                  <div class="form-group">
+                    <input type="text" formControlName="otherText" placeholder="otherText" class="form-control" id="phone" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck16">
+                        <label class="custom-control-label" for="customCheck16">Like Short Walk</label>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck17">
+                        <label class="custom-control-label" for="customCheck17">Like Long Walk</label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <select class="form-control" required>
+                      <option value="">Timings</option>
+                      <option>Morning</option>
+                      <option>Evening</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-md-12">
+              <label>Walking timings</label>
+               
+                <div class="form-group">
+                    <div class="form-row">
+                    <div class="col-md-4 col-lg-4">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="MorningWalk" class="custom-control-input" id="customCheck20">
+                        <label class="custom-control-label" for="customCheck20">Morning walk time</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" formControlName="AfternoonWalk" class="custom-control-input" id="customCheck18">
+                        <label class="custom-control-label" for="customCheck18">Afternoon walk time</label>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" formControlName="EveningWalk" class="custom-control-input" id="customCheck19">
+                          <label class="custom-control-label" for="customCheck19">Evening walk time</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+                <!-- <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group col-md-3 col-lg-6">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck19">
+                        <label class="custom-control-label" for="customCheck19">Evening walk time</label>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              
+           
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Are you Open for play dates for your pets</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <div class="slider round">
+                          <span class="on">YES</span><span class="off">NO</span>
+                        </div>
+
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>They Like Travelling in Car?</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <div class="slider round">
+                          <span class="on">YES</span><span class="off">NO</span>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Like swimming</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Are they okey left alone at home?</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio1">
+                            <input type="radio" formControlName="LikeSwim" class="form-check-input" id="radio1" name="LikeSwim" value="Yes" checked>Yes
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="LikeSwim" class="form-check-input" id="radio2" name="LikeSwim" value="No">No
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-4">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label " for="radio3">
+                            <input type="radio" formControlName="LikeSwim" class="form-check-input" id="radio3" name="LikeSwim" value="Never">Never
+                            Tried
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio1">
+                            <input type="radio" formControlName="AloneHome" class="form-check-input" id="radio1" name="AloneHome" value="Yes" checked>Yes
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="AloneHome" class="form-check-input" id="radio2" name="AloneHome" value="No">No
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-4">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="AloneHome" class="form-check-input" id="radio2" name="AloneHome" value="Dont">Dont
+                            Know
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Friendly with people</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Friendly with kids</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio1">
+                            <input type="radio" formControlName="FriendlyWithPeople" class="form-check-input" id="radio1" name="FriendlyWithPeople" value="Yes" checked>Yes
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="FriendlyWithPeople" class="form-check-input" id="radio2" name="FriendlyWithPeople" value="No">No
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-4">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label " for="radio3">
+                            <input type="radio" formControlName="FriendlyWithPeople" class="form-check-input" id="radio3" name="FriendlyWithPeople" value="Never">Never
+                            Tried
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio1">
+                            <input type="radio" formControlName="FriendlyWithkids" class="form-check-input" id="radio1" name="FriendlyWithkids" value="Yes" checked>Yes
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="FriendlyWithkids" class="form-check-input" id="radio2" name="FriendlyWithkids" value="No">No
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-4">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="FriendlyWithkids" class="form-check-input" id="radio2" name="FriendlyWithkids" value="Dont">Dont
+                            Know
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Friendly with other dogs</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Friendly with other cats</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio1">
+                            <input type="radio" formControlName="FriendlyWithOtherDogs" class="form-check-input" id="radio1" name="FriendlyWithOtherDogs" value="Yes" checked>Yes
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="FriendlyWithOtherDogs" class="form-check-input" id="radio2" name="FriendlyWithOtherDogs" value="No">No
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-4">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label " for="radio3">
+                            <input type="radio" formControlName="FriendlyWithOtherDogs" class="form-check-input" id="radio3" name="FriendlyWithOtherDogs" value="Never">Never
+                            Tried
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class=" col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio1">
+                            <input type="radio" formControlName="FriendlyWithOtherCats" class="form-check-input" id="radio1" name="FriendlyWithOtherCats" value="Yes" checked>Yes
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-3">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio" formControlName="FriendlyWithOtherCats" class="form-check-input" id="radio2" name="FriendlyWithOtherCats" value="No">No
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-md-2 col-lg-4">
+                      <div class="form-group">
+                        <div class="form-check-inline">
+                          <label class="form-check-label" for="radio2">
+                            <input type="radio"formControlName="FriendlyWithOtherCats" class="form-check-input" id="radio2" name="FriendlyWithOtherCats" value="Dont">Dont
+                            Know
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label>Medication</label>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label>Currently under going Any medications</label>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="switch">
+                        <input type="checkbox" formControlName="UnderGoing">
+                        <div class="slider round">
+                          <span class="on">YES</span><span class="off">NO</span>
+                        </div>
+
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label>Ongoing Medications</label>
+                </div>
+                <div class="col-md-6">
+                  <label class="switch">
+                    <input type="checkbox" formControlName="Ongoing">
+                    <div class="slider round">
+                      <span class="on">YES</span><span class="off">NO</span>
+                    </div>
+
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label>Name Of Medications</label>
+                </div>
+                <div class="col-md-6">
+                  <label>Remarks</label>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="abc col-md-12">
+              <div class="row">
+                <div class="form-row">
+                <div formArrayName="Medications" *ngFor="let items of PetProfileForm.get('Medications').controls;let ind=index;">
+                  <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+                     
+                      <div class="col-md-2 col-lg-3">
+                          <div class="form-group">
+                            <input placeholder="Name of Pet" formControlName="petname" class="form-control" />
+                          </div>
+                        </div>
+                        <div class="col-md-2 col-lg-3">
+                            <div class="form-group">
+                                <input placeholder="Type of Pet" formControlName="pettype" class="form-control" />
+                            </div>
+                          </div>
+                          <div class="col-md-2 col-lg-3">
+                            <div class="form-group">
+                              <input placeholder="Name of Owner" formControlName="OwnerName" class="form-control" />
+                            </div>
+                          </div>
+ 
+      
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <div class=" input-group mb-3">
+                              <input type="text" class="form-control" formControlName="ownerPhoneno" placeholder="Phone number">
+                            </div>
+                          </div>
+                        </div>
+       
+                      <div class="col-md-2">
+                          <ng-container *ngIf="PetProfileForm.get('Medications')?.controls?.length<=2">
+                              <button (click)="addField2(ind)" class="btn-success btn-sm">+</button>
+                              </ng-container>
+                        <ng-container *ngIf="ind!=0">
+                          <button  (click)="removeField2(ind)" class="btn-success btn-sm">- </button>
+                        </ng-container>
+                  </div> 
+                  </div>
+                </div>
+
+              
+              
+              </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" formControlName="MedicationName" class="form-control" placeholder="Enter Name">
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" formControlName="Timing" class="form-control" placeholder="Timming">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="form-group">
+                    <input type="text" formControlName="AfterFood" class="form-control" placeholder="Ater/before Food">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <label>Name OF Consulting doctors</label>
+
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" formControlName="DoctorName" class="form-control" placeholder="Enter Name">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="form-group">
+                    <input type="text" formControlName="ContactNo" class="form-control" placeholder="Contact Number">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <label>In Case of any emergencies Who do we Contacts</label>
+
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" class="form-control" formControlName="Emergencies"   placeholder="Enter Name">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="form-group">
+                    <input type="text" formControlName="EmergencyPhone" class="form-control" placeholder="Contact Number">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <label>Likes</label>
+                      <select class="form-control" formControlName="Like" >
+                        <option value=""></option>
+                        <option>Non veg</option>
+                        <option>Veg</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <label>Dis Likes</label>
+                      <select class="form-control" formControlName="Dislike" >
+                        <option value=""></option>
+                        <option>Veg</option>
+                        <option>Non veg</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div>
+                    <label></label></div>
+                  <div class="form-group">
+                    <input type="text" formControlName="Others" class="form-control" placeholder="Others">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label>Responds to Commands</label>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" formControlName="PawName" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" formControlName="Sit" class="form-control" placeholder="Sit">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+
+
+                  <div class="form-group">
+                    <input type="text" formControlName="come" class="form-control" placeholder="Come">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-row">
+                <div class="col-md-6">
+                  <div class="form-row">
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" formControlName="walk" class="form-control" placeholder="Walk" ngModel name="walk">
+                    </div>
+                    <div class="col-md-3 col-lg-6">
+                      <input type="text" formControlName="No" class="form-control" placeholder="No" ngModel name="no"> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="form-group">
+                    <input type="text" formControlName="stay" class="form-control" placeholder="Stay" ngModel name="saty">
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="col-md-12">
+              <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-3 col-lg-3">
+                        <label>Upload your photos</label>
+                      </div>
+                      <div class="col-md-4 col-lg-3">
+                        <div class="input-group">
+                          <span class="input-group-btn">
+                            <span class="btn btn-warning" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+                            <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;"
+                             type="file" #image formControlName="image">
+                          </span>
+                          <span class="form-control"></span>
+                        </div>
+          
+                      </div>
+                      <div class=" col-md-3 col-lg-6">
+                        <input type="textarea" formControlName="writehere" class="form-control" name="textarea" placeholder="Write Something here" ngModel>
+                      </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="reqments">Terms and Conditions*</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" formControlName="Condition" placeholder="Terms and Conditions" class="form-control"  >
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            
+             <div class="col-md-12 redbtn text-center">
+              <input id="submit" class="redbtn1" type="submit" name="">
+              <input class="redbtn2" type="button" name="" value="Cancel">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

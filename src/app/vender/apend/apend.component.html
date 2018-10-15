@@ -1,0 +1,46 @@
+<form [formGroup]="fGroup">
+  <div formArrayName="row_dynamic" *ngFor="let items of fGroup.get('row_dynamic').controls;let ind=index;">
+    <div [formGroupName]="ind" style="display:flex;flex-direction:row;align-items:center">
+      <div class="elem">
+        <label>Gender</label>
+        <select formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <div class="elem">
+        <label>Age</label>
+        <input type="text" formControlName="age">
+      </div>
+
+      <div class="elem">
+        <label>TypeOfPets</label>
+        <input type="text" formControlName="TypeOfPet">
+      </div>
+      <div class="elem">
+        <label>No of Pet</label>
+        <input type="text" formControlName="noofpet">
+      </div>
+      <div>
+        <button (click)="addField(ind)">+</button>
+        <ng-container *ngIf="ind!=10">
+            <button (click)="addField(ind)">+</button>
+          </ng-container>
+        <ng-container *ngIf="ind!=10">
+          <button  (click)="removeField(ind)">- </button>
+        </ng-container>
+       
+      </div>
+    </div>
+  </div>
+  <br>
+  <button (click)="submitForm()">Click me to read form value</button>
+</form>
+<br>
+<br>
+
+
+<h4>
+  {{fValue}}
+</h4>
+<h1>ho</h1>

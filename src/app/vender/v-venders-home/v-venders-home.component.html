@@ -1,0 +1,45 @@
+<div class="container-fluid" style="padding: 0;position: relative;">
+  <img src="../../../assets/img/bannerimg.png" style="width: 100%;height: 100%;background-color: black;opacity: 0.7" >
+</div>
+
+<div class="container-fluid" style="margin-top: 2%;padding: 0;">
+  <div class="col-md-12 px-0 text-center" style="margin-top: 3%">
+        <h2 class="main-head ">Register Your Services</h2>
+        <div class="container">
+  
+<div class="vendorForm">
+    <h4 class="text-center" style="color: #fff;margin-bottom: 10%">Choose Your Service Category</h4>
+  <form action="#">
+
+    <div class="form-group" style="margin: 10%">
+      
+      
+    <select  class="form-control"  (change)="firstDropDownChanged($event.target.value)">
+    <option>Select Category</option>
+    <option *ngFor='let v of _values1'>{{ v }}</option>
+  </select>
+    </div>
+     
+      
+    <div class="form-group" style="margin: 10%">
+      
+     <select class="form-control" (change)="secondDropDownChanged($event.target.value)">
+    <option>Select Sub-Category</option>
+    <option *ngFor='let v of _values2'>{{ v }}</option>
+    <!-- <option>Kennels</option>
+    <option>Transportaion</option>
+    <option>Swimming</option>
+    <option>Grooming</option>
+    <option>Trainer</option>
+    <option>Photograph</option>
+    <option>Dog Walking</option>
+    <option>NGO</option> -->
+    
+  </select>
+    </div>
+    <a routerLink="{{k}}" class="btn" type="submit"  class="btn btn-primary" id="fff">Next</a>
+  </form>
+</div>
+</div>
+</div>
+</div>

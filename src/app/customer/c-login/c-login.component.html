@@ -1,0 +1,79 @@
+
+<div class="container-fluid" id="back_color">
+
+	<div class="row" style="padding-left: 15%">
+	<form #loginForm="ngForm" (ngSubmit)="Login(loginForm.value)"
+		class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p style="font-family:'Yeon Sung', cursive;text-align: center;font-size:40px;padding-top: 15%;font-weight: bold;">PAW CLUB</p>
+
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+				
+				<a (click)="socialSignIn('facebook')" style="cursor: pointer">
+					<img src="..//..//../assets/img/Icons/facebook.png" id="fbb_btn">
+				</a>
+				<!-- <button (click)="socialSignIn('facebook')">Sign in with Facebook</button>
+<button (click)="socialSignIn('google')">Signin in with Google</button>   -->
+	  <a (click)="socialSignIn('google')">
+					<img src="..//..//../assets/img/Icons/google-plus.png" id="googlee_btn">
+				</a>
+				<br>
+				<br>
+				<br>
+				<br>
+
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<input type="text" class="form-control" id="uname" name="email" ngModel placeholder="Username"  />
+
+			</div>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<input type="password" class="form-control" id="password" name="password"  ngModel placeholder="Password"  />
+
+			</div>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<!-- <input type="checkbox">
+				<label>Remember Me</label> -->
+				<a routerLink="/customer/forgotpassword" style="margin-left: 45%">Forget Password?</a>
+			</div>
+
+			<br>
+			<br>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+				<button type="submit" class="btn btn-outline-info btn-md" id="log_btn" style="padding: 10px 40px;">LOGIN</button>
+
+			</div>
+			<br>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 15%; text-align: center;">
+				<label>
+					Create an account?
+					<a routerLink="/customer/register">Sign up</a>
+				</label>
+
+			</div>
+
+        </form>
+
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<img src="../../../assets/img/bulldog.png" id="dog_icon">
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div>
+
+
+
+
